@@ -1,29 +1,28 @@
 {
   "siteMetadata": {
     "language": "en",
-    "siteUrl": "https://gatsby-starter-portfolio-minimal-theme.netlify.app/",
-    "title": "Gatsby Starter for Portfolio Minimal",
+    "siteUrl": "https://gregliest.github.io/Blog/",
+    "title": "Greg's Blog",
     "titleTemplate": "%s · Portfolio Minimal",
-    "description": "A Gatsby Starter Project to easily get started with Portfolio Minimal theme.",
-    "author": "Konstantin Münster",
+    "description": "A blog about code, whitewater, and other interests",
+    "author": "Gregory Lee",
     "avatar": "../content/images/gatsby.png",
-    "bio": "This biography will be used in the footer area of an article and can contain some more details about the author.",
+    "bio": "Hi, I'm a mechanical and software engineer, whitewater kayaker, climber, and seeker. I'm passionate about seeing reality clearly to the best of my ability, without bias and preconceptions.",
     "social": {
-      "behance": "https://behance.com",
-      "github": "https://github.com/konstantinmuenster",
-      "medium": "https://konstantinmuenster.medium.com",
-      "linkedin": "https://www.linkedin.com/in/konstantin-muenster/",
-      "mail": "mailto:mail@konstantin.digital"
+      "github": "https://github.com/gregliest",
+      "medium": "https://medium.com/@greg_63957",
+      "linkedin": "https://www.linkedin.com/in/greg-lee-b1376a36/",
+      "mail": "mailto:blog@gregliest.com"
     }
   },
   "siteConfiguration": {
-    "logo": { "text": "Portfolio" },
+    "logo": { "text": "The Virtual and the Outdoors" },
     "navigation": {
       "header": [
-        { "label": "About", "url": "/#about" },
-        { "label": "Blog", "url": "/blog" },
-        { "label": "Features", "url": "/#features" },
-        { "label": "Github", "url": "/#github" }
+        { "label": "Code", "url": "/code" },
+        { "label": "Whitewater", "url": "/whitewater" },
+        { "label": "Outdoors", "url": "/outdoors" },
+        { "label": "Ideas", "url": "/ideas"}
       ],
       "ctaButton": {
         "openNewTab": true,
@@ -37,7 +36,7 @@
     },
     "featureToggles": {
       "useDarkModeAsDefault": false,
-      "useDarkModeBasedOnUsersPreference": true,
+      "useDarkModeBasedOnUsersPreference": false,
       "useCookieBar": false
     }
   }
