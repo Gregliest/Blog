@@ -1,0 +1,110 @@
+---
+layout: article
+title: "Layouts Part II: Add/Remove/Collapse"
+modified:
+categories: mobile
+comments: true
+excerpt: A comparison of the ease of adding, removing, and collapsing views in an Android Linear Layout vs. an iOS Interface Builder view.
+tags: []
+image:
+  feature:
+  teaser: /linear-layout/android-visible.png
+  thumb: /linear-layout/android-visible.png
+date: 2014-11-15T17:04:45-08:00
+type: Blog
+---
+The real power of Android's Linear Layout and readable xml over iOS's constraint system becomes apparent when as you try to change the view.  Let’s try adding a caption text field between the picture and the button in the view from the previous post.   In Android in a Linear Layout, simply add the new text field in the position you want it to appear.  The Linear Layout handles the rest.
+
+{% highlight css %}
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                             android:orientation="vertical"
+                             android:layout_width="fill_parent"
+                             android:layout_height="fill_parent">
+
+<TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Canyon Creek, CA"/>
+
+<ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="300dp"
+        android:gravity="center_horizontal"
+        android:scaleType="fitCenter"
+        android:src="@drawable/CanyonCreek"
+        android:id="@+id/imageView"/>
+
+<TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="A really awesome waterfall!"/>
+
+<Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Button"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/button"/>
+
+</LinearLayout>
+{% endhighlight %}
+
+On iOS, adding a view is much harder.  First, break the constraint between the image and the button.  Next, drag a new text field onto the screen.   Then, add new constraints, and make them equal to one another.  For some reason, IB does not update the constraints when you drag a view around, or update the frame when you change the constraints.  So, to complete the process, tell IB manually to update the frames of all the views.  Here is an intermediate stage as I futz with IB to make all the constraints line up.  Life is getting harder in the world of Apple...
+
+<figure class>
+	<img src="{{ site.url }}/images/linear-layout/ios-add-caption.png">
+</figure>
+
+To remove a view in Android, simply remove the view from the Linear Layout.  The view's attributes and layout logic are completely encapsulated within the xml tag, or abstracted away by the Linear Layout, so the developer doesn't have to do anything else.  This design is simple, clean, and beautiful.  On the other hand, in iOS, you’ll have to go through the whole process of deleting the view and rebuilding the surrounding constraints.  Painful.
+
+In general, the use of constraints in iOS complicates changes to views.  Even in a moderately complex view, dozens of constraints are required to define the layout.  With so much going on, it becomes difficult to figure out what layout parameters depend on what, and how view placements are defined.  I’ve had situations where all I’ve wanted to do is replace a single view element, and have had to tear down and rebuild dozens of constraints for that seemingly simple change.  Furthermore, the constraints system doesn't scale well, as modifying or debugging a view becomes more and more difficult as more view elements are added.  Redesigns in iOS are almost always painful. I once spent 8 hours updating the four screens in my personal app from iOS 6 to iOS 7, AFTER adhering to the best practices outlined for iOS 6.  Furthermore, since the xml from IB is auto generated and isn't really readable, two developers cannot work on the same part of a view, as the ensuing merge conflicts are usually totally unworkable.  It's also worth noting that some attributes must be set in code, notably hex colors.  So, the system forces the developer to split some layout logic between IB and code.  Please, for the sake of your later self and all the developers coming after you, at least be consistent with what you put in IB and what you put in code.
+
+Visibility
+
+Now let’s say you want a view to appear conditionally.  Android has provided a convenient and simple attribute to make this possible. Set visibility:invisible if you want the view to be invisible but not collapsed (if other view placements are measured off this view) or set Visibility:gone if you want the view to be completely gone (collapsed).  The initial visibility of a view can be set in the xml, and further changes can be done in code.  Here's an example of hiding the image.
+
+{% highlight css %}
+<ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="300dp"
+        android:gravity="center_horizontal"
+        android:scaleType="fitCenter"
+        android:src="@drawable/CanyonCreek"
+        android:visibility="gone"/>
+{% endhighlight %}
+
+<figure class="third">
+	<img src="{{ site.url }}/images/linear-layout/android-visible.png">
+	<img src="{{ site.url }}/images/linear-layout/android-invisible.png">
+	<img src="{{ site.url }}/images/linear-layout/android-gone.png">
+	<figcaption>Image view is visible, invisible, and gone</figcaption>
+</figure>
+
+Notice that the Linear Layout automatically fixed the spacing around the "gone" view as well, so the remaining elements are evenly spaced.  Awesomesauce.
+
+In iOS, setting the view to be hidden is the equivalent of Android's “invisible”: constraints are still measured off of that hidden view.  But, there is no equivalent to gone, which makes constructing collapsible views a huge pain.  As usual in iOS, there are a number of ways to replicate the behavior of “gone,” and all of them are  awkward in my opinion.  Here's the one I currently favor.
+
+{% highlight objective-c %}
+@interface ViewController ()
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *captionImageSpacingConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *captionHeight;
+@property (weak, nonatomic) IBOutlet UITextView *captionTextView;
+@end
+
+@implementation ViewController
+
+- (void)hideCaption {
+    self.captionImageSpacingConstraint.constant = 0;
+    self.captionHeight.constant = 0;
+    self.captionTextView.hidden = YES;
+}
+@end
+{% endhighlight %}
+
+As you can see, I set the height constraint of the caption to be 0.  I then had to set the spacing between the caption and the image to be zero to eliminate the extra space between the image and the button.  Finally, I had to set the text view to be hidden because views with a height constraint of 0 will still be drawn behind the currently visible view element, which can incur a performance penalty.  Also, if the currently visible view element is transparent,  the collapsed view will show through.  The above code only works if I want to be able to hide the view once. If I want to be able to toggle the view to be visible again, I need to save the spacing and height constraints somewhere, which adds two more variables to the above code.  Thus every collapsible view needs at least two wired constraints, two variables, and a method, which quickly leads to code bloat, especially in a view with multiple collapsible view elements.
+
+There are a couple of other ways to hide a view.  I could have set another constraint that encompassed both the spacing and the text view height constraint.  I would then set the priority of the spacing and height constraints to be lower than the larger constraint, and the height can be toggled using that single constraint.  I also could have set the constraint between the image and the next item (the button in this case).  Again this saves one constraint in the controller, but adds a constraint in IB.  I find that the added constraint and the differing priorities create confusing views in IB, especially as views get more complex and have more constraints on screen.  The added constraint also makes it harder to add or remove views, since the elements are now tied together with one more constraint.  It's a tradeoff between complexity in IB and more code bloat.  Again, all of this can be yours for free in Android.
+
+[Continue to Part III: The Beauty of Layout Weight and Conclusion](../android-ios-layouts-part-iii-the-beauty-of-layout-weight-and-conclusion)
