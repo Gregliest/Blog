@@ -6,6 +6,9 @@ import { POSTS_PER_PAGE } from '../../blog'
 import { InferGetStaticPropsType } from 'next'
 import { allBlogs } from 'contentlayer/generated'
 import { sortedBlogPost } from '../../../lib/utils/contentlayer'
+import ArticleCard from '@/components/MuiCard'
+import fsPromises from 'fs/promises'
+import path from 'path'
 
 export const getStaticPaths = async () => {
   const totalPosts = allBlogs
@@ -35,10 +38,15 @@ export const getStaticProps = async (context) => {
     totalPages: Math.ceil(posts.length / POSTS_PER_PAGE),
   }
 
+  const filePath = path.join(process.cwd(), '/data/blog/mediumBlog.json')
+  const jsonData = await fsPromises.readFile(filePath, 'utf-8')
+  const mediumPosts = JSON.parse(jsonData)
+
   return {
     props: {
       initialDisplayPosts: allCoreContent(initialDisplayPosts),
       posts: allCoreContent(posts),
+      mediumPosts,
       pagination,
     },
   }
@@ -47,11 +55,26 @@ export const getStaticProps = async (context) => {
 export default function PostPage({
   posts,
   initialDisplayPosts,
+  mediumPosts,
   pagination,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
+  console.log(mediumPosts)
   return (
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
+      <div className="container py-12">
+        <div className="-m-4 flex flex-wrap">
+          {mediumPosts.map((article) => (
+            <ArticleCard
+              key={article.title}
+              title={article.title}
+              description={article.description}
+              img={article.imgSrc}
+              link={article.href}
+            />
+          ))}
+        </div>
+      </div>
       <ListLayout
         posts={posts}
         initialDisplayPosts={initialDisplayPosts}
