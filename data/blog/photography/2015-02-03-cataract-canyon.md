@@ -1,6 +1,6 @@
 ---
 layout: media
-title: "Cataract Canyon"
+title: 'Cataract Canyon'
 modified:
 categories: photography
 comments: true
@@ -11,7 +11,7 @@ image:
   teaser: /photography/cataract.jpg
   thumb: /photography/cataract.jpg
 date: 2015-02-03T20:15:19-08:00
-type: Blog
+type: Photo
 ---
 
-One of my campsites along Cataract Canyon, on the Colorado River.  A beautiful place, and it was also shockingly hot that night.
+One of my campsites along Cataract Canyon, on the Colorado River. A beautiful place, and it was also shockingly hot that night.

@@ -48,6 +48,25 @@ export const Blog = defineDocumentType(() => ({
   computedFields,
 }))
 
+export const Photo = defineDocumentType(() => ({
+  name: 'Photo',
+  filePathPattern: 'photography/**/*.mdx',
+  contentType: 'mdx',
+  fields: {
+    title: { type: 'string', required: true },
+    date: { type: 'date', required: true },
+    tags: { type: 'list', of: { type: 'string' } },
+    lastmod: { type: 'date' },
+    summary: { type: 'string' },
+    images: { type: 'list', of: { type: 'string' } },
+    authors: { type: 'list', of: { type: 'string' } },
+    layout: { type: 'string' },
+    bibliography: { type: 'string' },
+    canonicalUrl: { type: 'string' },
+  },
+  computedFields,
+}))
+
 export const Authors = defineDocumentType(() => ({
   name: 'Authors',
   filePathPattern: 'authors/**/*.mdx',
@@ -68,7 +87,7 @@ export const Authors = defineDocumentType(() => ({
 
 export default makeSource({
   contentDirPath: 'data',
-  documentTypes: [Blog, Authors],
+  documentTypes: [Blog, Photo, Authors],
   mdx: {
     cwd: process.cwd(),
     remarkPlugins: [

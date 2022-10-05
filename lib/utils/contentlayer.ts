@@ -48,6 +48,7 @@ export function coreContent<T extends DocumentTypes>(content: T) {
   return omit(content, ['body', '_raw', '_id'])
 }
 
+// This gets all metadata essentially
 export function allCoreContent<T extends DocumentTypes>(contents: T[]) {
   return contents.map((c) => coreContent(c))
 }

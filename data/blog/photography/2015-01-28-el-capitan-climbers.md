@@ -1,6 +1,6 @@
 ---
 layout: article
-title: "El Capitan Climbers"
+title: 'El Capitan Climbers'
 modified:
 categories: photography
 comments: true
@@ -11,7 +11,7 @@ image:
   teaser: /photography/el-cap.jpg
   thumb: /photography/el-cap.jpg
 date: 2015-01-28T08:47:06-08:00
-type: Blog
+type: Photo
 ---
 
-Since I'm obsessed with climbing right now, here's a shot of El Capitan in Yosemite.  You can see the lights from the big wall climbers, and a satellite on the right.  It's not quite in focus, but I like the subject.
+Since I'm obsessed with climbing right now, here's a shot of El Capitan in Yosemite. You can see the lights from the big wall climbers, and a satellite on the right. It's not quite in focus, but I like the subject.

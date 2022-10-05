@@ -1,6 +1,6 @@
 ---
 layout: media
-title: "Milky Way Boats"
+title: 'Milky Way Boats'
 modified:
 categories: photography
 comments: true
@@ -12,7 +12,7 @@ image:
   thumb: /photography/milky-way-boats.jpg
 ads: false
 date: 2014-10-25T23:29:04-07:00
-type: Blog
+type: Photo
 ---
 
 Tomales Bay, CA.
