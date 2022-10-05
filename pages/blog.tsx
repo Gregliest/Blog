@@ -4,7 +4,7 @@ import { PageSEO } from '@/components/SEO'
 import { sortedBlogPost, allCoreContent } from '@/lib/utils/contentlayer'
 import { InferGetStaticPropsType } from 'next'
 import { allBlogs } from 'contentlayer/generated'
-import ArticleCard from '@/components/MuiCard'
+import ArticleCard from '@/components/ArticleCard'
 import fsPromises from 'fs/promises'
 import path from 'path'
 
@@ -50,8 +50,9 @@ export default function Blog({
               key={article.title}
               title={article.title}
               description={article.description}
-              img={article.imgSrc}
-              href={article.link}
+              date={article.date}
+              image={article.imgSrc}
+              link={article.link}
             />
           ))}
         </div>
