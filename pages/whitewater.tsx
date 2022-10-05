@@ -13,30 +13,27 @@ import {
 } from '@/lib/utils/contentProvider'
 
 export const getStaticProps = async () => {
-  // const result = allBlogs.map(String).join('\n')
-  const allPosts = await getAllPosts()
-  const result = filterByTag('photography', allPosts)
-
-  console.log(allCoreContent(allBlogs))
-
   // Get all local posts
-  console.log(getLocalPosts())
+  const localPosts = await getLocalPosts()
   // Get all remote posts
-  console.log(getMediumPosts())
+  const mediumPosts = await getMediumPosts()
   // Get all photography posts
-  console.log(getPhotographyPosts())
+  const photographyPosts = await getPhotographyPosts()
   // Get all posts
-
-  console.log(getAllPosts())
+  const allPosts = await getAllPosts()
   // Get all by tag
-  const result = filterByTag('photography', allPosts)
+  const filteredPosts = filterByTag('photography', allPosts)
   // Sort by date
   // Remove archived
   //
 
   return {
     props: {
-      allPosts: result,
+      localPosts,
+      mediumPosts,
+      photographyPosts,
+      allPosts,
+      filteredPosts,
     },
   }
 }

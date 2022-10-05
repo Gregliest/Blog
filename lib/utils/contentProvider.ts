@@ -29,9 +29,21 @@ export async function getAllPosts() {
   return getLocalPosts().concat(mediumPosts)
 }
 
+export function dateSortDesc(a: string, b: string) {
+  if (a > b) return -1
+  if (a < b) return 1
+  return 0
+}
+
+export function sortByDate(posts: any[]) {
+  posts.sort((post1, post2) => dateSortDesc(post1.date, post2.date))
+  return posts
+}
+
 export function filterByTag(tag: string, posts: any[]) {
-  console.log(typeof posts[1].tags)
-  console.log(posts[1].tags)
-  console.log(posts[1].tags instanceof Array)
   return posts.filter((post) => post.tags.includes(tag))
+}
+
+export function removeArchived(posts: any[]) {
+  return posts.filter((post) => !post.archived)
 }
