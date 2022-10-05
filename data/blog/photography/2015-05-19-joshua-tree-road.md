@@ -1,7 +1,6 @@
 ---
 title: 'Joshua Tree Road'
 date: 2015-05-19T08:46:32-07:00
-draft: false
 tags: ['photography']
 type: Photo
 authors: ['gregliest']

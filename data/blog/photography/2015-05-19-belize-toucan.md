@@ -1,17 +1,11 @@
 ---
-layout: media
 title: 'Belize Toucan'
-modified:
-categories: photography
-comments: true
-excerpt:
-tags: []
-image:
-  feature: /photography/belize-toucan.jpg
-  teaser: /photography/belize-toucan.jpg
-  thumb: /photography/belize-toucan.jpg
 date: 2015-05-19T08:23:14-07:00
+tags: ['photography']
 type: Photo
+authors: ['gregliest']
 ---
 
-A caged toucan, Belize.
+# A caged toucan, Belize.
+
+![Belize Toucan](/static/images/photography/belize-toucan.jpg)
