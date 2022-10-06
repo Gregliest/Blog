@@ -1,8 +1,9 @@
 import siteMetadata from '@/data/siteMetadata'
 import { PageSEO } from '@/components/SEO'
 import { Typography } from '@mui/material'
+import ListLayout from '@/layouts/ListLayout'
 
-import { allBlogs, allPhotos } from 'contentlayer/generated'
+import { allBlogs } from 'contentlayer/generated'
 import { sortedBlogPost, allCoreContent } from '@/lib/utils/contentlayer'
 import {
   getLocalPosts,
@@ -37,11 +38,15 @@ export const getStaticProps = async () => {
     },
   }
 }
-export default function Whitewater({ allPosts }) {
-  console.log(allPosts)
+export default function Whitewater({ photographyPosts }) {
   return (
     <>
       <PageSEO title={`Projects - ${siteMetadata.author}`} description={siteMetadata.description} />
+      <ListLayout
+        posts={photographyPosts}
+        initialDisplayPosts={photographyPosts}
+        title="All Posts"
+      />
       <Typography>Hello</Typography>
     </>
   )

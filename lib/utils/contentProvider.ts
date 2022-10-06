@@ -1,5 +1,6 @@
-import { allBlogs, allPhotos } from 'contentlayer/generated'
+import { allBlogs } from 'contentlayer/generated'
 import { allCoreContent } from './contentlayer'
+import type { Blog } from 'contentlayer/generated'
 
 import { promises as fs } from 'fs'
 import path from 'path'
@@ -8,11 +9,7 @@ import path from 'path'
 
 // Gets the metadata for all local posts
 export function getLocalPosts() {
-  return allCoreContent(allBlogs).concat(getPhotographyPosts())
-}
-
-export function getPhotographyPosts() {
-  return allCoreContent(allPhotos)
+  return allCoreContent(allBlogs)
 }
 
 // Gets the metadata for all Medium posts
@@ -24,6 +21,10 @@ export async function getMediumPosts() {
   return mediumPosts
 }
 
+export async function getPhotographyPosts() {
+  const posts = await getAllPosts()
+  return filterByTag('photography', posts)
+}
 export async function getAllPosts() {
   const mediumPosts = await getMediumPosts()
   return getLocalPosts().concat(mediumPosts)
@@ -35,15 +36,15 @@ export function dateSortDesc(a: string, b: string) {
   return 0
 }
 
-export function sortByDate(posts: any[]) {
+export function sortByDate(posts: Blog[]) {
   posts.sort((post1, post2) => dateSortDesc(post1.date, post2.date))
   return posts
 }
 
-export function filterByTag(tag: string, posts: any[]) {
+export function filterByTag(tag: string, posts: Blog[]) {
   return posts.filter((post) => post.tags.includes(tag))
 }
 
-export function removeArchived(posts: any[]) {
+export function removeArchived(posts: Blog[]) {
   return posts.filter((post) => !post.archived)
 }

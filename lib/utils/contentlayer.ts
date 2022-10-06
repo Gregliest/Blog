@@ -1,5 +1,5 @@
 import kebabCase from '@/lib/utils/kebabCase'
-import type { Blog, Photo, DocumentTypes } from 'contentlayer/generated'
+import type { Blog, DocumentTypes } from 'contentlayer/generated'
 
 export function dateSortDesc(a: string, b: string) {
   if (a > b) return -1
@@ -54,7 +54,7 @@ export function allCoreContent<T extends DocumentTypes>(contents: T[]) {
 }
 
 // TODO: refactor into contentlayer once compute over all docs is enabled
-export async function getAllTags(allBlogs: Blog[] | Photo[]) {
+export async function getAllTags(allBlogs: Blog[]) {
   const tagCount: Record<string, number> = {}
   // Iterate through each post, putting all found tags into `tags`
   allBlogs.forEach((file) => {
