@@ -1,20 +1,19 @@
 ---
 title: 'iOS > Android: View Life Cycle'
 date: 2014-11-23T08:31:09-07:00
-draft: false
 summary: A comparison of the view and controller life cycle hooks in iOS and Android.
-tags: [android, iOS, mobile, view controllers]
+tags: ['code', 'android', 'iOS', 'mobile']
+thumbnail: /static/images/lifecycle/basic-lifecycle-android.png
 type: Blog
-authors: ['gregliest']
 ---
 
 In this post, I’m going to compare the life cycle hooks in iOS and Android, and discuss at a high level why iOS’s system is superior to Android’s. In general, iOS provides hooks that match the life cycle of the view, which creates an easy and intuitive system, and successfully hides system level concerns from the developer. On the other hand, Android's hooks follow the state of the controller, which conflates the life cycle of the view with the state of the controller, breaking the fundamental abstraction of MVC. This terrible design creates a confusing and quirky system, and exposes system level complexity to the developer.
 
-MVC refresher
+# MVC refresher
 
 To establish terminology, I'll quickly discuss [Model-View-Controller](http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller), the design paradigm favored by both platforms. MVC seeks to reduce the complexity of user interfaces by separating concerns into models, views, and controllers. Models hold the data. Views are the representation of the data on screen, and should contain minimal logic. Controllers manage the views and their life cycle, and coordinate with models and the rest of the app. Since controllers are in the middle of everything, they are usually significantly more complicated than views.
 
-The View Life Cycle
+# The View Life Cycle
 
 When a view is about to appear on screen, the app needs to perform the following tasks:
 
@@ -29,7 +28,7 @@ And when the view should leave the screen:
 
 These tasks represent the major stages in a view's life cycle, and a developer might want to take action at some or all of these stages. For instance, a developer may wish to persist the state of the UI when a view is going off screen. To support these actions, each platform has provided a number of hooks in their controllers.
 
-The Life Cycle Hooks
+# The Life Cycle Hooks
 
 Apple's most common methods are:
 
