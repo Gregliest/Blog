@@ -3,8 +3,6 @@ import { PageSEO } from '@/components/SEO'
 import { Typography } from '@mui/material'
 import ListLayout from '@/layouts/ListLayout'
 
-import { allBlogs } from 'contentlayer/generated'
-import { sortedBlogPost, allCoreContent } from '@/lib/utils/contentlayer'
 import {
   getLocalPosts,
   getMediumPosts,
