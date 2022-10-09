@@ -15,7 +15,7 @@ export default function Gallery({ posts }) {
 
   return (
     <div>
-      <ImageList sx={{ width: 500, height: 450 }} cols={3} rowHeight={164}>
+      <ImageList cols={3} rowHeight={164}>
         {list}
       </ImageList>
     </div>
