@@ -1,16 +1,23 @@
 import siteMetadata from '@/data/siteMetadata'
 import { PageSEO } from '@/components/SEO'
-import { Typography } from '@mui/material'
 
+const sizeOf = require('image-size')
 import { getPhotographyPosts } from '@/lib/utils/contentProvider'
 import Gallery from '@/components/Gallery'
 
 export const getStaticProps = async () => {
   const photographyPosts = await getPhotographyPosts()
+  const posts = photographyPosts.map((post) => {
+    const dimensions = sizeOf('/home/greg/Code/Blog/public' + post.image)
+    post['originalWidth'] = dimensions.width
+    post['originalHeight'] = dimensions.height
+
+    return post
+  })
 
   return {
     props: {
-      photographyPosts,
+      photographyPosts: posts,
     },
   }
 }
