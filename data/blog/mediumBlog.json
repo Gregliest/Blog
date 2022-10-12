@@ -2,7 +2,8 @@
   {
     "category": "software-architecture",
     "title": "Navigators Part II: Benefits and Drawbacks",
-    "publishedAt": "2018-09-13T00:30:26.000Z",
+    "date": "2018-09-13",
+    "summary": "",
     "link": "https://medium.com/@greg_63957/navigators-part-ii-benefits-and-drawbacks-f869ad58909e",
     "thumbnail": "blogThumbnails/navigator2.png",
     "tags": ["code", "architecture", "android"]
@@ -10,7 +11,8 @@
   {
     "category": "android",
     "title": "Navigators Part 1: a Flow-Based Architecture for Android",
-    "publishedAt": "2018-07-26T23:56:24.000Z",
+    "date": "2018-07-26",
+    "summary": "",
     "link": "https://medium.com/@greg_63957/navigators-part-1-a-flow-based-architecture-for-android-b66df2fa6e79",
     "thumbnail": "blogThumbnails/navigator1.png",
     "tags": ["code", "architecture", "android"]
@@ -18,7 +20,8 @@
   {
     "category": "software-development",
     "title": "Volunteering to Write Code for Non-Profits",
-    "publishedAt": "2018-03-14T00:31:35.000Z",
+    "date": "2018-03-14",
+    "summary": "",
     "link": "https://medium.com/@greg_63957/volunteering-to-write-code-for-non-profits-389ee98c9173?source=rss-207117267ac2------2",
     "thumbnail": "blogThumbnails/nonprofits.png",
     "tags": ["code", "ngos"]
@@ -26,7 +29,8 @@
   {
     "category": "scoop-eng",
     "title": "Making JUnit read a little more like RSpec",
-    "publishedAt": "2017-05-16T02:12:23.000Z",
+    "date": "2017-05-16",
+    "summary": "",
     "link": "https://medium.com/@greg_63957/making-junit-read-a-little-more-like-rspec-b389fb369897",
     "thumbnail": "blogThumbnails/junit.png",
     "tags": ["code", "architecture", "android"]
@@ -34,7 +38,8 @@
   {
     "category": "software-engineering",
     "title": "Conj, Cons, Concat? Oh my!",
-    "publishedAt": "2017-05-10T09:42:51.000Z",
+    "date": "2017-05-10",
+    "summary": "",
     "link": "https://medium.com/@greg_63957/conj-cons-concat-oh-my-1398a2981eab?source=rss-207117267ac2------2",
     "thumbnail": "blogThumbnails/conj.png",
     "tags": ["code", "clojure"]
@@ -42,7 +47,8 @@
   {
     "category": "android-app-development",
     "title": "Android View Measurement",
-    "publishedAt": "2017-01-27T00:11:49.000Z",
+    "date": "2017-01-27",
+    "summary": "",
     "link": "https://medium.com/@greg_63957/android-view-measurement-d1f2f5c98f75",
     "thumbnail": "blogThumbnails/viewmeasurement.png",
     "tags": ["code", "architecture", "android"]

@@ -5,38 +5,33 @@ import Card from '@mui/material/Card'
 import CardActionArea from '@mui/material/CardActionArea'
 import CardContent from '@mui/material/CardContent'
 import CardMedia from '@mui/material/CardMedia'
+import { Blog } from 'contentlayer/generated'
 
 interface ArticleCardProps {
-  date: string
-  description: string
-  image: string
-  title: string
-  link: string
+  post: Blog
 }
 
 export default function ArticleCard(props: ArticleCardProps) {
+  console.log(props)
   return (
     <Grid item xs={12} md={6}>
       <CardActionArea component="a" href="#">
         <Card sx={{ display: 'flex' }}>
           <CardContent sx={{ flex: 1 }}>
             <Typography component="h2" variant="h5">
-              {props.title}
+              {props.post.title}
             </Typography>
             <Typography variant="subtitle1" color="text.secondary">
-              {props.date}
+              {props.post.date}
             </Typography>
             <Typography variant="subtitle1" paragraph>
-              {props.description}
-            </Typography>
-            <Typography variant="subtitle1" color="primary">
-              Continue reading...
+              {props.post.summary}
             </Typography>
           </CardContent>
           <CardMedia
             component="img"
             sx={{ width: 160, display: { xs: 'none', sm: 'block' } }}
-            image={props.image}
+            image={props.post.image}
           />
         </Card>
       </CardActionArea>

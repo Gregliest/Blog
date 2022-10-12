@@ -10,6 +10,7 @@ import {
   getPhotographyPosts,
   filterByTag,
 } from '@/lib/utils/contentProvider'
+import ArticleCard from '@/components/ArticleCard'
 
 export const getStaticProps = async () => {
   // Get all local posts
@@ -36,15 +37,18 @@ export const getStaticProps = async () => {
     },
   }
 }
-export default function Whitewater({ photographyPosts }) {
+export default function Whitewater({ allPosts }) {
   return (
     <>
       <PageSEO title={`Projects - ${siteMetadata.author}`} description={siteMetadata.description} />
-      <ListLayout
-        posts={photographyPosts}
-        initialDisplayPosts={photographyPosts}
-        title="All Posts"
-      />
+
+      <div className="container py-12">
+        <div className="-m-4 flex flex-wrap">
+          {allPosts.map((article) => (
+            <ArticleCard key={article.title} post={article} />
+          ))}
+        </div>
+      </div>
       <Typography>Hello</Typography>
     </>
   )
