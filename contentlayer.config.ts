@@ -1,4 +1,9 @@
-import { defineDocumentType, ComputedFields, makeSource } from 'contentlayer/source-files'
+import {
+  defineDocumentType,
+  ComputedFields,
+  makeSource,
+  defineNestedType,
+} from 'contentlayer/source-files'
 import readingTime from 'reading-time'
 import path from 'path'
 // Remark packages
@@ -27,6 +32,13 @@ const computedFields: ComputedFields = {
   },
   toc: { type: 'string', resolve: (doc) => extractTocHeadings(doc.body.raw) },
 }
+const Series = defineNestedType(() => ({
+  name: 'Series',
+  fields: {
+    name: { type: 'string' },
+    number: { type: 'number' },
+  },
+}))
 
 export const Blog = defineDocumentType(() => ({
   name: 'Blog',
@@ -35,18 +47,21 @@ export const Blog = defineDocumentType(() => ({
   fields: {
     title: { type: 'string', required: true },
     date: { type: 'date', required: true },
-    tags: { type: 'list', of: { type: 'string' } },
-    lastmod: { type: 'date' },
-    draft: { type: 'boolean' },
     summary: { type: 'string' },
+    tags: { type: 'list', of: { type: 'string' } },
+    thumbnail: { type: 'string' },
+
+    archived: { type: 'boolean' },
+    draft: { type: 'boolean' },
+    series: { type: 'nested', of: Series },
+
+    lastmod: { type: 'date' },
     images: { type: 'list', of: { type: 'string' } },
     image: { type: 'string' },
-    thumbnail: { type: 'string' },
     authors: { type: 'list', of: { type: 'string' } },
     layout: { type: 'string' },
     bibliography: { type: 'string' },
     canonicalUrl: { type: 'string' },
-    archived: { type: 'boolean' },
   },
   computedFields,
 }))

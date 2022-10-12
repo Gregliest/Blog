@@ -9,6 +9,7 @@ import {
   getAllPosts,
   getPhotographyPosts,
   filterByTag,
+  getAllDisplayPosts,
 } from '@/lib/utils/contentProvider'
 import ArticleCard from '@/components/ArticleCard'
 
@@ -20,7 +21,7 @@ export const getStaticProps = async () => {
   // Get all photography posts
   const photographyPosts = await getPhotographyPosts()
   // Get all posts
-  const allPosts = await getAllPosts()
+  const allPosts = await getAllDisplayPosts()
   // Get all by tag
   const filteredPosts = filterByTag('photography', allPosts)
   // Sort by date

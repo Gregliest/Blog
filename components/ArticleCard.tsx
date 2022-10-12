@@ -6,6 +6,7 @@ import CardActionArea from '@mui/material/CardActionArea'
 import CardContent from '@mui/material/CardContent'
 import CardMedia from '@mui/material/CardMedia'
 import { Blog } from 'contentlayer/generated'
+import formatDate from '@/lib/utils/formatDate'
 
 interface ArticleCardProps {
   post: Blog
@@ -22,7 +23,7 @@ export default function ArticleCard(props: ArticleCardProps) {
               {props.post.title}
             </Typography>
             <Typography variant="subtitle1" color="text.secondary">
-              {props.post.date}
+              {formatDate(props.post.date)}
             </Typography>
             <Typography variant="subtitle1" paragraph>
               {props.post.summary}

@@ -27,7 +27,20 @@ export async function getPhotographyPosts() {
 }
 export async function getAllPosts() {
   const mediumPosts = await getMediumPosts()
-  return getLocalPosts().concat(mediumPosts)
+  const allPosts = getLocalPosts().concat(mediumPosts)
+  return sortByDate(allPosts)
+}
+
+// Does not include draft or archived
+export async function getAllDisplayPosts() {
+  const posts = await getAllPosts()
+
+  return posts.filter((post) => !post.archived && !post.draft)
+}
+
+export async function getSeries(name) {
+  const posts = await getAllPosts()
+  return posts.filter((post) => post.series && post.series.name === name)
 }
 
 export function dateSortDesc(a: string, b: string) {
