@@ -1,5 +1,4 @@
 import { allBlogs } from 'contentlayer/generated'
-import { allCoreContent } from './contentlayer'
 import type { Blog } from 'contentlayer/generated'
 
 import { promises as fs } from 'fs'
@@ -9,7 +8,7 @@ import path from 'path'
 
 // Gets the metadata for all local posts
 export function getLocalPosts() {
-  return allCoreContent(allBlogs)
+  return allBlogs
 }
 
 // Gets the metadata for all Medium posts

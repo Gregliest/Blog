@@ -6,7 +6,7 @@ import { POSTS_PER_PAGE } from '../../blog'
 import { InferGetStaticPropsType } from 'next'
 import { allBlogs } from 'contentlayer/generated'
 import { sortedBlogPost } from '../../../lib/utils/contentlayer'
-import ArticleCard from '@/components/MuiCard'
+import ArticleCard from '@/components/ArticleCard'
 import fsPromises from 'fs/promises'
 import path from 'path'
 
@@ -65,13 +65,7 @@ export default function PostPage({
       <div className="container py-12">
         <div className="-m-4 flex flex-wrap">
           {mediumPosts.map((article) => (
-            <ArticleCard
-              key={article.title}
-              title={article.title}
-              description={article.description}
-              img={article.imgSrc}
-              link={article.href}
-            />
+            <ArticleCard key={article.title} post={article} />
           ))}
         </div>
       </div>
