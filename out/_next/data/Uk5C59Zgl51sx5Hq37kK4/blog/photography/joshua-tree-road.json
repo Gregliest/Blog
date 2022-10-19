@@ -1,0 +1,64 @@
+{
+  "pageProps": {
+    "post": {
+      "title": "Joshua Tree Road",
+      "date": "2015-05-19T15:46:32.000Z",
+      "tags": ["photography"],
+      "thumbnail": "/static/images/photography/jtree-road.jpg",
+      "image": "/static/images/photography/jtree-road.jpg",
+      "authors": ["gregliest"],
+      "body": {
+        "raw": "\n# Hidden Valley Campground, Joshua Tree National Park, USA\n\n![Joshua Tree](/static/images/photography/jtree-road.jpg)\n\nI had wanted to climb, but the weather decided not to cooperate: Joshua Tree got about 20% of its annual rainfall that day. Brutal. So, I decided to scramble up one of the rock piles in the middle of the camp, and managed to catch this long exposure of a car looking for a campsite. I did end up getting on some classics after everything dried out.\n",
+        "code": "var Component=(()=>{var p=Object.create;var r=Object.defineProperty;var g=Object.getOwnPropertyDescriptor;var l=Object.getOwnPropertyNames;var u=Object.getPrototypeOf,m=Object.prototype.hasOwnProperty;var f=(t,e)=>()=>(e||t((e={exports:{}}).exports,e),e.exports),j=(t,e)=>{for(var a in e)r(t,a,{get:e[a],enumerable:!0})},d=(t,e,a,i)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let n of l(e))!m.call(t,n)&&n!==a&&r(t,n,{get:()=>e[n],enumerable:!(i=g(e,n))||i.enumerable});return t};var x=(t,e,a)=>(a=t!=null?p(u(t)):{},d(e||!t||!t.__esModule?r(a,\"default\",{value:t,enumerable:!0}):a,t)),y=t=>d(r({},\"__esModule\",{value:!0}),t);var c=f((C,s)=>{s.exports=_jsx_runtime});var w={};j(w,{default:()=>k,frontmatter:()=>b});var o=x(c()),b={title:\"Joshua Tree Road\",date:new Date(1432050392e3),tags:[\"photography\"],type:\"Blog\",image:\"/static/images/photography/jtree-road.jpg\",thumbnail:\"/static/images/photography/jtree-road.jpg\",authors:[\"gregliest\"]};function h(t){let e=Object.assign({h1:\"h1\",a:\"a\",span:\"span\",div:\"div\",p:\"p\"},t.components),{Image:a}=e;return a||v(\"Image\",!0,\"13:1-13:58\"),(0,o.jsxs)(o.Fragment,{children:[(0,o.jsxs)(e.h1,{id:\"hidden-valley-campground-joshua-tree-national-park-usa\",children:[(0,o.jsx)(e.a,{\"aria-hidden\":\"true\",href:\"#hidden-valley-campground-joshua-tree-national-park-usa\",tabIndex:\"-1\",children:(0,o.jsx)(e.span,{className:\"icon icon-link\"})}),\"Hidden Valley Campground, Joshua Tree National Park, USA\"]}),(0,o.jsx)(e.div,{children:(0,o.jsx)(a,{alt:\"Joshua Tree\",src:\"/static/images/photography/jtree-road.jpg\",width:\"1024\",height:\"678\"})}),(0,o.jsx)(e.p,{children:\"I had wanted to climb, but the weather decided not to cooperate: Joshua Tree got about 20% of its annual rainfall that day. Brutal. So, I decided to scramble up one of the rock piles in the middle of the camp, and managed to catch this long exposure of a car looking for a campsite. I did end up getting on some classics after everything dried out.\"})]})}function _(t={}){let{wrapper:e}=t.components||{};return e?(0,o.jsx)(e,Object.assign({},t,{children:(0,o.jsx)(h,t)})):h(t)}var k=_;function v(t,e,a){throw new Error(\"Expected \"+(e?\"component\":\"object\")+\" `\"+t+\"` to be defined: you likely forgot to import, pass, or provide it.\"+(a?\"\\nIt\\u2019s referenced in your code at `\"+a+\"` in `/home/greg/Code/Blog/_mdx_bundler_entry_point-0d60306a-e4ab-4536-a0ab-7a319b24a5a0.mdx`\":\"\"))}return y(w);})();\n;return Component;"
+      },
+      "_id": "blog/photography/joshua-tree-road.mdx",
+      "_raw": {
+        "sourceFilePath": "blog/photography/joshua-tree-road.mdx",
+        "sourceFileName": "joshua-tree-road.mdx",
+        "sourceFileDir": "blog/photography",
+        "contentType": "mdx",
+        "flattenedPath": "blog/photography/joshua-tree-road"
+      },
+      "type": "Blog",
+      "readingTime": { "text": "1 min read", "minutes": 0.39, "time": 23400, "words": 78 },
+      "slug": "photography/joshua-tree-road",
+      "toc": [
+        {
+          "value": "Hidden Valley Campground, Joshua Tree National Park, USA",
+          "url": "#hidden-valley-campground-joshua-tree-national-park-usa",
+          "depth": 1
+        }
+      ]
+    },
+    "authorDetails": [{}],
+    "prev": {
+      "title": "Belize Toucan",
+      "date": "2015-05-19T15:23:14.000Z",
+      "tags": ["photography"],
+      "thumbnail": "/static/images/photography/belize-toucan.jpg",
+      "image": "/static/images/photography/belize-toucan.jpg",
+      "authors": ["gregliest"],
+      "type": "Blog",
+      "readingTime": { "text": "1 min read", "minutes": 0.035, "time": 2100, "words": 7 },
+      "slug": "photography/belize-toucan",
+      "toc": [{ "value": "A caged toucan, Belize.", "url": "#a-caged-toucan-belize", "depth": 1 }]
+    },
+    "next": {
+      "title": "O Canada",
+      "date": "2017-07-15T00:00:00.000Z",
+      "summary": "The scenic lands of Canada featuring maple leaves, snow-capped mountains, turquoise lakes and Toronto. Take in the sights in this photo gallery exhibition and see how easy it is to replicate with some MDX magic and tailwind classes.",
+      "tags": ["holiday", "canada", "images"],
+      "draft": false,
+      "type": "Blog",
+      "readingTime": { "text": "2 min read", "minutes": 1.195, "time": 71700, "words": 239 },
+      "slug": "pictures-of-canada",
+      "toc": [
+        { "value": "O Canada", "url": "#o-canada", "depth": 1 },
+        { "value": "Gallery", "url": "#gallery", "depth": 1 },
+        { "value": "Implementation", "url": "#implementation", "depth": 1 },
+        { "value": "Photo Credits", "url": "#photo-credits", "depth": 3 }
+      ]
+    }
+  },
+  "__N_SSG": true
+}

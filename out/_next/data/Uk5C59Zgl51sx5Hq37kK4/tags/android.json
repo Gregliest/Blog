@@ -1,0 +1,59 @@
+{
+  "pageProps": {
+    "posts": [
+      {
+        "title": "Layouts Part I: Android > iOS",
+        "date": "2014-11-15T01:01:45.000Z",
+        "summary": "A comparison of basic layouts in iOS and Android.",
+        "tags": ["code", "android", "iOS", "mobile"],
+        "thumbnail": "/static/images/linear-layout/android-initial.png",
+        "series": { "name": "Android Layouts", "number": 1, "type": "Series", "_raw": {} },
+        "type": "Blog",
+        "readingTime": { "text": "4 min read", "minutes": 3.835, "time": 230100, "words": 767 },
+        "slug": "mobile/android-layouts-1",
+        "toc": []
+      },
+      {
+        "title": "Layouts Part II: Add/Remove/Collapse",
+        "date": "2014-11-16T01:04:45.000Z",
+        "summary": "A comparison of the ease of adding, removing, and collapsing views in an Android Linear Layout vs. an iOS Interface Builder view.",
+        "tags": ["code", "android", "iOS", "mobile"],
+        "thumbnail": "/linear-layout/android-visible.png",
+        "series": { "name": "Android Layouts", "number": 2, "type": "Series", "_raw": {} },
+        "type": "Blog",
+        "readingTime": { "text": "6 min read", "minutes": 5.525, "time": 331500, "words": 1105 },
+        "slug": "mobile/android-layouts-2",
+        "toc": [{ "value": "Visibility", "url": "#visibility", "depth": 1 }]
+      },
+      {
+        "title": "Layouts Part III: The Beauty of Layout Weight and Conclusion",
+        "date": "2014-11-17T01:05:23.000Z",
+        "summary": "A discussion of Android's layout weight and the fantastic abstraction it represents.  There is no equivalent on iOS.",
+        "tags": ["code", "mobile", "android"],
+        "thumbnail": "/linear-layout/android-buttons-weight.png",
+        "series": { "name": "Android Layouts", "number": 3, "type": "Series", "_raw": {} },
+        "type": "Blog",
+        "readingTime": { "text": "4 min read", "minutes": 3.61, "time": 216600, "words": 722 },
+        "slug": "mobile/android-layouts-3",
+        "toc": []
+      },
+      {
+        "title": "iOS > Android: View Life Cycle",
+        "date": "2014-11-23T15:31:09.000Z",
+        "summary": "A comparison of the view and controller life cycle hooks in iOS and Android.",
+        "tags": ["code", "android", "iOS", "mobile"],
+        "thumbnail": "/static/images/lifecycle/basic-lifecycle-android.png",
+        "type": "Blog",
+        "readingTime": { "text": "8 min read", "minutes": 7.785, "time": 467100, "words": 1557 },
+        "slug": "mobile/android-vc-lifecycle",
+        "toc": [
+          { "value": "MVC refresher", "url": "#mvc-refresher", "depth": 1 },
+          { "value": "The View Life Cycle", "url": "#the-view-life-cycle", "depth": 1 },
+          { "value": "The Life Cycle Hooks", "url": "#the-life-cycle-hooks", "depth": 1 }
+        ]
+      }
+    ],
+    "tag": "android"
+  },
+  "__N_SSG": true
+}

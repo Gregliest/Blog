@@ -1,0 +1,60 @@
+{
+  "pageProps": {
+    "post": {
+      "title": "Milky Way Boats",
+      "date": "2014-10-26T06:29:04.000Z",
+      "tags": ["photography"],
+      "thumbnail": "/static/images/photography/milky-way-boats.jpg",
+      "image": "/static/images/photography/milky-way-boats.jpg",
+      "authors": ["gregliest"],
+      "body": {
+        "raw": "\n# Tomales Bay, CA.\n\n![Tomales](/static/images/photography/milky-way-boats.jpg)\n",
+        "code": "var Component=(()=>{var g=Object.create;var i=Object.defineProperty;var h=Object.getOwnPropertyDescriptor;var l=Object.getOwnPropertyNames;var p=Object.getPrototypeOf,y=Object.prototype.hasOwnProperty;var b=(e,t)=>()=>(t||e((t={exports:{}}).exports,t),t.exports),f=(e,t)=>{for(var a in t)i(e,a,{get:t[a],enumerable:!0})},r=(e,t,a,s)=>{if(t&&typeof t==\"object\"||typeof t==\"function\")for(let n of l(t))!y.call(e,n)&&n!==a&&i(e,n,{get:()=>t[n],enumerable:!(s=h(t,n))||s.enumerable});return e};var u=(e,t,a)=>(a=e!=null?g(p(e)):{},r(t||!e||!e.__esModule?i(a,\"default\",{value:e,enumerable:!0}):a,e)),x=e=>r(i({},\"__esModule\",{value:!0}),e);var m=b((B,c)=>{c.exports=_jsx_runtime});var M={};f(M,{default:()=>w,frontmatter:()=>_});var o=u(m()),_={title:\"Milky Way Boats\",date:new Date(1414304944e3),tags:[\"photography\"],type:\"Blog\",image:\"/static/images/photography/milky-way-boats.jpg\",thumbnail:\"/static/images/photography/milky-way-boats.jpg\",authors:[\"gregliest\"]};function d(e){let t=Object.assign({h1:\"h1\",a:\"a\",span:\"span\",div:\"div\"},e.components),{Image:a}=t;return a||k(\"Image\",!0,\"13:1-13:59\"),(0,o.jsxs)(o.Fragment,{children:[(0,o.jsxs)(t.h1,{id:\"tomales-bay-ca\",children:[(0,o.jsx)(t.a,{\"aria-hidden\":\"true\",href:\"#tomales-bay-ca\",tabIndex:\"-1\",children:(0,o.jsx)(t.span,{className:\"icon icon-link\"})}),\"Tomales Bay, CA.\"]}),(0,o.jsx)(t.div,{children:(0,o.jsx)(a,{alt:\"Tomales\",src:\"/static/images/photography/milky-way-boats.jpg\",width:\"1024\",height:\"678\"})})]})}function j(e={}){let{wrapper:t}=e.components||{};return t?(0,o.jsx)(t,Object.assign({},e,{children:(0,o.jsx)(d,e)})):d(e)}var w=j;function k(e,t,a){throw new Error(\"Expected \"+(t?\"component\":\"object\")+\" `\"+e+\"` to be defined: you likely forgot to import, pass, or provide it.\"+(a?\"\\nIt\\u2019s referenced in your code at `\"+a+\"` in `/home/greg/Code/Blog/_mdx_bundler_entry_point-bb348ce4-c990-40f9-83f8-78afa8b565c3.mdx`\":\"\"))}return x(M);})();\n;return Component;"
+      },
+      "_id": "blog/photography/milky-way-boats.mdx",
+      "_raw": {
+        "sourceFilePath": "blog/photography/milky-way-boats.mdx",
+        "sourceFileName": "milky-way-boats.mdx",
+        "sourceFileDir": "blog/photography",
+        "contentType": "mdx",
+        "flattenedPath": "blog/photography/milky-way-boats"
+      },
+      "type": "Blog",
+      "readingTime": { "text": "1 min read", "minutes": 0.025, "time": 1500, "words": 5 },
+      "slug": "photography/milky-way-boats",
+      "toc": [{ "value": "Tomales Bay, CA.", "url": "#tomales-bay-ca", "depth": 1 }]
+    },
+    "authorDetails": [{}],
+    "prev": {
+      "title": "Ladybug on a Lupine",
+      "date": "2014-10-19T06:12:42.000Z",
+      "tags": ["photography"],
+      "thumbnail": "/static/images/photography/ladybug-on-lupine.jpg",
+      "image": "/static/images/photography/ladybug-on-lupine.jpg",
+      "authors": ["gregliest"],
+      "type": "Blog",
+      "readingTime": { "text": "1 min read", "minutes": 0.365, "time": 21900, "words": 73 },
+      "slug": "photography/ladybug-on-a-lupine",
+      "toc": [
+        {
+          "value": "Ladybug on a Lupine, Yosemite, USA",
+          "url": "#ladybug-on-a-lupine-yosemite-usa",
+          "depth": 1
+        }
+      ]
+    },
+    "next": {
+      "title": "Layouts Part I: Android > iOS",
+      "date": "2014-11-15T01:01:45.000Z",
+      "summary": "A comparison of basic layouts in iOS and Android.",
+      "tags": ["code", "android", "iOS", "mobile"],
+      "thumbnail": "/static/images/linear-layout/android-initial.png",
+      "series": { "name": "Android Layouts", "number": 1, "type": "Series", "_raw": {} },
+      "type": "Blog",
+      "readingTime": { "text": "4 min read", "minutes": 3.835, "time": 230100, "words": 767 },
+      "slug": "mobile/android-layouts-1",
+      "toc": []
+    }
+  },
+  "__N_SSG": true
+}

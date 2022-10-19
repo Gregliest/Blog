@@ -1,0 +1,19 @@
+{
+  "pageProps": {
+    "posts": [
+      {
+        "title": "Canyon Creek",
+        "date": "2014-10-15T06:27:03.000Z",
+        "summary": "California creeking at its (sort of) finest.",
+        "tags": ["whitewater"],
+        "thumbnail": "/static/images/kayaking/CC/waterfall-thumb.jpg",
+        "type": "Blog",
+        "readingTime": { "text": "6 min read", "minutes": 5.08, "time": 304800, "words": 1016 },
+        "slug": "kayaking/canyon-creek",
+        "toc": []
+      }
+    ],
+    "tag": "whitewater"
+  },
+  "__N_SSG": true
+}

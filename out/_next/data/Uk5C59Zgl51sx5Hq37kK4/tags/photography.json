@@ -1,0 +1,116 @@
+{
+  "pageProps": {
+    "posts": [
+      {
+        "title": "Belize Toucan",
+        "date": "2015-05-19T15:23:14.000Z",
+        "tags": ["photography"],
+        "thumbnail": "/static/images/photography/belize-toucan.jpg",
+        "image": "/static/images/photography/belize-toucan.jpg",
+        "authors": ["gregliest"],
+        "type": "Blog",
+        "readingTime": { "text": "1 min read", "minutes": 0.035, "time": 2100, "words": 7 },
+        "slug": "photography/belize-toucan",
+        "toc": [{ "value": "A caged toucan, Belize.", "url": "#a-caged-toucan-belize", "depth": 1 }]
+      },
+      {
+        "title": "Capitol Reef Giant",
+        "date": "2014-10-13T06:28:21.000Z",
+        "tags": ["photography"],
+        "thumbnail": "/static/images/photography/capitol-reef-tree.jpg",
+        "image": "/static/images/photography/capitol-reef-tree.jpg",
+        "authors": ["gregliest"],
+        "type": "Blog",
+        "readingTime": { "text": "1 min read", "minutes": 0.385, "time": 23100, "words": 77 },
+        "slug": "photography/canyonlands-giant",
+        "toc": [
+          {
+            "value": "Capitol Reef Giant, Capitol Reef National Park, USA",
+            "url": "#capitol-reef-giant-capitol-reef-national-park-usa",
+            "depth": 1
+          }
+        ]
+      },
+      {
+        "title": "Cataract Canyon",
+        "date": "2015-02-04T04:15:19.000Z",
+        "tags": ["photography"],
+        "thumbnail": "/static/images/photography/cataract.jpg",
+        "image": "/static/images/photography/cataract.jpg",
+        "authors": ["gregliest"],
+        "type": "Blog",
+        "readingTime": { "text": "1 min read", "minutes": 0.135, "time": 8100, "words": 27 },
+        "slug": "photography/cataract-canyon",
+        "toc": [{ "value": "Cataract Canyon, USA", "url": "#cataract-canyon-usa", "depth": 1 }]
+      },
+      {
+        "title": "El Capitan Climbers",
+        "date": "2015-01-28T16:47:06.000Z",
+        "tags": ["photography"],
+        "thumbnail": "/static/images/photography/el-cap.jpg",
+        "image": "/static/images/photography/el-cap.jpg",
+        "authors": ["gregliest"],
+        "type": "Blog",
+        "readingTime": { "text": "1 min read", "minutes": 0.245, "time": 14700, "words": 49 },
+        "slug": "photography/el-capitan-climbers",
+        "toc": [
+          {
+            "value": "El Capitan Climbers, Yosemite, USA",
+            "url": "#el-capitan-climbers-yosemite-usa",
+            "depth": 1
+          }
+        ]
+      },
+      {
+        "title": "Joshua Tree Road",
+        "date": "2015-05-19T15:46:32.000Z",
+        "tags": ["photography"],
+        "thumbnail": "/static/images/photography/jtree-road.jpg",
+        "image": "/static/images/photography/jtree-road.jpg",
+        "authors": ["gregliest"],
+        "type": "Blog",
+        "readingTime": { "text": "1 min read", "minutes": 0.39, "time": 23400, "words": 78 },
+        "slug": "photography/joshua-tree-road",
+        "toc": [
+          {
+            "value": "Hidden Valley Campground, Joshua Tree National Park, USA",
+            "url": "#hidden-valley-campground-joshua-tree-national-park-usa",
+            "depth": 1
+          }
+        ]
+      },
+      {
+        "title": "Ladybug on a Lupine",
+        "date": "2014-10-19T06:12:42.000Z",
+        "tags": ["photography"],
+        "thumbnail": "/static/images/photography/ladybug-on-lupine.jpg",
+        "image": "/static/images/photography/ladybug-on-lupine.jpg",
+        "authors": ["gregliest"],
+        "type": "Blog",
+        "readingTime": { "text": "1 min read", "minutes": 0.365, "time": 21900, "words": 73 },
+        "slug": "photography/ladybug-on-a-lupine",
+        "toc": [
+          {
+            "value": "Ladybug on a Lupine, Yosemite, USA",
+            "url": "#ladybug-on-a-lupine-yosemite-usa",
+            "depth": 1
+          }
+        ]
+      },
+      {
+        "title": "Milky Way Boats",
+        "date": "2014-10-26T06:29:04.000Z",
+        "tags": ["photography"],
+        "thumbnail": "/static/images/photography/milky-way-boats.jpg",
+        "image": "/static/images/photography/milky-way-boats.jpg",
+        "authors": ["gregliest"],
+        "type": "Blog",
+        "readingTime": { "text": "1 min read", "minutes": 0.025, "time": 1500, "words": 5 },
+        "slug": "photography/milky-way-boats",
+        "toc": [{ "value": "Tomales Bay, CA.", "url": "#tomales-bay-ca", "depth": 1 }]
+      }
+    ],
+    "tag": "photography"
+  },
+  "__N_SSG": true
+}

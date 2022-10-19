@@ -1,0 +1,24 @@
+{
+  "pageProps": {
+    "posts": [
+      {
+        "title": "Introducing Multi-part Posts with Nested Routing",
+        "date": "2021-05-02T00:00:00.000Z",
+        "summary": "The blog template supports posts in nested sub-folders. This can be used to group posts of similar content e.g. a multi-part course. This post is itself an example of a nested route!",
+        "tags": ["multi-author", "next-js", "feature"],
+        "draft": false,
+        "type": "Blog",
+        "readingTime": { "text": "1 min read", "minutes": 0.845, "time": 50700, "words": 169 },
+        "slug": "nested-route/introducing-multi-part-posts-with-nested-routing",
+        "toc": [
+          { "value": "Nested Routes", "url": "#nested-routes", "depth": 1 },
+          { "value": "How", "url": "#how", "depth": 2 },
+          { "value": "Use Cases", "url": "#use-cases", "depth": 2 },
+          { "value": "Note", "url": "#note", "depth": 2 }
+        ]
+      }
+    ],
+    "tag": "feature"
+  },
+  "__N_SSG": true
+}

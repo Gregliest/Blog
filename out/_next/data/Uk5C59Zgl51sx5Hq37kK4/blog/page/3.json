@@ -1,0 +1,513 @@
+{
+  "pageProps": {
+    "initialDisplayPosts": [
+      {
+        "title": "Cataract Canyon",
+        "date": "2015-02-04T04:15:19.000Z",
+        "tags": ["photography"],
+        "thumbnail": "/static/images/photography/cataract.jpg",
+        "image": "/static/images/photography/cataract.jpg",
+        "authors": ["gregliest"],
+        "type": "Blog",
+        "readingTime": { "text": "1 min read", "minutes": 0.135, "time": 8100, "words": 27 },
+        "slug": "photography/cataract-canyon",
+        "toc": [{ "value": "Cataract Canyon, USA", "url": "#cataract-canyon-usa", "depth": 1 }]
+      },
+      {
+        "title": "El Capitan Climbers",
+        "date": "2015-01-28T16:47:06.000Z",
+        "tags": ["photography"],
+        "thumbnail": "/static/images/photography/el-cap.jpg",
+        "image": "/static/images/photography/el-cap.jpg",
+        "authors": ["gregliest"],
+        "type": "Blog",
+        "readingTime": { "text": "1 min read", "minutes": 0.245, "time": 14700, "words": 49 },
+        "slug": "photography/el-capitan-climbers",
+        "toc": [
+          {
+            "value": "El Capitan Climbers, Yosemite, USA",
+            "url": "#el-capitan-climbers-yosemite-usa",
+            "depth": 1
+          }
+        ]
+      },
+      {
+        "title": "iOS > Android: View Life Cycle",
+        "date": "2014-11-23T15:31:09.000Z",
+        "summary": "A comparison of the view and controller life cycle hooks in iOS and Android.",
+        "tags": ["code", "android", "iOS", "mobile"],
+        "thumbnail": "/static/images/lifecycle/basic-lifecycle-android.png",
+        "type": "Blog",
+        "readingTime": { "text": "8 min read", "minutes": 7.785, "time": 467100, "words": 1557 },
+        "slug": "mobile/android-vc-lifecycle",
+        "toc": [
+          { "value": "MVC refresher", "url": "#mvc-refresher", "depth": 1 },
+          { "value": "The View Life Cycle", "url": "#the-view-life-cycle", "depth": 1 },
+          { "value": "The Life Cycle Hooks", "url": "#the-life-cycle-hooks", "depth": 1 }
+        ]
+      },
+      {
+        "title": "Layouts Part III: The Beauty of Layout Weight and Conclusion",
+        "date": "2014-11-17T01:05:23.000Z",
+        "summary": "A discussion of Android's layout weight and the fantastic abstraction it represents.  There is no equivalent on iOS.",
+        "tags": ["code", "mobile", "android"],
+        "thumbnail": "/linear-layout/android-buttons-weight.png",
+        "series": { "name": "Android Layouts", "number": 3, "type": "Series", "_raw": {} },
+        "type": "Blog",
+        "readingTime": { "text": "4 min read", "minutes": 3.61, "time": 216600, "words": 722 },
+        "slug": "mobile/android-layouts-3",
+        "toc": []
+      },
+      {
+        "title": "Layouts Part II: Add/Remove/Collapse",
+        "date": "2014-11-16T01:04:45.000Z",
+        "summary": "A comparison of the ease of adding, removing, and collapsing views in an Android Linear Layout vs. an iOS Interface Builder view.",
+        "tags": ["code", "android", "iOS", "mobile"],
+        "thumbnail": "/linear-layout/android-visible.png",
+        "series": { "name": "Android Layouts", "number": 2, "type": "Series", "_raw": {} },
+        "type": "Blog",
+        "readingTime": { "text": "6 min read", "minutes": 5.525, "time": 331500, "words": 1105 },
+        "slug": "mobile/android-layouts-2",
+        "toc": [{ "value": "Visibility", "url": "#visibility", "depth": 1 }]
+      }
+    ],
+    "posts": [
+      {
+        "title": "Sample .md file Test",
+        "date": "2022-03-08T00:00:00.000Z",
+        "summary": "Example of a markdown file with code blocks and syntax highlighting",
+        "tags": ["markdown", "code", "features"],
+        "draft": false,
+        "type": "Blog",
+        "readingTime": { "text": "1 min read", "minutes": 0.595, "time": 35700, "words": 119 },
+        "slug": "test",
+        "toc": [
+          { "value": "Inline Highlighting", "url": "#inline-highlighting", "depth": 2 },
+          { "value": "Code Blocks", "url": "#code-blocks", "depth": 2 }
+        ]
+      },
+      {
+        "title": "New features in v1",
+        "date": "2021-08-07T15:32:14.000Z",
+        "summary": "An overview of the new features released in v1 - code block copy, multiple authors, frontmatter layout and more",
+        "tags": ["next-js", "tailwind", "guide"],
+        "draft": false,
+        "lastmod": "2021-02-01T00:00:00.000Z",
+        "layout": "PostSimple",
+        "bibliography": "references-data.bib",
+        "type": "Blog",
+        "readingTime": { "text": "12 min read", "minutes": 11.905, "time": 714300, "words": 2381 },
+        "slug": "new-features-in-v1",
+        "toc": [
+          { "value": "Overview", "url": "#overview", "depth": 2 },
+          { "value": "Theme colors", "url": "#theme-colors", "depth": 2 },
+          { "value": "Xdm MDX compiler", "url": "#xdm-mdx-compiler", "depth": 2 },
+          {
+            "value": "Table of contents component",
+            "url": "#table-of-contents-component",
+            "depth": 2
+          },
+          { "value": "Layouts", "url": "#layouts", "depth": 2 },
+          { "value": "Adding new templates", "url": "#adding-new-templates", "depth": 3 },
+          {
+            "value": "Configuring a blog post frontmatter",
+            "url": "#configuring-a-blog-post-frontmatter",
+            "depth": 3
+          },
+          { "value": "Extend", "url": "#extend", "depth": 3 },
+          { "value": "Analytics", "url": "#analytics", "depth": 2 },
+          { "value": "Blog comments system", "url": "#blog-comments-system", "depth": 2 },
+          { "value": "Multiple authors", "url": "#multiple-authors", "depth": 2 },
+          {
+            "value": "Multiple authors in blog post",
+            "url": "#multiple-authors-in-blog-post",
+            "depth": 3
+          },
+          {
+            "value": "Copy button for code blocks",
+            "url": "#copy-button-for-code-blocks",
+            "depth": 2
+          },
+          {
+            "value": "Line highlighting and line numbers",
+            "url": "#line-highlighting-and-line-numbers",
+            "depth": 2
+          },
+          {
+            "value": "Newletter component (v1.1.3)",
+            "url": "#newletter-component-v113",
+            "depth": 2
+          },
+          {
+            "value": "Bibliography and Citations (v1.2.1)",
+            "url": "#bibliography-and-citations-v121",
+            "depth": 2
+          },
+          { "value": "Self-hosted font (v1.5.0)", "url": "#self-hosted-font-v150", "depth": 2 },
+          { "value": "Upgrade guide", "url": "#upgrade-guide", "depth": 2 }
+        ]
+      },
+      {
+        "title": "Introducing Multi-part Posts with Nested Routing",
+        "date": "2021-05-02T00:00:00.000Z",
+        "summary": "The blog template supports posts in nested sub-folders. This can be used to group posts of similar content e.g. a multi-part course. This post is itself an example of a nested route!",
+        "tags": ["multi-author", "next-js", "feature"],
+        "draft": false,
+        "type": "Blog",
+        "readingTime": { "text": "1 min read", "minutes": 0.845, "time": 50700, "words": 169 },
+        "slug": "nested-route/introducing-multi-part-posts-with-nested-routing",
+        "toc": [
+          { "value": "Nested Routes", "url": "#nested-routes", "depth": 1 },
+          { "value": "How", "url": "#how", "depth": 2 },
+          { "value": "Use Cases", "url": "#use-cases", "depth": 2 },
+          { "value": "Note", "url": "#note", "depth": 2 }
+        ]
+      },
+      {
+        "title": "Introducing Tailwind Nextjs Starter Blog",
+        "date": "2021-01-12T00:00:00.000Z",
+        "summary": "Looking for a performant, out of the box template, with all the best in web technology to support your blogging needs? Checkout the Tailwind Nextjs Starter Blog template.",
+        "tags": ["next-js", "tailwind", "guide"],
+        "draft": false,
+        "lastmod": "2021-02-01T00:00:00.000Z",
+        "images": ["/static/images/canada/mountains.jpg", "/static/images/canada/toronto.jpg"],
+        "authors": ["default", "sparrowhawk"],
+        "type": "Blog",
+        "readingTime": { "text": "6 min read", "minutes": 5.815, "time": 348900, "words": 1163 },
+        "slug": "introducing-tailwind-nextjs-starter-blog",
+        "toc": [
+          {
+            "value": "Tailwind Nextjs Starter Blog",
+            "url": "#tailwind-nextjs-starter-blog",
+            "depth": 1
+          },
+          { "value": "Examples", "url": "#examples", "depth": 2 },
+          { "value": "Motivation", "url": "#motivation", "depth": 2 },
+          { "value": "Features", "url": "#features", "depth": 2 },
+          { "value": "Sample posts", "url": "#sample-posts", "depth": 2 },
+          { "value": "Quick Start Guide", "url": "#quick-start-guide", "depth": 2 },
+          { "value": "Development", "url": "#development", "depth": 2 },
+          { "value": "Extend / Customize", "url": "#extend--customize", "depth": 2 },
+          { "value": "Post", "url": "#post", "depth": 2 },
+          { "value": "Frontmatter", "url": "#frontmatter", "depth": 3 },
+          { "value": "Compose", "url": "#compose", "depth": 3 },
+          { "value": "Deploy", "url": "#deploy", "depth": 2 },
+          { "value": "Support", "url": "#support", "depth": 2 },
+          { "value": "Licence", "url": "#licence", "depth": 2 }
+        ]
+      },
+      {
+        "title": "Deriving the OLS Estimator",
+        "date": "2020-12-21T00:00:00.000Z",
+        "summary": "How to derive the OLS Estimator with matrix notation and a tour of math typesetting using markdown with the help of KaTeX.",
+        "tags": ["next js", "math", "ols"],
+        "draft": false,
+        "type": "Blog",
+        "readingTime": { "text": "3 min read", "minutes": 2.8, "time": 168000, "words": 560 },
+        "slug": "deriving-ols-estimator",
+        "toc": [
+          { "value": "Introduction", "url": "#introduction", "depth": 1 },
+          {
+            "value": "Deriving the OLS Estimator",
+            "url": "#deriving-the-ols-estimator",
+            "depth": 1
+          },
+          { "value": "Least Squares", "url": "#least-squares", "depth": 2 }
+        ]
+      },
+      {
+        "title": "Images in Next.js",
+        "date": "2020-11-11T00:00:00.000Z",
+        "summary": "In this article we introduce adding images in the tailwind starter blog and the benefits and limitations of the next/image component.",
+        "tags": ["next js", "guide"],
+        "draft": false,
+        "authors": ["sparrowhawk"],
+        "type": "Blog",
+        "readingTime": { "text": "2 min read", "minutes": 1.96, "time": 117600, "words": 392 },
+        "slug": "guide-to-using-images-in-nextjs",
+        "toc": [
+          { "value": "Introduction", "url": "#introduction", "depth": 1 },
+          { "value": "Usage", "url": "#usage", "depth": 1 },
+          { "value": "Benefits", "url": "#benefits", "depth": 1 },
+          { "value": "Limitations", "url": "#limitations", "depth": 1 }
+        ]
+      },
+      {
+        "title": "Markdown Guide",
+        "date": "2019-10-11T00:00:00.000Z",
+        "summary": "Markdown cheatsheet for all your blogging needs - headers, lists, images, tables and more! An illustrated guide based on GitHub Flavored Markdown.",
+        "tags": ["github", "guide"],
+        "draft": false,
+        "type": "Blog",
+        "readingTime": { "text": "4 min read", "minutes": 3.155, "time": 189300, "words": 631 },
+        "slug": "github-markdown-guide",
+        "toc": [
+          { "value": "Introduction", "url": "#introduction", "depth": 1 },
+          { "value": "What is Markdown?", "url": "#what-is-markdown", "depth": 1 },
+          { "value": "Syntax guide", "url": "#syntax-guide", "depth": 1 },
+          { "value": "Headers", "url": "#headers", "depth": 2 },
+          { "value": "This is a h1 tag", "url": "#this-is-a-h1-tag", "depth": 1 },
+          { "value": "This is a h2 tag", "url": "#this-is-a-h2-tag", "depth": 2 },
+          { "value": "This is a h4 tag", "url": "#this-is-a-h4-tag", "depth": 4 },
+          { "value": "Emphasis", "url": "#emphasis", "depth": 2 },
+          { "value": "Lists", "url": "#lists", "depth": 2 },
+          { "value": "Unordered", "url": "#unordered", "depth": 3 },
+          { "value": "Ordered", "url": "#ordered", "depth": 3 },
+          { "value": "Images", "url": "#images", "depth": 2 },
+          { "value": "Links", "url": "#links", "depth": 2 },
+          { "value": "Blockquotes", "url": "#blockquotes", "depth": 2 },
+          { "value": "Inline code", "url": "#inline-code", "depth": 2 },
+          { "value": "Syntax highlighting", "url": "#syntax-highlighting", "depth": 2 },
+          { "value": "Footnotes", "url": "#footnotes", "depth": 2 },
+          { "value": "Task Lists", "url": "#task-lists", "depth": 2 },
+          { "value": "Tables", "url": "#tables", "depth": 2 },
+          { "value": "Strikethrough", "url": "#strikethrough", "depth": 2 }
+        ]
+      },
+      {
+        "title": "O Canada",
+        "date": "2017-07-15T00:00:00.000Z",
+        "summary": "The scenic lands of Canada featuring maple leaves, snow-capped mountains, turquoise lakes and Toronto. Take in the sights in this photo gallery exhibition and see how easy it is to replicate with some MDX magic and tailwind classes.",
+        "tags": ["holiday", "canada", "images"],
+        "draft": false,
+        "type": "Blog",
+        "readingTime": { "text": "2 min read", "minutes": 1.195, "time": 71700, "words": 239 },
+        "slug": "pictures-of-canada",
+        "toc": [
+          { "value": "O Canada", "url": "#o-canada", "depth": 1 },
+          { "value": "Gallery", "url": "#gallery", "depth": 1 },
+          { "value": "Implementation", "url": "#implementation", "depth": 1 },
+          { "value": "Photo Credits", "url": "#photo-credits", "depth": 3 }
+        ]
+      },
+      {
+        "title": "Joshua Tree Road",
+        "date": "2015-05-19T15:46:32.000Z",
+        "tags": ["photography"],
+        "thumbnail": "/static/images/photography/jtree-road.jpg",
+        "image": "/static/images/photography/jtree-road.jpg",
+        "authors": ["gregliest"],
+        "type": "Blog",
+        "readingTime": { "text": "1 min read", "minutes": 0.39, "time": 23400, "words": 78 },
+        "slug": "photography/joshua-tree-road",
+        "toc": [
+          {
+            "value": "Hidden Valley Campground, Joshua Tree National Park, USA",
+            "url": "#hidden-valley-campground-joshua-tree-national-park-usa",
+            "depth": 1
+          }
+        ]
+      },
+      {
+        "title": "Belize Toucan",
+        "date": "2015-05-19T15:23:14.000Z",
+        "tags": ["photography"],
+        "thumbnail": "/static/images/photography/belize-toucan.jpg",
+        "image": "/static/images/photography/belize-toucan.jpg",
+        "authors": ["gregliest"],
+        "type": "Blog",
+        "readingTime": { "text": "1 min read", "minutes": 0.035, "time": 2100, "words": 7 },
+        "slug": "photography/belize-toucan",
+        "toc": [{ "value": "A caged toucan, Belize.", "url": "#a-caged-toucan-belize", "depth": 1 }]
+      },
+      {
+        "title": "Cataract Canyon",
+        "date": "2015-02-04T04:15:19.000Z",
+        "tags": ["photography"],
+        "thumbnail": "/static/images/photography/cataract.jpg",
+        "image": "/static/images/photography/cataract.jpg",
+        "authors": ["gregliest"],
+        "type": "Blog",
+        "readingTime": { "text": "1 min read", "minutes": 0.135, "time": 8100, "words": 27 },
+        "slug": "photography/cataract-canyon",
+        "toc": [{ "value": "Cataract Canyon, USA", "url": "#cataract-canyon-usa", "depth": 1 }]
+      },
+      {
+        "title": "El Capitan Climbers",
+        "date": "2015-01-28T16:47:06.000Z",
+        "tags": ["photography"],
+        "thumbnail": "/static/images/photography/el-cap.jpg",
+        "image": "/static/images/photography/el-cap.jpg",
+        "authors": ["gregliest"],
+        "type": "Blog",
+        "readingTime": { "text": "1 min read", "minutes": 0.245, "time": 14700, "words": 49 },
+        "slug": "photography/el-capitan-climbers",
+        "toc": [
+          {
+            "value": "El Capitan Climbers, Yosemite, USA",
+            "url": "#el-capitan-climbers-yosemite-usa",
+            "depth": 1
+          }
+        ]
+      },
+      {
+        "title": "iOS > Android: View Life Cycle",
+        "date": "2014-11-23T15:31:09.000Z",
+        "summary": "A comparison of the view and controller life cycle hooks in iOS and Android.",
+        "tags": ["code", "android", "iOS", "mobile"],
+        "thumbnail": "/static/images/lifecycle/basic-lifecycle-android.png",
+        "type": "Blog",
+        "readingTime": { "text": "8 min read", "minutes": 7.785, "time": 467100, "words": 1557 },
+        "slug": "mobile/android-vc-lifecycle",
+        "toc": [
+          { "value": "MVC refresher", "url": "#mvc-refresher", "depth": 1 },
+          { "value": "The View Life Cycle", "url": "#the-view-life-cycle", "depth": 1 },
+          { "value": "The Life Cycle Hooks", "url": "#the-life-cycle-hooks", "depth": 1 }
+        ]
+      },
+      {
+        "title": "Layouts Part III: The Beauty of Layout Weight and Conclusion",
+        "date": "2014-11-17T01:05:23.000Z",
+        "summary": "A discussion of Android's layout weight and the fantastic abstraction it represents.  There is no equivalent on iOS.",
+        "tags": ["code", "mobile", "android"],
+        "thumbnail": "/linear-layout/android-buttons-weight.png",
+        "series": { "name": "Android Layouts", "number": 3, "type": "Series", "_raw": {} },
+        "type": "Blog",
+        "readingTime": { "text": "4 min read", "minutes": 3.61, "time": 216600, "words": 722 },
+        "slug": "mobile/android-layouts-3",
+        "toc": []
+      },
+      {
+        "title": "Layouts Part II: Add/Remove/Collapse",
+        "date": "2014-11-16T01:04:45.000Z",
+        "summary": "A comparison of the ease of adding, removing, and collapsing views in an Android Linear Layout vs. an iOS Interface Builder view.",
+        "tags": ["code", "android", "iOS", "mobile"],
+        "thumbnail": "/linear-layout/android-visible.png",
+        "series": { "name": "Android Layouts", "number": 2, "type": "Series", "_raw": {} },
+        "type": "Blog",
+        "readingTime": { "text": "6 min read", "minutes": 5.525, "time": 331500, "words": 1105 },
+        "slug": "mobile/android-layouts-2",
+        "toc": [{ "value": "Visibility", "url": "#visibility", "depth": 1 }]
+      },
+      {
+        "title": "Layouts Part I: Android > iOS",
+        "date": "2014-11-15T01:01:45.000Z",
+        "summary": "A comparison of basic layouts in iOS and Android.",
+        "tags": ["code", "android", "iOS", "mobile"],
+        "thumbnail": "/static/images/linear-layout/android-initial.png",
+        "series": { "name": "Android Layouts", "number": 1, "type": "Series", "_raw": {} },
+        "type": "Blog",
+        "readingTime": { "text": "4 min read", "minutes": 3.835, "time": 230100, "words": 767 },
+        "slug": "mobile/android-layouts-1",
+        "toc": []
+      },
+      {
+        "title": "Milky Way Boats",
+        "date": "2014-10-26T06:29:04.000Z",
+        "tags": ["photography"],
+        "thumbnail": "/static/images/photography/milky-way-boats.jpg",
+        "image": "/static/images/photography/milky-way-boats.jpg",
+        "authors": ["gregliest"],
+        "type": "Blog",
+        "readingTime": { "text": "1 min read", "minutes": 0.025, "time": 1500, "words": 5 },
+        "slug": "photography/milky-way-boats",
+        "toc": [{ "value": "Tomales Bay, CA.", "url": "#tomales-bay-ca", "depth": 1 }]
+      },
+      {
+        "title": "Ladybug on a Lupine",
+        "date": "2014-10-19T06:12:42.000Z",
+        "tags": ["photography"],
+        "thumbnail": "/static/images/photography/ladybug-on-lupine.jpg",
+        "image": "/static/images/photography/ladybug-on-lupine.jpg",
+        "authors": ["gregliest"],
+        "type": "Blog",
+        "readingTime": { "text": "1 min read", "minutes": 0.365, "time": 21900, "words": 73 },
+        "slug": "photography/ladybug-on-a-lupine",
+        "toc": [
+          {
+            "value": "Ladybug on a Lupine, Yosemite, USA",
+            "url": "#ladybug-on-a-lupine-yosemite-usa",
+            "depth": 1
+          }
+        ]
+      },
+      {
+        "title": "Canyon Creek",
+        "date": "2014-10-15T06:27:03.000Z",
+        "summary": "California creeking at its (sort of) finest.",
+        "tags": ["whitewater"],
+        "thumbnail": "/static/images/kayaking/CC/waterfall-thumb.jpg",
+        "type": "Blog",
+        "readingTime": { "text": "6 min read", "minutes": 5.08, "time": 304800, "words": 1016 },
+        "slug": "kayaking/canyon-creek",
+        "toc": []
+      },
+      {
+        "title": "Capitol Reef Giant",
+        "date": "2014-10-13T06:28:21.000Z",
+        "tags": ["photography"],
+        "thumbnail": "/static/images/photography/capitol-reef-tree.jpg",
+        "image": "/static/images/photography/capitol-reef-tree.jpg",
+        "authors": ["gregliest"],
+        "type": "Blog",
+        "readingTime": { "text": "1 min read", "minutes": 0.385, "time": 23100, "words": 77 },
+        "slug": "photography/canyonlands-giant",
+        "toc": [
+          {
+            "value": "Capitol Reef Giant, Capitol Reef National Park, USA",
+            "url": "#capitol-reef-giant-capitol-reef-national-park-usa",
+            "depth": 1
+          }
+        ]
+      }
+    ],
+    "mediumPosts": [
+      {
+        "category": "software-architecture",
+        "title": "Navigators Part II: Benefits and Drawbacks",
+        "date": "2018-09-13",
+        "summary": "",
+        "link": "https://medium.com/@greg_63957/navigators-part-ii-benefits-and-drawbacks-f869ad58909e",
+        "thumbnail": "blogThumbnails/navigator2.png",
+        "tags": ["code", "architecture", "android"]
+      },
+      {
+        "category": "android",
+        "title": "Navigators Part 1: a Flow-Based Architecture for Android",
+        "date": "2018-07-26",
+        "summary": "",
+        "link": "https://medium.com/@greg_63957/navigators-part-1-a-flow-based-architecture-for-android-b66df2fa6e79",
+        "thumbnail": "blogThumbnails/navigator1.png",
+        "tags": ["code", "architecture", "android"]
+      },
+      {
+        "category": "software-development",
+        "title": "Volunteering to Write Code for Non-Profits",
+        "date": "2018-03-14",
+        "summary": "",
+        "link": "https://medium.com/@greg_63957/volunteering-to-write-code-for-non-profits-389ee98c9173?source=rss-207117267ac2------2",
+        "thumbnail": "blogThumbnails/nonprofits.png",
+        "tags": ["code", "ngos"]
+      },
+      {
+        "category": "scoop-eng",
+        "title": "Making JUnit read a little more like RSpec",
+        "date": "2017-05-16",
+        "summary": "",
+        "link": "https://medium.com/@greg_63957/making-junit-read-a-little-more-like-rspec-b389fb369897",
+        "thumbnail": "blogThumbnails/junit.png",
+        "tags": ["code", "architecture", "android"]
+      },
+      {
+        "category": "software-engineering",
+        "title": "Conj, Cons, Concat? Oh my!",
+        "date": "2017-05-10",
+        "summary": "",
+        "link": "https://medium.com/@greg_63957/conj-cons-concat-oh-my-1398a2981eab?source=rss-207117267ac2------2",
+        "thumbnail": "blogThumbnails/conj.png",
+        "tags": ["code", "clojure"]
+      },
+      {
+        "category": "android-app-development",
+        "title": "Android View Measurement",
+        "date": "2017-01-27",
+        "summary": "",
+        "link": "https://medium.com/@greg_63957/android-view-measurement-d1f2f5c98f75",
+        "thumbnail": "blogThumbnails/viewmeasurement.png",
+        "tags": ["code", "architecture", "android"]
+      }
+    ],
+    "pagination": { "currentPage": 3, "totalPages": 4 }
+  },
+  "__N_SSG": true
+}

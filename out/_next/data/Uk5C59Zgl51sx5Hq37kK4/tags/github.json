@@ -1,0 +1,40 @@
+{
+  "pageProps": {
+    "posts": [
+      {
+        "title": "Markdown Guide",
+        "date": "2019-10-11T00:00:00.000Z",
+        "summary": "Markdown cheatsheet for all your blogging needs - headers, lists, images, tables and more! An illustrated guide based on GitHub Flavored Markdown.",
+        "tags": ["github", "guide"],
+        "draft": false,
+        "type": "Blog",
+        "readingTime": { "text": "4 min read", "minutes": 3.155, "time": 189300, "words": 631 },
+        "slug": "github-markdown-guide",
+        "toc": [
+          { "value": "Introduction", "url": "#introduction", "depth": 1 },
+          { "value": "What is Markdown?", "url": "#what-is-markdown", "depth": 1 },
+          { "value": "Syntax guide", "url": "#syntax-guide", "depth": 1 },
+          { "value": "Headers", "url": "#headers", "depth": 2 },
+          { "value": "This is a h1 tag", "url": "#this-is-a-h1-tag", "depth": 1 },
+          { "value": "This is a h2 tag", "url": "#this-is-a-h2-tag", "depth": 2 },
+          { "value": "This is a h4 tag", "url": "#this-is-a-h4-tag", "depth": 4 },
+          { "value": "Emphasis", "url": "#emphasis", "depth": 2 },
+          { "value": "Lists", "url": "#lists", "depth": 2 },
+          { "value": "Unordered", "url": "#unordered", "depth": 3 },
+          { "value": "Ordered", "url": "#ordered", "depth": 3 },
+          { "value": "Images", "url": "#images", "depth": 2 },
+          { "value": "Links", "url": "#links", "depth": 2 },
+          { "value": "Blockquotes", "url": "#blockquotes", "depth": 2 },
+          { "value": "Inline code", "url": "#inline-code", "depth": 2 },
+          { "value": "Syntax highlighting", "url": "#syntax-highlighting", "depth": 2 },
+          { "value": "Footnotes", "url": "#footnotes", "depth": 2 },
+          { "value": "Task Lists", "url": "#task-lists", "depth": 2 },
+          { "value": "Tables", "url": "#tables", "depth": 2 },
+          { "value": "Strikethrough", "url": "#strikethrough", "depth": 2 }
+        ]
+      }
+    ],
+    "tag": "github"
+  },
+  "__N_SSG": true
+}

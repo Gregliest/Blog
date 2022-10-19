@@ -1,0 +1,24 @@
+{
+  "pageProps": {
+    "posts": [
+      {
+        "title": "O Canada",
+        "date": "2017-07-15T00:00:00.000Z",
+        "summary": "The scenic lands of Canada featuring maple leaves, snow-capped mountains, turquoise lakes and Toronto. Take in the sights in this photo gallery exhibition and see how easy it is to replicate with some MDX magic and tailwind classes.",
+        "tags": ["holiday", "canada", "images"],
+        "draft": false,
+        "type": "Blog",
+        "readingTime": { "text": "2 min read", "minutes": 1.195, "time": 71700, "words": 239 },
+        "slug": "pictures-of-canada",
+        "toc": [
+          { "value": "O Canada", "url": "#o-canada", "depth": 1 },
+          { "value": "Gallery", "url": "#gallery", "depth": 1 },
+          { "value": "Implementation", "url": "#implementation", "depth": 1 },
+          { "value": "Photo Credits", "url": "#photo-credits", "depth": 3 }
+        ]
+      }
+    ],
+    "tag": "canada"
+  },
+  "__N_SSG": true
+}

@@ -1,0 +1,31 @@
+{
+  "pageProps": {
+    "author": {
+      "name": "Gregory Lee",
+      "avatar": "/static/images/avatar.png",
+      "occupation": "Professor of Atmospheric Science",
+      "company": "Stanford University",
+      "email": "address@yoursite.com",
+      "twitter": "https://twitter.com/Twitter",
+      "linkedin": "https://www.linkedin.com",
+      "github": "https://github.com",
+      "body": {
+        "raw": "\nHi, I'm Greg\n",
+        "code": "var Component=(()=>{var u=Object.create;var r=Object.defineProperty;var d=Object.getOwnPropertyDescriptor;var f=Object.getOwnPropertyNames;var g=Object.getPrototypeOf,h=Object.prototype.hasOwnProperty;var w=(t,e)=>()=>(e||t((e={exports:{}}).exports,e),e.exports),x=(t,e)=>{for(var n in e)r(t,n,{get:e[n],enumerable:!0})},s=(t,e,n,c)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let o of f(e))!h.call(t,o)&&o!==n&&r(t,o,{get:()=>e[o],enumerable:!(c=d(e,o))||c.enumerable});return t};var l=(t,e,n)=>(n=t!=null?u(g(t)):{},s(e||!t||!t.__esModule?r(n,\"default\",{value:t,enumerable:!0}):n,t)),j=t=>s(r({},\"__esModule\",{value:!0}),t);var m=w((k,a)=>{a.exports=_jsx_runtime});var v={};x(v,{default:()=>b,frontmatter:()=>y});var i=l(m()),y={name:\"Gregory Lee\",avatar:\"/static/images/avatar.png\",occupation:\"Professor of Atmospheric Science\",company:\"Stanford University\",email:\"address@yoursite.com\",twitter:\"https://twitter.com/Twitter\",linkedin:\"https://www.linkedin.com\",github:\"https://github.com\"};function p(t){let e=Object.assign({p:\"p\"},t.components);return(0,i.jsx)(e.p,{children:\"Hi, I'm Greg\"})}function _(t={}){let{wrapper:e}=t.components||{};return e?(0,i.jsx)(e,Object.assign({},t,{children:(0,i.jsx)(p,t)})):p(t)}var b=_;return j(v);})();\n;return Component;"
+      },
+      "_id": "authors/default.mdx",
+      "_raw": {
+        "sourceFilePath": "authors/default.mdx",
+        "sourceFileName": "default.mdx",
+        "sourceFileDir": "authors",
+        "contentType": "mdx",
+        "flattenedPath": "authors/default"
+      },
+      "type": "Authors",
+      "readingTime": { "text": "1 min read", "minutes": 0.015, "time": 900, "words": 3 },
+      "slug": "default",
+      "toc": []
+    }
+  },
+  "__N_SSG": true
+}
