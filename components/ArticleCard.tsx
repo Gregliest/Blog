@@ -7,35 +7,36 @@ import CardContent from '@mui/material/CardContent'
 import CardMedia from '@mui/material/CardMedia'
 import { Blog } from 'contentlayer/generated'
 import formatDate from '@/lib/utils/formatDate'
+import { SxProps, Theme } from '@mui/material'
 
 interface ArticleCardProps {
   post: Blog
+  sx?: SxProps<Theme>
 }
 
 export default function ArticleCard(props: ArticleCardProps) {
   console.log(props)
   return (
-    <Grid item xs={12} md={6}>
-      <CardActionArea component="a" href="#">
-        <Card sx={{ display: 'flex' }}>
-          <CardContent sx={{ flex: 1 }}>
-            <Typography component="h2" variant="h5">
-              {props.post.title}
-            </Typography>
-            <Typography variant="subtitle1" color="text.secondary">
-              {formatDate(props.post.date)}
-            </Typography>
-            <Typography variant="subtitle1" paragraph>
-              {props.post.summary}
-            </Typography>
-          </CardContent>
-          <CardMedia
-            component="img"
-            sx={{ width: 160, display: { xs: 'none', sm: 'block' } }}
-            image={props.post.image}
-          />
-        </Card>
+    <Card sx={[{ maxWidth: 340 }, ...(Array.isArray(props.sx) ? props.sx : [props.sx])]}>
+      <CardActionArea component="a" href="#" sx={{ width: 1, height: 1 }}>
+        <CardMedia
+          component="img"
+          sx={{ width: 1 }}
+          // image={props.post.image}
+          image="/static/images/photography/belize-toucan.jpg"
+        />
+        <CardContent sx={{ flex: 1 }}>
+          <Typography component="h2" variant="h5">
+            {props.post.title}
+          </Typography>
+          <Typography variant="subtitle1" color="text.secondary">
+            {formatDate(props.post.date)}
+          </Typography>
+          <Typography variant="subtitle1" paragraph>
+            {props.post.summary}
+          </Typography>
+        </CardContent>
       </CardActionArea>
-    </Grid>
+    </Card>
   )
 }

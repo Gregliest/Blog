@@ -26,7 +26,6 @@ export default function Gallery({ posts }) {
   return (
     <Box
       sx={{
-        height: 450,
         display: 'grid',
         gridTemplateColumns: {
           xs: 'repeat(1, 1fr)',

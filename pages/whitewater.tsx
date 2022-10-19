@@ -12,6 +12,7 @@ import {
   getAllDisplayPosts,
 } from '@/lib/utils/contentProvider'
 import ArticleCard from '@/components/ArticleCard'
+import ArticleGallery from '@/components/ArticleGallery'
 
 export const getStaticProps = async () => {
   // Get all local posts
@@ -43,14 +44,15 @@ export default function Whitewater({ allPosts }) {
     <>
       <PageSEO title={`Projects - ${siteMetadata.author}`} description={siteMetadata.description} />
 
-      <div className="container py-12">
+      <ArticleGallery articles={allPosts} />
+      {/* <div className="container py-12">
         <div className="-m-4 flex flex-wrap">
           {allPosts.map((article) => (
             <ArticleCard key={article.title} post={article} />
           ))}
         </div>
-      </div>
-      <Typography>Hello</Typography>
+      </div> */}
+      {/* <Typography>Hello</Typography> */}
     </>
   )
 }
