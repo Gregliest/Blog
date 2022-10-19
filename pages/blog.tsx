@@ -35,7 +35,6 @@ export default function Blog({
   mediumPosts,
   pagination,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  console.log(mediumPosts)
   return (
     <>
       <PageSEO title={`Blog - ${siteMetadata.author}`} description={siteMetadata.description} />

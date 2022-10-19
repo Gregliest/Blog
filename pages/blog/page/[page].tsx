@@ -58,7 +58,6 @@ export default function PostPage({
   mediumPosts,
   pagination,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  console.log(mediumPosts)
   return (
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />

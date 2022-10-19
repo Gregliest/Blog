@@ -15,16 +15,10 @@ interface ArticleCardProps {
 }
 
 export default function ArticleCard(props: ArticleCardProps) {
-  console.log(props)
   return (
     <Card sx={[{ maxWidth: 340 }, ...(Array.isArray(props.sx) ? props.sx : [props.sx])]}>
       <CardActionArea component="a" href="#" sx={{ width: 1, height: 1 }}>
-        <CardMedia
-          component="img"
-          sx={{ width: 1 }}
-          // image={props.post.image}
-          image="/static/images/photography/belize-toucan.jpg"
-        />
+        <CardMedia component="img" sx={{ width: 1 }} image={props.post.image} />
         <CardContent sx={{ flex: 1 }}>
           <Typography component="h2" variant="h5">
             {props.post.title}

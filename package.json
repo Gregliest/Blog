@@ -13,7 +13,8 @@
     "serve": "next start",
     "analyze": "cross-env ANALYZE=true next build",
     "lint": "next lint --fix --dir pages --dir components --dir lib --dir layouts --dir scripts",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "deployGH": "next build && touch out/.nojekyll && git add out/ && git commit -m \"Deploy\" && git subtree push --prefix out origin gh-pages"
   },
   "dependencies": {
     "@emotion/react": "^11.10.4",
@@ -60,8 +61,8 @@
     "@svgr/webpack": "^6.1.2",
     "@types/react": "^18.0.21",
     "@types/tailwindcss": "^3.1.0",
-    "@typescript-eslint/eslint-plugin": "^5.39.0",
-    "@typescript-eslint/parser": "^5.39.0",
+    "@typescript-eslint/eslint-plugin": "^5.40.1",
+    "@typescript-eslint/parser": "^5.40.1",
     "cross-env": "^7.0.3",
     "dedent": "^0.7.0",
     "eslint": "^8.25.0",

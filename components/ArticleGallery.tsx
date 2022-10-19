@@ -2,7 +2,6 @@ import { Box } from '@mui/material'
 import ArticleCard from './ArticleCard'
 
 export default function ArticleGallery(props) {
-  console.log(props.articles)
   const list = props.articles.map((article) => {
     return <ArticleCard key={article.title} post={article} sx={{ margin: 2 }} />
   })
