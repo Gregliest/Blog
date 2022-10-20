@@ -59,11 +59,7 @@ const securityHeaders = [
  **/
 module.exports = withContentlayer(
   withBundleAnalyzer({
-    basePath: '/Blog',
     reactStrictMode: true,
-    images: {
-      unoptimized: true,
-    },
     pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
     eslint: {
       dirs: ['pages', 'components', 'lib', 'layouts', 'scripts'],

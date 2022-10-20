@@ -8,7 +8,7 @@ import Gallery from '@/components/Gallery'
 export const getStaticProps = async () => {
   const photographyPosts = await getPhotographyPosts()
   const posts = photographyPosts.map((post) => {
-    const dimensions = sizeOf('/home/greg/Code/Blog/public' + post.image)
+    const dimensions = sizeOf(process.cwd() + '/public' + post.image)
     post['originalWidth'] = dimensions.width
     post['originalHeight'] = dimensions.height
 
