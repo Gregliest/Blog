@@ -1,0 +1,63 @@
+{
+  "pageProps": {
+    "post": {
+      "title": "Ladybug on a Lupine",
+      "date": "2014-10-19T06:12:42.000Z",
+      "tags": ["photography"],
+      "thumbnail": "/static/images/photography/ladybug-on-lupine.jpg",
+      "image": "/static/images/photography/ladybug-on-lupine.jpg",
+      "authors": ["gregliest"],
+      "body": {
+        "raw": "\n# Ladybug on a Lupine, Yosemite, USA\n\n![Ladybug](/static/images/photography/ladybug-on-lupine.jpg)\n\nThis image is one of my very first macro photos, from way back in June 2010. I had just bought a spanking new 85mm macro lens, and was trying it out in Yosemite National Park, near Hetch Hetchy reservoir. I got super lucky, the bug, the flower, and the focus all came together for this image, and I've been hooked on macro photography ever since.\n",
+        "code": "var Component=(()=>{var p=Object.create;var i=Object.defineProperty;var u=Object.getOwnPropertyDescriptor;var d=Object.getOwnPropertyNames;var m=Object.getPrototypeOf,l=Object.prototype.hasOwnProperty;var y=(t,e)=>()=>(e||t((e={exports:{}}).exports,e),e.exports),b=(t,e)=>{for(var a in e)i(t,a,{get:e[a],enumerable:!0})},s=(t,e,a,r)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let o of d(e))!l.call(t,o)&&o!==a&&i(t,o,{get:()=>e[o],enumerable:!(r=u(e,o))||r.enumerable});return t};var f=(t,e,a)=>(a=t!=null?p(m(t)):{},s(e||!t||!t.__esModule?i(a,\"default\",{value:t,enumerable:!0}):a,t)),j=t=>s(i({},\"__esModule\",{value:!0}),t);var c=y((L,g)=>{g.exports=_jsx_runtime});var k={};b(k,{default:()=>v,frontmatter:()=>x});var n=f(c()),x={title:\"Ladybug on a Lupine\",date:new Date(1413699162e3),tags:[\"photography\"],type:\"Blog\",image:\"/static/images/photography/ladybug-on-lupine.jpg\",thumbnail:\"/static/images/photography/ladybug-on-lupine.jpg\",authors:[\"gregliest\"]};function h(t){let e=Object.assign({h1:\"h1\",a:\"a\",span:\"span\",div:\"div\",p:\"p\"},t.components),{Image:a}=e;return a||_(\"Image\",!0),(0,n.jsxs)(n.Fragment,{children:[(0,n.jsxs)(e.h1,{id:\"ladybug-on-a-lupine-yosemite-usa\",children:[(0,n.jsx)(e.a,{\"aria-hidden\":\"true\",href:\"#ladybug-on-a-lupine-yosemite-usa\",tabIndex:\"-1\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Ladybug on a Lupine, Yosemite, USA\"]}),(0,n.jsx)(e.div,{children:(0,n.jsx)(a,{alt:\"Ladybug\",src:\"/static/images/photography/ladybug-on-lupine.jpg\",width:\"1613\",height:\"1080\"})}),(0,n.jsx)(e.p,{children:\"This image is one of my very first macro photos, from way back in June 2010. I had just bought a spanking new 85mm macro lens, and was trying it out in Yosemite National Park, near Hetch Hetchy reservoir. I got super lucky, the bug, the flower, and the focus all came together for this image, and I've been hooked on macro photography ever since.\"})]})}function w(t={}){let{wrapper:e}=t.components||{};return e?(0,n.jsx)(e,Object.assign({},t,{children:(0,n.jsx)(h,t)})):h(t)}var v=w;function _(t,e){throw new Error(\"Expected \"+(e?\"component\":\"object\")+\" `\"+t+\"` to be defined: you likely forgot to import, pass, or provide it.\")}return j(k);})();\n;return Component;"
+      },
+      "_id": "blog/photography/ladybug-on-a-lupine.mdx",
+      "_raw": {
+        "sourceFilePath": "blog/photography/ladybug-on-a-lupine.mdx",
+        "sourceFileName": "ladybug-on-a-lupine.mdx",
+        "sourceFileDir": "blog/photography",
+        "contentType": "mdx",
+        "flattenedPath": "blog/photography/ladybug-on-a-lupine"
+      },
+      "type": "Blog",
+      "readingTime": { "text": "1 min read", "minutes": 0.365, "time": 21900, "words": 73 },
+      "slug": "photography/ladybug-on-a-lupine",
+      "toc": [
+        {
+          "value": "Ladybug on a Lupine, Yosemite, USA",
+          "url": "#ladybug-on-a-lupine-yosemite-usa",
+          "depth": 1
+        }
+      ],
+      "originalWidth": 1613,
+      "originalHeight": 1080
+    },
+    "authorDetails": [{}],
+    "prev": {
+      "title": "Canyon Creek",
+      "date": "2014-10-15T06:27:03.000Z",
+      "summary": "California creeking at its (sort of) finest.",
+      "tags": ["whitewater"],
+      "thumbnail": "/static/images/kayaking/CC/waterfall-thumb.jpg",
+      "type": "Blog",
+      "readingTime": { "text": "6 min read", "minutes": 5.08, "time": 304800, "words": 1016 },
+      "slug": "kayaking/canyon-creek",
+      "toc": []
+    },
+    "next": {
+      "title": "Milky Way Boats",
+      "date": "2014-10-26T06:29:04.000Z",
+      "tags": ["photography"],
+      "thumbnail": "/static/images/photography/milky-way-boats.jpg",
+      "image": "/static/images/photography/milky-way-boats.jpg",
+      "authors": ["gregliest"],
+      "type": "Blog",
+      "readingTime": { "text": "1 min read", "minutes": 0.025, "time": 1500, "words": 5 },
+      "slug": "photography/milky-way-boats",
+      "toc": [{ "value": "Tomales Bay, CA.", "url": "#tomales-bay-ca", "depth": 1 }],
+      "originalWidth": 1024,
+      "originalHeight": 678
+    }
+  },
+  "__N_SSG": true
+}

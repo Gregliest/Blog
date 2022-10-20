@@ -1,0 +1,215 @@
+{
+  "pageProps": {
+    "photographyPosts": [
+      {
+        "title": "Joshua Tree Road",
+        "date": "2015-05-19T15:46:32.000Z",
+        "tags": ["photography"],
+        "thumbnail": "/static/images/photography/jtree-road.jpg",
+        "image": "/static/images/photography/jtree-road.jpg",
+        "authors": ["gregliest"],
+        "body": {
+          "raw": "\n# Hidden Valley Campground, Joshua Tree National Park, USA\n\n![Joshua Tree](/static/images/photography/jtree-road.jpg)\n\nI had wanted to climb, but the weather decided not to cooperate: Joshua Tree got about 20% of its annual rainfall that day. Brutal. So, I decided to scramble up one of the rock piles in the middle of the camp, and managed to catch this long exposure of a car looking for a campsite. I did end up getting on some classics after everything dried out.\n",
+          "code": "var Component=(()=>{var p=Object.create;var r=Object.defineProperty;var l=Object.getOwnPropertyDescriptor;var g=Object.getOwnPropertyNames;var u=Object.getPrototypeOf,m=Object.prototype.hasOwnProperty;var f=(t,e)=>()=>(e||t((e={exports:{}}).exports,e),e.exports),j=(t,e)=>{for(var o in e)r(t,o,{get:e[o],enumerable:!0})},s=(t,e,o,i)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let n of g(e))!m.call(t,n)&&n!==o&&r(t,n,{get:()=>e[n],enumerable:!(i=l(e,n))||i.enumerable});return t};var x=(t,e,o)=>(o=t!=null?p(u(t)):{},s(e||!t||!t.__esModule?r(o,\"default\",{value:t,enumerable:!0}):o,t)),y=t=>s(r({},\"__esModule\",{value:!0}),t);var c=f((J,d)=>{d.exports=_jsx_runtime});var w={};j(w,{default:()=>k,frontmatter:()=>b});var a=x(c()),b={title:\"Joshua Tree Road\",date:new Date(1432050392e3),tags:[\"photography\"],type:\"Blog\",image:\"/static/images/photography/jtree-road.jpg\",thumbnail:\"/static/images/photography/jtree-road.jpg\",authors:[\"gregliest\"]};function h(t){let e=Object.assign({h1:\"h1\",a:\"a\",span:\"span\",div:\"div\",p:\"p\"},t.components),{Image:o}=e;return o||v(\"Image\",!0),(0,a.jsxs)(a.Fragment,{children:[(0,a.jsxs)(e.h1,{id:\"hidden-valley-campground-joshua-tree-national-park-usa\",children:[(0,a.jsx)(e.a,{\"aria-hidden\":\"true\",href:\"#hidden-valley-campground-joshua-tree-national-park-usa\",tabIndex:\"-1\",children:(0,a.jsx)(e.span,{className:\"icon icon-link\"})}),\"Hidden Valley Campground, Joshua Tree National Park, USA\"]}),(0,a.jsx)(e.div,{children:(0,a.jsx)(o,{alt:\"Joshua Tree\",src:\"/static/images/photography/jtree-road.jpg\",width:\"1024\",height:\"678\"})}),(0,a.jsx)(e.p,{children:\"I had wanted to climb, but the weather decided not to cooperate: Joshua Tree got about 20% of its annual rainfall that day. Brutal. So, I decided to scramble up one of the rock piles in the middle of the camp, and managed to catch this long exposure of a car looking for a campsite. I did end up getting on some classics after everything dried out.\"})]})}function _(t={}){let{wrapper:e}=t.components||{};return e?(0,a.jsx)(e,Object.assign({},t,{children:(0,a.jsx)(h,t)})):h(t)}var k=_;function v(t,e){throw new Error(\"Expected \"+(e?\"component\":\"object\")+\" `\"+t+\"` to be defined: you likely forgot to import, pass, or provide it.\")}return y(w);})();\n;return Component;"
+        },
+        "_id": "blog/photography/joshua-tree-road.mdx",
+        "_raw": {
+          "sourceFilePath": "blog/photography/joshua-tree-road.mdx",
+          "sourceFileName": "joshua-tree-road.mdx",
+          "sourceFileDir": "blog/photography",
+          "contentType": "mdx",
+          "flattenedPath": "blog/photography/joshua-tree-road"
+        },
+        "type": "Blog",
+        "readingTime": { "text": "1 min read", "minutes": 0.39, "time": 23400, "words": 78 },
+        "slug": "photography/joshua-tree-road",
+        "toc": [
+          {
+            "value": "Hidden Valley Campground, Joshua Tree National Park, USA",
+            "url": "#hidden-valley-campground-joshua-tree-national-park-usa",
+            "depth": 1
+          }
+        ],
+        "originalWidth": 1024,
+        "originalHeight": 678
+      },
+      {
+        "title": "Belize Toucan",
+        "date": "2015-05-19T15:23:14.000Z",
+        "tags": ["photography"],
+        "thumbnail": "/static/images/photography/belize-toucan.jpg",
+        "image": "/static/images/photography/belize-toucan.jpg",
+        "authors": ["gregliest"],
+        "body": {
+          "raw": "\n# A caged toucan, Belize.\n\n![Belize Toucan](/static/images/photography/belize-toucan.jpg)\n",
+          "code": "var Component=(()=>{var h=Object.create;var i=Object.defineProperty;var l=Object.getOwnPropertyDescriptor;var p=Object.getOwnPropertyNames;var u=Object.getPrototypeOf,m=Object.prototype.hasOwnProperty;var x=(t,e)=>()=>(e||t((e={exports:{}}).exports,e),e.exports),b=(t,e)=>{for(var n in e)i(t,n,{get:e[n],enumerable:!0})},r=(t,e,n,c)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let o of p(e))!m.call(t,o)&&o!==n&&i(t,o,{get:()=>e[o],enumerable:!(c=l(e,o))||c.enumerable});return t};var f=(t,e,n)=>(n=t!=null?h(u(t)):{},r(e||!t||!t.__esModule?i(n,\"default\",{value:t,enumerable:!0}):n,t)),j=t=>r(i({},\"__esModule\",{value:!0}),t);var g=x((M,s)=>{s.exports=_jsx_runtime});var v={};b(v,{default:()=>_,frontmatter:()=>y});var a=f(g()),y={title:\"Belize Toucan\",date:new Date(1432048994e3),tags:[\"photography\"],type:\"Blog\",image:\"/static/images/photography/belize-toucan.jpg\",thumbnail:\"/static/images/photography/belize-toucan.jpg\",authors:[\"gregliest\"]};function d(t){let e=Object.assign({h1:\"h1\",a:\"a\",span:\"span\",div:\"div\"},t.components),{Image:n}=e;return n||w(\"Image\",!0),(0,a.jsxs)(a.Fragment,{children:[(0,a.jsxs)(e.h1,{id:\"a-caged-toucan-belize\",children:[(0,a.jsx)(e.a,{\"aria-hidden\":\"true\",href:\"#a-caged-toucan-belize\",tabIndex:\"-1\",children:(0,a.jsx)(e.span,{className:\"icon icon-link\"})}),\"A caged toucan, Belize.\"]}),(0,a.jsx)(e.div,{children:(0,a.jsx)(n,{alt:\"Belize Toucan\",src:\"/static/images/photography/belize-toucan.jpg\",width:\"1024\",height:\"678\"})})]})}function z(t={}){let{wrapper:e}=t.components||{};return e?(0,a.jsx)(e,Object.assign({},t,{children:(0,a.jsx)(d,t)})):d(t)}var _=z;function w(t,e){throw new Error(\"Expected \"+(e?\"component\":\"object\")+\" `\"+t+\"` to be defined: you likely forgot to import, pass, or provide it.\")}return j(v);})();\n;return Component;"
+        },
+        "_id": "blog/photography/belize-toucan.mdx",
+        "_raw": {
+          "sourceFilePath": "blog/photography/belize-toucan.mdx",
+          "sourceFileName": "belize-toucan.mdx",
+          "sourceFileDir": "blog/photography",
+          "contentType": "mdx",
+          "flattenedPath": "blog/photography/belize-toucan"
+        },
+        "type": "Blog",
+        "readingTime": { "text": "1 min read", "minutes": 0.035, "time": 2100, "words": 7 },
+        "slug": "photography/belize-toucan",
+        "toc": [
+          { "value": "A caged toucan, Belize.", "url": "#a-caged-toucan-belize", "depth": 1 }
+        ],
+        "originalWidth": 1024,
+        "originalHeight": 678
+      },
+      {
+        "title": "Cataract Canyon",
+        "date": "2015-02-04T04:15:19.000Z",
+        "tags": ["photography"],
+        "thumbnail": "/static/images/photography/cataract.jpg",
+        "image": "/static/images/photography/cataract.jpg",
+        "authors": ["gregliest"],
+        "body": {
+          "raw": "\n# Cataract Canyon, USA\n\n![Cataract](/static/images/photography/cataract.jpg)\n\nOne of my campsites along Cataract Canyon, on the Colorado River. A beautiful place, and it was also shockingly hot that night.\n",
+          "code": "var Component=(()=>{var g=Object.create;var r=Object.defineProperty;var d=Object.getOwnPropertyDescriptor;var l=Object.getOwnPropertyNames;var m=Object.getPrototypeOf,u=Object.prototype.hasOwnProperty;var y=(a,t)=>()=>(t||a((t={exports:{}}).exports,t),t.exports),f=(a,t)=>{for(var n in t)r(a,n,{get:t[n],enumerable:!0})},i=(a,t,n,c)=>{if(t&&typeof t==\"object\"||typeof t==\"function\")for(let o of l(t))!u.call(a,o)&&o!==n&&r(a,o,{get:()=>t[o],enumerable:!(c=d(t,o))||c.enumerable});return a};var x=(a,t,n)=>(n=a!=null?g(m(a)):{},i(t||!a||!a.__esModule?r(n,\"default\",{value:a,enumerable:!0}):n,a)),j=a=>i(r({},\"__esModule\",{value:!0}),a);var h=y((k,s)=>{s.exports=_jsx_runtime});var v={};f(v,{default:()=>b,frontmatter:()=>C});var e=x(h()),C={title:\"Cataract Canyon\",date:new Date(1423023319e3),tags:[\"photography\"],type:\"Blog\",image:\"/static/images/photography/cataract.jpg\",thumbnail:\"/static/images/photography/cataract.jpg\",authors:[\"gregliest\"]};function p(a){let t=Object.assign({h1:\"h1\",a:\"a\",span:\"span\",div:\"div\",p:\"p\"},a.components),{Image:n}=t;return n||w(\"Image\",!0),(0,e.jsxs)(e.Fragment,{children:[(0,e.jsxs)(t.h1,{id:\"cataract-canyon-usa\",children:[(0,e.jsx)(t.a,{\"aria-hidden\":\"true\",href:\"#cataract-canyon-usa\",tabIndex:\"-1\",children:(0,e.jsx)(t.span,{className:\"icon icon-link\"})}),\"Cataract Canyon, USA\"]}),(0,e.jsx)(t.div,{children:(0,e.jsx)(n,{alt:\"Cataract\",src:\"/static/images/photography/cataract.jpg\",width:\"1024\",height:\"678\"})}),(0,e.jsx)(t.p,{children:\"One of my campsites along Cataract Canyon, on the Colorado River. A beautiful place, and it was also shockingly hot that night.\"})]})}function _(a={}){let{wrapper:t}=a.components||{};return t?(0,e.jsx)(t,Object.assign({},a,{children:(0,e.jsx)(p,a)})):p(a)}var b=_;function w(a,t){throw new Error(\"Expected \"+(t?\"component\":\"object\")+\" `\"+a+\"` to be defined: you likely forgot to import, pass, or provide it.\")}return j(v);})();\n;return Component;"
+        },
+        "_id": "blog/photography/cataract-canyon.mdx",
+        "_raw": {
+          "sourceFilePath": "blog/photography/cataract-canyon.mdx",
+          "sourceFileName": "cataract-canyon.mdx",
+          "sourceFileDir": "blog/photography",
+          "contentType": "mdx",
+          "flattenedPath": "blog/photography/cataract-canyon"
+        },
+        "type": "Blog",
+        "readingTime": { "text": "1 min read", "minutes": 0.135, "time": 8100, "words": 27 },
+        "slug": "photography/cataract-canyon",
+        "toc": [{ "value": "Cataract Canyon, USA", "url": "#cataract-canyon-usa", "depth": 1 }],
+        "originalWidth": 1024,
+        "originalHeight": 678
+      },
+      {
+        "title": "El Capitan Climbers",
+        "date": "2015-01-28T16:47:06.000Z",
+        "tags": ["photography"],
+        "thumbnail": "/static/images/photography/el-cap.jpg",
+        "image": "/static/images/photography/el-cap.jpg",
+        "authors": ["gregliest"],
+        "body": {
+          "raw": "\n# El Capitan Climbers, Yosemite, USA\n\n![El Cap](/static/images/photography/el-cap.jpg)\n\nSince I'm obsessed with climbing right now, here's a shot of El Capitan in Yosemite. You can see the lights from the big wall climbers, and a satellite on the right. It's not quite in focus, but I like the subject.\n",
+          "code": "var Component=(()=>{var p=Object.create;var s=Object.defineProperty;var m=Object.getOwnPropertyDescriptor;var g=Object.getOwnPropertyNames;var d=Object.getPrototypeOf,u=Object.prototype.hasOwnProperty;var b=(t,e)=>()=>(e||t((e={exports:{}}).exports,e),e.exports),f=(t,e)=>{for(var a in e)s(t,a,{get:e[a],enumerable:!0})},r=(t,e,a,o)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let n of g(e))!u.call(t,n)&&n!==a&&s(t,n,{get:()=>e[n],enumerable:!(o=m(e,n))||o.enumerable});return t};var j=(t,e,a)=>(a=t!=null?p(d(t)):{},r(e||!t||!t.__esModule?s(a,\"default\",{value:t,enumerable:!0}):a,t)),x=t=>r(s({},\"__esModule\",{value:!0}),t);var l=b((v,c)=>{c.exports=_jsx_runtime});var E={};f(E,{default:()=>C,frontmatter:()=>y});var i=j(l()),y={title:\"El Capitan Climbers\",date:new Date(1422463626e3),tags:[\"photography\"],type:\"Blog\",image:\"/static/images/photography/el-cap.jpg\",thumbnail:\"/static/images/photography/el-cap.jpg\",authors:[\"gregliest\"]};function h(t){let e=Object.assign({h1:\"h1\",a:\"a\",span:\"span\",div:\"div\",p:\"p\"},t.components),{Image:a}=e;return a||_(\"Image\",!0),(0,i.jsxs)(i.Fragment,{children:[(0,i.jsxs)(e.h1,{id:\"el-capitan-climbers-yosemite-usa\",children:[(0,i.jsx)(e.a,{\"aria-hidden\":\"true\",href:\"#el-capitan-climbers-yosemite-usa\",tabIndex:\"-1\",children:(0,i.jsx)(e.span,{className:\"icon icon-link\"})}),\"El Capitan Climbers, Yosemite, USA\"]}),(0,i.jsx)(e.div,{children:(0,i.jsx)(a,{alt:\"El Cap\",src:\"/static/images/photography/el-cap.jpg\",width:\"1024\",height:\"678\"})}),(0,i.jsx)(e.p,{children:\"Since I'm obsessed with climbing right now, here's a shot of El Capitan in Yosemite. You can see the lights from the big wall climbers, and a satellite on the right. It's not quite in focus, but I like the subject.\"})]})}function w(t={}){let{wrapper:e}=t.components||{};return e?(0,i.jsx)(e,Object.assign({},t,{children:(0,i.jsx)(h,t)})):h(t)}var C=w;function _(t,e){throw new Error(\"Expected \"+(e?\"component\":\"object\")+\" `\"+t+\"` to be defined: you likely forgot to import, pass, or provide it.\")}return x(E);})();\n;return Component;"
+        },
+        "_id": "blog/photography/el-capitan-climbers.mdx",
+        "_raw": {
+          "sourceFilePath": "blog/photography/el-capitan-climbers.mdx",
+          "sourceFileName": "el-capitan-climbers.mdx",
+          "sourceFileDir": "blog/photography",
+          "contentType": "mdx",
+          "flattenedPath": "blog/photography/el-capitan-climbers"
+        },
+        "type": "Blog",
+        "readingTime": { "text": "1 min read", "minutes": 0.245, "time": 14700, "words": 49 },
+        "slug": "photography/el-capitan-climbers",
+        "toc": [
+          {
+            "value": "El Capitan Climbers, Yosemite, USA",
+            "url": "#el-capitan-climbers-yosemite-usa",
+            "depth": 1
+          }
+        ],
+        "originalWidth": 1024,
+        "originalHeight": 678
+      },
+      {
+        "title": "Milky Way Boats",
+        "date": "2014-10-26T06:29:04.000Z",
+        "tags": ["photography"],
+        "thumbnail": "/static/images/photography/milky-way-boats.jpg",
+        "image": "/static/images/photography/milky-way-boats.jpg",
+        "authors": ["gregliest"],
+        "body": {
+          "raw": "\n# Tomales Bay, CA.\n\n![Tomales](/static/images/photography/milky-way-boats.jpg)\n",
+          "code": "var Component=(()=>{var h=Object.create;var i=Object.defineProperty;var l=Object.getOwnPropertyDescriptor;var p=Object.getOwnPropertyNames;var d=Object.getPrototypeOf,y=Object.prototype.hasOwnProperty;var u=(e,t)=>()=>(t||e((t={exports:{}}).exports,t),t.exports),x=(e,t)=>{for(var o in t)i(e,o,{get:t[o],enumerable:!0})},r=(e,t,o,s)=>{if(t&&typeof t==\"object\"||typeof t==\"function\")for(let n of p(t))!y.call(e,n)&&n!==o&&i(e,n,{get:()=>t[n],enumerable:!(s=l(t,n))||s.enumerable});return e};var b=(e,t,o)=>(o=e!=null?h(d(e)):{},r(t||!e||!e.__esModule?i(o,\"default\",{value:e,enumerable:!0}):o,e)),f=e=>r(i({},\"__esModule\",{value:!0}),e);var m=u((B,c)=>{c.exports=_jsx_runtime});var M={};x(M,{default:()=>_,frontmatter:()=>j});var a=b(m()),j={title:\"Milky Way Boats\",date:new Date(1414304944e3),tags:[\"photography\"],type:\"Blog\",image:\"/static/images/photography/milky-way-boats.jpg\",thumbnail:\"/static/images/photography/milky-way-boats.jpg\",authors:[\"gregliest\"]};function g(e){let t=Object.assign({h1:\"h1\",a:\"a\",span:\"span\",div:\"div\"},e.components),{Image:o}=t;return o||k(\"Image\",!0),(0,a.jsxs)(a.Fragment,{children:[(0,a.jsxs)(t.h1,{id:\"tomales-bay-ca\",children:[(0,a.jsx)(t.a,{\"aria-hidden\":\"true\",href:\"#tomales-bay-ca\",tabIndex:\"-1\",children:(0,a.jsx)(t.span,{className:\"icon icon-link\"})}),\"Tomales Bay, CA.\"]}),(0,a.jsx)(t.div,{children:(0,a.jsx)(o,{alt:\"Tomales\",src:\"/static/images/photography/milky-way-boats.jpg\",width:\"1024\",height:\"678\"})})]})}function w(e={}){let{wrapper:t}=e.components||{};return t?(0,a.jsx)(t,Object.assign({},e,{children:(0,a.jsx)(g,e)})):g(e)}var _=w;function k(e,t){throw new Error(\"Expected \"+(t?\"component\":\"object\")+\" `\"+e+\"` to be defined: you likely forgot to import, pass, or provide it.\")}return f(M);})();\n;return Component;"
+        },
+        "_id": "blog/photography/milky-way-boats.mdx",
+        "_raw": {
+          "sourceFilePath": "blog/photography/milky-way-boats.mdx",
+          "sourceFileName": "milky-way-boats.mdx",
+          "sourceFileDir": "blog/photography",
+          "contentType": "mdx",
+          "flattenedPath": "blog/photography/milky-way-boats"
+        },
+        "type": "Blog",
+        "readingTime": { "text": "1 min read", "minutes": 0.025, "time": 1500, "words": 5 },
+        "slug": "photography/milky-way-boats",
+        "toc": [{ "value": "Tomales Bay, CA.", "url": "#tomales-bay-ca", "depth": 1 }],
+        "originalWidth": 1024,
+        "originalHeight": 678
+      },
+      {
+        "title": "Ladybug on a Lupine",
+        "date": "2014-10-19T06:12:42.000Z",
+        "tags": ["photography"],
+        "thumbnail": "/static/images/photography/ladybug-on-lupine.jpg",
+        "image": "/static/images/photography/ladybug-on-lupine.jpg",
+        "authors": ["gregliest"],
+        "body": {
+          "raw": "\n# Ladybug on a Lupine, Yosemite, USA\n\n![Ladybug](/static/images/photography/ladybug-on-lupine.jpg)\n\nThis image is one of my very first macro photos, from way back in June 2010. I had just bought a spanking new 85mm macro lens, and was trying it out in Yosemite National Park, near Hetch Hetchy reservoir. I got super lucky, the bug, the flower, and the focus all came together for this image, and I've been hooked on macro photography ever since.\n",
+          "code": "var Component=(()=>{var p=Object.create;var i=Object.defineProperty;var u=Object.getOwnPropertyDescriptor;var d=Object.getOwnPropertyNames;var m=Object.getPrototypeOf,l=Object.prototype.hasOwnProperty;var y=(t,e)=>()=>(e||t((e={exports:{}}).exports,e),e.exports),b=(t,e)=>{for(var a in e)i(t,a,{get:e[a],enumerable:!0})},s=(t,e,a,r)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let o of d(e))!l.call(t,o)&&o!==a&&i(t,o,{get:()=>e[o],enumerable:!(r=u(e,o))||r.enumerable});return t};var f=(t,e,a)=>(a=t!=null?p(m(t)):{},s(e||!t||!t.__esModule?i(a,\"default\",{value:t,enumerable:!0}):a,t)),j=t=>s(i({},\"__esModule\",{value:!0}),t);var c=y((L,g)=>{g.exports=_jsx_runtime});var k={};b(k,{default:()=>v,frontmatter:()=>x});var n=f(c()),x={title:\"Ladybug on a Lupine\",date:new Date(1413699162e3),tags:[\"photography\"],type:\"Blog\",image:\"/static/images/photography/ladybug-on-lupine.jpg\",thumbnail:\"/static/images/photography/ladybug-on-lupine.jpg\",authors:[\"gregliest\"]};function h(t){let e=Object.assign({h1:\"h1\",a:\"a\",span:\"span\",div:\"div\",p:\"p\"},t.components),{Image:a}=e;return a||_(\"Image\",!0),(0,n.jsxs)(n.Fragment,{children:[(0,n.jsxs)(e.h1,{id:\"ladybug-on-a-lupine-yosemite-usa\",children:[(0,n.jsx)(e.a,{\"aria-hidden\":\"true\",href:\"#ladybug-on-a-lupine-yosemite-usa\",tabIndex:\"-1\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Ladybug on a Lupine, Yosemite, USA\"]}),(0,n.jsx)(e.div,{children:(0,n.jsx)(a,{alt:\"Ladybug\",src:\"/static/images/photography/ladybug-on-lupine.jpg\",width:\"1613\",height:\"1080\"})}),(0,n.jsx)(e.p,{children:\"This image is one of my very first macro photos, from way back in June 2010. I had just bought a spanking new 85mm macro lens, and was trying it out in Yosemite National Park, near Hetch Hetchy reservoir. I got super lucky, the bug, the flower, and the focus all came together for this image, and I've been hooked on macro photography ever since.\"})]})}function w(t={}){let{wrapper:e}=t.components||{};return e?(0,n.jsx)(e,Object.assign({},t,{children:(0,n.jsx)(h,t)})):h(t)}var v=w;function _(t,e){throw new Error(\"Expected \"+(e?\"component\":\"object\")+\" `\"+t+\"` to be defined: you likely forgot to import, pass, or provide it.\")}return j(k);})();\n;return Component;"
+        },
+        "_id": "blog/photography/ladybug-on-a-lupine.mdx",
+        "_raw": {
+          "sourceFilePath": "blog/photography/ladybug-on-a-lupine.mdx",
+          "sourceFileName": "ladybug-on-a-lupine.mdx",
+          "sourceFileDir": "blog/photography",
+          "contentType": "mdx",
+          "flattenedPath": "blog/photography/ladybug-on-a-lupine"
+        },
+        "type": "Blog",
+        "readingTime": { "text": "1 min read", "minutes": 0.365, "time": 21900, "words": 73 },
+        "slug": "photography/ladybug-on-a-lupine",
+        "toc": [
+          {
+            "value": "Ladybug on a Lupine, Yosemite, USA",
+            "url": "#ladybug-on-a-lupine-yosemite-usa",
+            "depth": 1
+          }
+        ],
+        "originalWidth": 1613,
+        "originalHeight": 1080
+      },
+      {
+        "title": "Capitol Reef Giant",
+        "date": "2014-10-13T06:28:21.000Z",
+        "tags": ["photography"],
+        "thumbnail": "/static/images/photography/capitol-reef-tree.jpg",
+        "image": "/static/images/photography/capitol-reef-tree.jpg",
+        "authors": ["gregliest"],
+        "body": {
+          "raw": "\n# Capitol Reef Giant, Capitol Reef National Park, USA\n\n![Capitol Reef](/static/images/photography/capitol-reef-tree.jpg)\n\nI took a road trip through Utah in the winter of 2013. In Capitol Reef National Park, it snowed a couple of inches during the night, and I was able to snap this shot of the truly massive guardian of the loop road. I think I may have been the only visitor in the park that night and morning, those are my tracks in the picture.\n",
+          "code": "var Component=(()=>{var l=Object.create;var o=Object.defineProperty;var g=Object.getOwnPropertyDescriptor;var d=Object.getOwnPropertyNames;var f=Object.getPrototypeOf,m=Object.prototype.hasOwnProperty;var u=(e,t)=>()=>(t||e((t={exports:{}}).exports,t),t.exports),x=(e,t)=>{for(var i in t)o(e,i,{get:t[i],enumerable:!0})},s=(e,t,i,r)=>{if(t&&typeof t==\"object\"||typeof t==\"function\")for(let n of d(t))!m.call(e,n)&&n!==i&&o(e,n,{get:()=>t[n],enumerable:!(r=g(t,n))||r.enumerable});return e};var y=(e,t,i)=>(i=e!=null?l(f(e)):{},s(t||!e||!e.__esModule?o(i,\"default\",{value:e,enumerable:!0}):i,e)),j=e=>s(o({},\"__esModule\",{value:!0}),e);var h=u((C,p)=>{p.exports=_jsx_runtime});var _={};x(_,{default:()=>w,frontmatter:()=>k});var a=y(h()),k={title:\"Capitol Reef Giant\",date:new Date(1413181701e3),tags:[\"photography\"],type:\"Blog\",image:\"/static/images/photography/capitol-reef-tree.jpg\",thumbnail:\"/static/images/photography/capitol-reef-tree.jpg\",authors:[\"gregliest\"]};function c(e){let t=Object.assign({h1:\"h1\",a:\"a\",span:\"span\",div:\"div\",p:\"p\"},e.components),{Image:i}=t;return i||I(\"Image\",!0),(0,a.jsxs)(a.Fragment,{children:[(0,a.jsxs)(t.h1,{id:\"capitol-reef-giant-capitol-reef-national-park-usa\",children:[(0,a.jsx)(t.a,{\"aria-hidden\":\"true\",href:\"#capitol-reef-giant-capitol-reef-national-park-usa\",tabIndex:\"-1\",children:(0,a.jsx)(t.span,{className:\"icon icon-link\"})}),\"Capitol Reef Giant, Capitol Reef National Park, USA\"]}),(0,a.jsx)(t.div,{children:(0,a.jsx)(i,{alt:\"Capitol Reef\",src:\"/static/images/photography/capitol-reef-tree.jpg\",width:\"1024\",height:\"678\"})}),(0,a.jsx)(t.p,{children:\"I took a road trip through Utah in the winter of 2013. In Capitol Reef National Park, it snowed a couple of inches during the night, and I was able to snap this shot of the truly massive guardian of the loop road. I think I may have been the only visitor in the park that night and morning, those are my tracks in the picture.\"})]})}function b(e={}){let{wrapper:t}=e.components||{};return t?(0,a.jsx)(t,Object.assign({},e,{children:(0,a.jsx)(c,e)})):c(e)}var w=b;function I(e,t){throw new Error(\"Expected \"+(t?\"component\":\"object\")+\" `\"+e+\"` to be defined: you likely forgot to import, pass, or provide it.\")}return j(_);})();\n;return Component;"
+        },
+        "_id": "blog/photography/canyonlands-giant.mdx",
+        "_raw": {
+          "sourceFilePath": "blog/photography/canyonlands-giant.mdx",
+          "sourceFileName": "canyonlands-giant.mdx",
+          "sourceFileDir": "blog/photography",
+          "contentType": "mdx",
+          "flattenedPath": "blog/photography/canyonlands-giant"
+        },
+        "type": "Blog",
+        "readingTime": { "text": "1 min read", "minutes": 0.385, "time": 23100, "words": 77 },
+        "slug": "photography/canyonlands-giant",
+        "toc": [
+          {
+            "value": "Capitol Reef Giant, Capitol Reef National Park, USA",
+            "url": "#capitol-reef-giant-capitol-reef-national-park-usa",
+            "depth": 1
+          }
+        ],
+        "originalWidth": 1024,
+        "originalHeight": 678
+      }
+    ]
+  },
+  "__N_SSG": true
+}
