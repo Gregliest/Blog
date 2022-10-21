@@ -4,6 +4,8 @@ import { InferGetStaticPropsType } from 'next'
 import { getAllDisplayPosts } from '@/lib/utils/contentProvider'
 import ArticleGallery from '@/components/ArticleGallery'
 
+export const POSTS_PER_PAGE = 5
+
 export const getStaticProps = async () => {
   const allPosts = await getAllDisplayPosts()
 
