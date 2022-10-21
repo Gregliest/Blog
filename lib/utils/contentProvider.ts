@@ -34,7 +34,7 @@ export async function getAllPosts() {
 export async function getAllDisplayPosts() {
   const posts = await getAllPosts()
 
-  return posts.filter((post) => !post.archived && !post.draft)
+  return posts.filter((post) => !post.archived && !post.draft && !post.tags.includes('example'))
 }
 
 export async function getSeries(name) {

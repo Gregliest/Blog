@@ -6,19 +6,19 @@ import ArticleGallery from '@/components/ArticleGallery'
 
 export const getStaticProps = async () => {
   const allPosts = await getAllDisplayPosts()
-  const whitewaterPosts = filterByTag('whitewater', allPosts)
+  const ideaPosts = filterByTag('idea', allPosts)
 
   return {
     props: {
-      whitewaterPosts,
+      ideaPosts,
     },
   }
 }
-export default function Whitewater({ whitewaterPosts }) {
+export default function Whitewater({ ideaPosts }) {
   return (
     <>
       <PageSEO title={`Projects - ${siteMetadata.author}`} description={siteMetadata.description} />
-      <ArticleGallery articles={whitewaterPosts} />
+      <ArticleGallery articles={ideaPosts} />
     </>
   )
 }
