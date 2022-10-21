@@ -3,54 +3,54 @@
     "category": "software-architecture",
     "title": "Navigators Part II: Benefits and Drawbacks",
     "date": "2018-09-13",
-    "summary": "",
+    "summary": "The pattern is great, except that it is difficult to pass data between views",
     "link": "https://medium.com/@greg_63957/navigators-part-ii-benefits-and-drawbacks-f869ad58909e",
-    "thumbnail": "blogThumbnails/navigator2.png",
+    "thumbnail": "/static/images/mediumThumbnails/navigator2.png",
     "tags": ["code", "architecture", "android"]
   },
   {
     "category": "android",
     "title": "Navigators Part 1: a Flow-Based Architecture for Android",
     "date": "2018-07-26",
-    "summary": "",
+    "summary": "A new pattern for promoting modular view components",
     "link": "https://medium.com/@greg_63957/navigators-part-1-a-flow-based-architecture-for-android-b66df2fa6e79",
-    "thumbnail": "blogThumbnails/navigator1.png",
+    "thumbnail": "/static/images/mediumThumbnails/navigator1.png",
     "tags": ["code", "architecture", "android"]
   },
   {
     "category": "software-development",
     "title": "Volunteering to Write Code for Non-Profits",
     "date": "2018-03-14",
-    "summary": "",
+    "summary": "Tips for volunteering as a software engineer",
     "link": "https://medium.com/@greg_63957/volunteering-to-write-code-for-non-profits-389ee98c9173?source=rss-207117267ac2------2",
-    "thumbnail": "blogThumbnails/nonprofits.png",
+    "thumbnail": "/static/images/mediumThumbnails/nonprofits.png",
     "tags": ["code", "ngos"]
   },
   {
     "category": "scoop-eng",
     "title": "Making JUnit read a little more like RSpec",
     "date": "2017-05-16",
-    "summary": "",
+    "summary": "A simple way to make JUnit more modular and readable",
     "link": "https://medium.com/@greg_63957/making-junit-read-a-little-more-like-rspec-b389fb369897",
-    "thumbnail": "blogThumbnails/junit.png",
+    "thumbnail": "/static/images/mediumThumbnails/junit.png",
     "tags": ["code", "architecture", "android"]
   },
   {
     "category": "software-engineering",
     "title": "Conj, Cons, Concat? Oh my!",
     "date": "2017-05-10",
-    "summary": "",
+    "summary": "How to add elements to Clojure data structures",
     "link": "https://medium.com/@greg_63957/conj-cons-concat-oh-my-1398a2981eab?source=rss-207117267ac2------2",
-    "thumbnail": "blogThumbnails/conj.png",
+    "thumbnail": "/static/images/mediumThumbnails/conj.png",
     "tags": ["code", "clojure"]
   },
   {
     "category": "android-app-development",
     "title": "Android View Measurement",
     "date": "2017-01-27",
-    "summary": "",
+    "summary": "How to get the (X, Y) coordinates of a view",
     "link": "https://medium.com/@greg_63957/android-view-measurement-d1f2f5c98f75",
-    "thumbnail": "blogThumbnails/viewmeasurement.png",
+    "thumbnail": "/static/images/mediumThumbnails/viewmeasurement.png",
     "tags": ["code", "architecture", "android"]
   }
 ]

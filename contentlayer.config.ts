@@ -62,6 +62,7 @@ export const Blog = defineDocumentType(() => ({
     layout: { type: 'string' },
     bibliography: { type: 'string' },
     canonicalUrl: { type: 'string' },
+    link: { type: 'string' },
   },
   computedFields,
 }))

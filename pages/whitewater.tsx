@@ -40,19 +40,11 @@ export const getStaticProps = async () => {
   }
 }
 export default function Whitewater({ allPosts }) {
+  const posts = allPosts.filter((post) => !post.tags.includes('example'))
   return (
     <>
       <PageSEO title={`Projects - ${siteMetadata.author}`} description={siteMetadata.description} />
-
-      <ArticleGallery articles={allPosts} />
-      {/* <div className="container py-12">
-        <div className="-m-4 flex flex-wrap">
-          {allPosts.map((article) => (
-            <ArticleCard key={article.title} post={article} />
-          ))}
-        </div>
-      </div> */}
-      {/* <Typography>Hello</Typography> */}
+      <ArticleGallery articles={posts} />
     </>
   )
 }

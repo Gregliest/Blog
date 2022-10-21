@@ -1,7 +1,7 @@
 ---
 title: Sample .md file Test
 date: '2022-03-08'
-tags: ['markdown', 'code', 'features']
+tags: ['markdown', 'code', 'features', 'example']
 draft: false
 type: Blog
 summary: Example of a markdown file with code blocks and syntax highlighting
