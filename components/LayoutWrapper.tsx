@@ -34,7 +34,7 @@ const LayoutWrapper = ({ children }: Props) => {
             </Link>
           </div>
           <div className="flex items-center text-base leading-5">
-            <div className="hidden sm:block">
+            <div className="hidden nav:block">
               {headerNavLinks.map((link) => (
                 <Link
                   key={link.title}
@@ -45,7 +45,6 @@ const LayoutWrapper = ({ children }: Props) => {
                 </Link>
               ))}
             </div>
-            <ThemeSwitch />
             <MobileNav />
           </div>
         </header>
