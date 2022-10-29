@@ -3,7 +3,7 @@ title: 'Layouts Part I: Android > iOS'
 date: 2014-11-14T17:01:45-08:00
 summary: A comparison of basic layouts in iOS and Android.
 tags: ['code', 'android', 'iOS', 'mobile']
-thumbnail: /static/images/linear-layout/android-initial.png
+thumbnail: /images/linear-layout/android-initial.png
 series:
   name: Android Layouts
   number: 1
@@ -40,15 +40,15 @@ Let’s build a simple view with a text field, an image, and a button, one after
 </LinearLayout>
 ```
 
-![The Basic Android Layout](/static/images/linear-layout/android-initial.png)
+![The Basic Android Layout](/images/linear-layout/android-initial.png)
 
 On iOS, the basic view setup is also quite easy. I’m going to use Interface Builder whenever possible because it is Apple's preferred view construction tool and because I find the code constraint language to be obtuse and unreadable. To obtain the same view we built in Android, you simply drag the elements you want onto the screen. Here’s an example.
 
-![The Basic Layout](/static/images/ios/basic-lined-up-layout.png)
+![The Basic Layout](/images/ios/basic-lined-up-layout.png)
 
 Note that auto layout will automatically infer a set of constraints to define how the view should change on rotation or resize. One can build an app without ever touching constraints, which is handy for prototypes. However, in my experience, the resulting view usually has a few bugs. Also, auto layout does not afford pixel control over the spacing, widths, and heights. So, to make a more professional layout, I'm going to add constraints. I will not go into detail here; there are a number of existing tutorials on how to use Interface Builder.
 
-![The Basic Layout, with Constraints!](/static/images/ios/basic-layout-constraints.png)
+![The Basic Layout, with Constraints!](/images/ios/basic-layout-constraints.png)
 
 I had to add eight constraints to do what Android did for free, adding significant complexity and code bloat. As a view gets more complex and the number of constraints multiplies, this system quickly becomes unwieldy. It can be really difficult to determine how a view element's position is being defined when there are dozens of constraints, and other elements are being dynamically resized.
 
@@ -87,7 +87,7 @@ In contrast to the web of constraints in iOS, the readability of the Android xml
 </LinearLayout>
 ```
 
-![The Improved Android Layout](/static/images/linear-layout/android-improved.png)
+![The Improved Android Layout](/images/linear-layout/android-improved.png)
 
 The one quirk I will note about this view is the use of `gravity` vs. `layout_gravity`. `gravity` dictates the placement of the elements of a view inside its frame, while `layout_gravity` controls the placement of a view's frame within its parent. For instance, with a button, `gravity` affects the placement of the title text within the button, while `layout_gravity` affects the placement of the button in the parent linearLayout. So, `layout_gravity` centers the button.
 
