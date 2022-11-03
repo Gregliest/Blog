@@ -9,6 +9,7 @@ export type PostFrontMatter = {
   slug: string
   fileName: string
 
+  link?: string
   image?: string
   thumbnail?: string
   lastmod?: string

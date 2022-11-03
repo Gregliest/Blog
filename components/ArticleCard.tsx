@@ -4,12 +4,12 @@ import Card from '@mui/material/Card'
 import CardActionArea from '@mui/material/CardActionArea'
 import CardContent from '@mui/material/CardContent'
 import CardMedia from '@mui/material/CardMedia'
-import { Blog } from 'contentlayer/generated'
 import formatDate from '@/lib/utils/formatDate'
 import { SxProps, Theme } from '@mui/material'
+import { PostFrontMatter } from 'types/PostFrontMatter'
 
 interface ArticleCardProps {
-  post: Blog
+  post: PostFrontMatter
   sx?: SxProps<Theme>
 }
 
