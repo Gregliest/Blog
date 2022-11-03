@@ -22,6 +22,7 @@ export const getStaticProps = async () => {
 }
 
 export default function Whitewater({ photographyPosts }) {
+  console.log(photographyPosts)
   return (
     <>
       <div className="divide-y">
