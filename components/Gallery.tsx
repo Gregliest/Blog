@@ -10,7 +10,7 @@ export default function Gallery({ posts }) {
 
     return (
       <Link href={`/blog/${post.slug}`} passHref key={post.title}>
-        <ImageListItem component="a">
+        <ImageListItem key={post.title}>
           <Image
             layout="responsive"
             width={WIDTH}
