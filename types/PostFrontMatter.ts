@@ -1,7 +1,16 @@
+export type PostSeries = {
+  name: string
+  number: number
+}
 export type PostFrontMatter = {
   title: string
   date: string
   tags: string[]
+  slug: string
+  fileName: string
+
+  image?: string
+  thumbnail?: string
   lastmod?: string
   draft?: boolean
   summary?: string
@@ -9,6 +18,6 @@ export type PostFrontMatter = {
   authors?: string[]
   layout?: string
   canonicalUrl?: string
-  slug: string
-  fileName: string
+  archived?: boolean
+  series?: PostSeries
 }
