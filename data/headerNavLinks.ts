@@ -2,8 +2,7 @@ const headerNavLinks = [
   { href: '/code', title: 'Code' },
   { href: '/whitewater', title: 'Whitewater' },
   { href: '/photography', title: 'Photography' },
-  { href: '/ideas', title: 'Ideas' },
-  { href: '/blog', title: 'Blog' },
+  // { href: '/ideas', title: 'Ideas' },
   { href: '/tags', title: 'Tags' },
   { href: '/about', title: 'About' },
 ]
