@@ -5,7 +5,7 @@ const siteMetadata = {
   description: '',
   language: 'en-us',
   theme: 'light', // system, dark or light
-  siteUrl: 'https://gregliest.github.io',
+  siteUrl: 'https://www.gregliest.com',
   siteRepo: 'https://github.com/gregliest/Blog',
   siteLogo: '/static/images/logo.png',
   image: '/static/images/avatar.png',

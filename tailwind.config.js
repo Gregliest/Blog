@@ -18,6 +18,14 @@ module.exports = {
   ],
   darkMode: 'class',
   theme: {
+    screens: {
+      xs: '0px',
+      sm: '640px',
+      md: '900px',
+      lg: '1200px',
+      xl: '1536px',
+      nav: '1200px',
+    },
     extend: {
       spacing: {
         '9/16': '56.25%',
