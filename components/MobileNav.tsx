@@ -2,7 +2,11 @@ import { useState } from 'react'
 import Link from './Link'
 import headerNavLinks from '@/data/headerNavLinks'
 
-const MobileNav = () => {
+interface MobileNavProps {
+  navLinks?: string[]
+}
+const MobileNav = (props: MobileNavProps) => {
+  const navLinks = props.navLinks ? props.navLinks : headerNavLinks
   const [navShow, setNavShow] = useState(false)
 
   const onToggleNav = () => {
@@ -18,7 +22,7 @@ const MobileNav = () => {
   }
 
   return (
-    <div className="sm:hidden">
+    <div>
       <button
         type="button"
         className="ml-1 mr-1 h-8 w-8 rounded py-1"
@@ -58,7 +62,7 @@ const MobileNav = () => {
           onClick={onToggleNav}
         ></button>
         <nav className="fixed mt-8 h-full">
-          {headerNavLinks.map((link) => (
+          {navLinks.map((link) => (
             <div key={link.title} className="px-12 py-4">
               <Link
                 href={link.href}
