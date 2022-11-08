@@ -1,4 +1,7 @@
+import Footer from '@/components/Footer'
+import Header from '@/components/Header'
 import { MDXLayoutRenderer } from '@/components/MDXComponents'
+import SectionContainer from '@/components/SectionContainer'
 import { getFileBySlug } from '@/lib/mdx'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { AuthorFrontMatter } from 'types/AuthorFrontMatter'
@@ -18,10 +21,15 @@ export default function About({ authorDetails }: InferGetStaticPropsType<typeof 
   const { mdxSource, frontMatter } = authorDetails
 
   return (
-    <MDXLayoutRenderer
-      layout={frontMatter.layout || DEFAULT_LAYOUT}
-      mdxSource={mdxSource}
-      frontMatter={frontMatter}
-    />
+    <SectionContainer>
+      <Header />
+      <MDXLayoutRenderer
+        layout={frontMatter.layout || DEFAULT_LAYOUT}
+        mdxSource={mdxSource}
+        frontMatter={frontMatter}
+        content={undefined}
+      />
+      <Footer />
+    </SectionContainer>
   )
 }

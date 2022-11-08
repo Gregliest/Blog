@@ -3,6 +3,9 @@ import { PageSEO } from '@/components/SEO'
 
 import { filterByTag, getAllDisplayPosts } from '@/lib/utils/contentProvider'
 import ArticleGallery from '@/components/ArticleGallery'
+import SectionContainer from '@/components/SectionContainer'
+import { MinimalHeader } from '@/components/Header'
+import Footer from '@/components/Footer'
 
 export const getStaticProps = async () => {
   const allPosts = await getAllDisplayPosts()
@@ -16,9 +19,11 @@ export const getStaticProps = async () => {
 }
 export default function Whitewater({ whitewaterPosts }) {
   return (
-    <>
+    <SectionContainer>
+      <MinimalHeader title="Whitewater" />
       <PageSEO title={`Projects - ${siteMetadata.author}`} description={siteMetadata.description} />
       <ArticleGallery articles={whitewaterPosts} />
-    </>
+      <Footer />
+    </SectionContainer>
   )
 }
