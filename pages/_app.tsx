@@ -24,9 +24,9 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
       {isDevelopment && isSocket && <ClientReload />}
       <Analytics />
-      <LayoutWrapper>
+      <div className="bg-zinc-200">
         <Component {...pageProps} />
-      </LayoutWrapper>
+      </div>
     </ThemeProvider>
   )
 }
