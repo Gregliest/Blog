@@ -11,7 +11,7 @@ const siteMetadata = {
   image: '/static/images/avatar.png',
   socialBanner: '/static/images/twitter-card.png',
   email: 'blog@gregliest.com',
-  github: 'https://github.com/gregliest',
+  github: 'https://github.com/gregliest/Blog',
   twitter: '',
   facebook: '',
   youtube: '',

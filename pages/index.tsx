@@ -21,16 +21,18 @@ export const getStaticProps = async () => {
 
 export default function Blog({ allPosts }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
-    <div className="h-screen w-full bg-bowser bg-cover bg-center bg-center">
-      <SectionContainer>
-        <Header />
-        <PageSEO
-          title={`Projects - ${siteMetadata.author}`}
-          description={siteMetadata.description}
-        />
-        <ArticleGallery articles={allPosts} />
-        <Footer />
-      </SectionContainer>
+    <div>
+      <Header />
+      <div className="h-screen w-full bg-bowser bg-cover bg-fixed bg-center">
+        <SectionContainer>
+          <PageSEO
+            title={`Projects - ${siteMetadata.author}`}
+            description={siteMetadata.description}
+          />
+          <ArticleGallery articles={allPosts} />
+          <Footer />
+        </SectionContainer>
+      </div>
     </div>
   )
 }
