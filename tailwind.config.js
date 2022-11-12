@@ -27,6 +27,9 @@ module.exports = {
       nav: '1200px',
     },
     extend: {
+      backgroundImage: {
+        bowser: "url('/static/images/BowserBanner.jpg')",
+      },
       spacing: {
         '9/16': '56.25%',
       },
