@@ -29,6 +29,10 @@ export default function Blog({ allPosts }: InferGetStaticPropsType<typeof getSta
             title={`Projects - ${siteMetadata.author}`}
             description={siteMetadata.description}
           />
+          <div className="mt-100 rounded-xl bg-zinc-300 bg-opacity-50 p-5 text-2xl text-white">
+            Parralax inline
+          </div>
+
           <ArticleGallery articles={allPosts} />
           <Footer />
         </SectionContainer>
