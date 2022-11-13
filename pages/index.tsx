@@ -22,16 +22,27 @@ export const getStaticProps = async () => {
 export default function Blog({ allPosts }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <div>
-      <Header />
       <div className="h-screen w-full bg-bowser bg-cover bg-fixed bg-center">
+        {/* Background gradients for the header */}
+        <div
+          className="bg-gradient-to-r from-white via-transparent to-white
+          sm:bg-gradient-to-r sm:from-white sm:to-white
+          xl:bg-gradient-to-r xl:from-white xl:via-transparent xl:to-white"
+        >
+          <Header />
+        </div>
+        <div className="invisible h-5 bg-gradient-to-b from-white sm:visible xl:invisible" />
+
+        <div className="h-1/4" />
+        <p className="text-center text-5xl text-white">
+          Software Engineering, Whitewater Kayaking, Photography, and more!
+        </p>
+        <div className="h-1/4" />
         <SectionContainer>
           <PageSEO
             title={`Projects - ${siteMetadata.author}`}
             description={siteMetadata.description}
           />
-          <div className="mt-100 rounded-xl bg-zinc-300 bg-opacity-50 p-5 text-2xl text-white">
-            Parralax inline
-          </div>
 
           <ArticleGallery articles={allPosts} />
           <Footer />
