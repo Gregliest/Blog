@@ -27,6 +27,15 @@ module.exports = {
       nav: '1200px',
     },
     extend: {
+      keyframes: {
+        fadeInOut: {
+          '0%, 100%': { opacity: '0' },
+          '50%': { opacity: '1' },
+        },
+      },
+      animation: {
+        fadeInOut: 'fadeInOut 1s ease-in-out infinite',
+      },
       backgroundImage: {
         bowser: "url('/static/images/BowserBanner.jpg')",
       },

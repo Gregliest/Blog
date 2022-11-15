@@ -6,6 +6,7 @@ import ArticleGallery from '@/components/ArticleGallery'
 import SectionContainer from '@/components/SectionContainer'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import AnimatedTextBox from '@/components/AnimatedTextBox'
 
 export const POSTS_PER_PAGE = 5
 
@@ -37,6 +38,8 @@ export default function Blog({ allPosts }: InferGetStaticPropsType<typeof getSta
         <p className="p-5 text-center text-5xl text-white backdrop-blur-sm">
           Software Engineering, Whitewater Kayaking, Photography, and more!
         </p>
+        <AnimatedTextBox title="Greg Blog" array={['software', 'whitewater', 'photography']} />
+
         <div className="h-1/4" />
 
         <SectionContainer>
