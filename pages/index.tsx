@@ -26,14 +26,7 @@ export default function Blog({ allPosts }: InferGetStaticPropsType<typeof getSta
     <div>
       <div className="h-screen w-full bg-bowser bg-cover bg-fixed bg-center">
         {/* Background gradients for the header */}
-        <div
-          className="bg-gradient-to-r from-white via-transparent to-white
-          sm:bg-gradient-to-r sm:from-white sm:to-white
-          xl:bg-gradient-to-r xl:from-white xl:via-transparent xl:to-white"
-        >
-          <Header />
-        </div>
-        <div className="invisible h-5 bg-gradient-to-b from-white sm:visible xl:invisible" />
+        <Header />
 
         <div className="h-1/4" />
         <AnimatedTextBox title="A Blog About:" array={blogAbout} />

@@ -1,4 +1,6 @@
 export default function Card() {
+  // Gradient bottom border
+  // {/* <div className="invisible h-5 bg-gradient-to-b from-white sm:visible xl:invisible" /> */}
   return (
     <div className="group relative mx-auto max-w-7xl">
       <div className="absolute -inset-1 rounded-lg bg-gradient-to-r from-white to-zinc-600 opacity-25 blur transition duration-1000 group-hover:opacity-100 group-hover:duration-200" />

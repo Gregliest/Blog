@@ -35,8 +35,8 @@ const Header = (props: HeaderProps) => {
   const title = props.title ? props.title : siteMetadata.headerTitle
 
   return (
-    <header className="flex justify-between p-3">
-      <div>
+    <header className="flex justify-between">
+      <div className="bg-white p-3">
         <Link href="/" aria-label={title}>
           <div className="flex items-center justify-between">
             <div className="mr-3">
@@ -46,7 +46,8 @@ const Header = (props: HeaderProps) => {
           </div>
         </Link>
       </div>
-      <div className="flex items-center text-base leading-5">
+      <div className="w-full bg-gradient-to-r from-white via-transparent to-white" />
+      <div className="flex items-center bg-white p-3 text-base leading-5">
         <div className="hidden sm:block">
           {headerNavLinks.map((link) => (
             <Link
