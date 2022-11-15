@@ -1,7 +1,7 @@
 export default function Card() {
   return (
     <div className="group relative mx-auto max-w-7xl">
-      <div className="absolute -inset-1 rounded-lg bg-gradient-to-r from-purple-600 to-pink-600 opacity-25 blur transition duration-1000 group-hover:opacity-100 group-hover:duration-200"></div>
+      <div className="absolute -inset-1 rounded-lg bg-gradient-to-r from-white to-zinc-600 opacity-25 blur transition duration-1000 group-hover:opacity-100 group-hover:duration-200" />
 
       <div className="items-top relative flex justify-start space-x-6 rounded-lg bg-white px-7 py-6 leading-none ring-1 ring-gray-900/5">
         <svg className="h-8 w-8 text-purple-600" fill="none" viewBox="0 0 24 24">
