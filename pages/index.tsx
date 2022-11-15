@@ -35,11 +35,7 @@ export default function Blog({ allPosts }: InferGetStaticPropsType<typeof getSta
         <div className="invisible h-5 bg-gradient-to-b from-white sm:visible xl:invisible" />
 
         <div className="h-1/4" />
-        <p className="p-5 text-center text-5xl text-white backdrop-blur-sm">
-          Software Engineering, Whitewater Kayaking, Photography, and more!
-        </p>
         <AnimatedTextBox title="Greg Blog" array={['software', 'whitewater', 'photography']} />
-
         <div className="h-1/4" />
 
         <SectionContainer>
