@@ -21,6 +21,7 @@ export const getStaticProps = async () => {
 }
 
 export default function Blog({ allPosts }: InferGetStaticPropsType<typeof getStaticProps>) {
+  const blogAbout = ['Software', 'Whitewater', 'Photography', 'Rescue', 'and More!']
   return (
     <div>
       <div className="h-screen w-full bg-bowser bg-cover bg-fixed bg-center">
@@ -35,7 +36,7 @@ export default function Blog({ allPosts }: InferGetStaticPropsType<typeof getSta
         <div className="invisible h-5 bg-gradient-to-b from-white sm:visible xl:invisible" />
 
         <div className="h-1/4" />
-        <AnimatedTextBox title="Greg Blog" array={['software', 'whitewater', 'photography']} />
+        <AnimatedTextBox title="A Blog About:" array={blogAbout} />
         <div className="h-1/4" />
 
         <SectionContainer>

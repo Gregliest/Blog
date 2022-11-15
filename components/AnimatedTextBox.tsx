@@ -1,5 +1,4 @@
 // A view element with a title and an animation that cycles through the strings in an array
-import { Typography } from '@mui/material'
 import { useState } from 'react'
 
 export default function AnimatedTextBox({ title, array }) {
@@ -9,15 +8,16 @@ export default function AnimatedTextBox({ title, array }) {
     index >= array.length - 1 ? setIndex(0) : setIndex(index + 1)
   }
   return (
-    <div className="backdrop-blur-sm">
-      <p className="p-5 text-center text-xl text-white">{title}</p>
-
-      <p
-        className="animate-fadeInOut p-5 text-center text-5xl text-white"
-        onAnimationIteration={incrementIndex}
-      >
-        {array[index]}
-      </p>
+    <div className="grid place-items-center">
+      <div className="w-96 rounded-md backdrop-blur-sm">
+        <p className="pt-5 text-center text-xl text-white">{title}</p>
+        <p
+          className="animate-fadeInOut p-5 text-center text-5xl text-white"
+          onAnimationIteration={incrementIndex}
+        >
+          {array[index]}
+        </p>
+      </div>
     </div>
   )
 }

@@ -30,11 +30,11 @@ module.exports = {
       keyframes: {
         fadeInOut: {
           '0%, 100%': { opacity: '0' },
-          '50%': { opacity: '1' },
+          '10%, 50%, 90%': { opacity: '1' },
         },
       },
       animation: {
-        fadeInOut: 'fadeInOut 1s ease-in-out infinite',
+        fadeInOut: 'fadeInOut 2s ease-in-out infinite',
       },
       backgroundImage: {
         bowser: "url('/static/images/BowserBanner.jpg')",
