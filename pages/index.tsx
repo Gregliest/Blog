@@ -6,7 +6,6 @@ import ArticleGallery from '@/components/ArticleGallery'
 import SectionContainer from '@/components/SectionContainer'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import AnimatedCard from '@/components/AnimatedCard'
 
 export const POSTS_PER_PAGE = 5
 
@@ -39,8 +38,6 @@ export default function Blog({ allPosts }: InferGetStaticPropsType<typeof getSta
           Software Engineering, Whitewater Kayaking, Photography, and more!
         </p>
         <div className="h-1/4" />
-
-        <AnimatedCard />
 
         <SectionContainer>
           <PageSEO
