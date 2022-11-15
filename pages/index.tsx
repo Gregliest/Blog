@@ -6,6 +6,7 @@ import ArticleGallery from '@/components/ArticleGallery'
 import SectionContainer from '@/components/SectionContainer'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import AnimatedCard from '@/components/AnimatedCard'
 
 export const POSTS_PER_PAGE = 5
 
@@ -34,10 +35,13 @@ export default function Blog({ allPosts }: InferGetStaticPropsType<typeof getSta
         <div className="invisible h-5 bg-gradient-to-b from-white sm:visible xl:invisible" />
 
         <div className="h-1/4" />
-        <p className="text-center text-5xl text-white">
+        <p className="p-5 text-center text-5xl text-white backdrop-blur-sm">
           Software Engineering, Whitewater Kayaking, Photography, and more!
         </p>
         <div className="h-1/4" />
+
+        <AnimatedCard />
+
         <SectionContainer>
           <PageSEO
             title={`Projects - ${siteMetadata.author}`}
