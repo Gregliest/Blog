@@ -7,6 +7,7 @@ import formatDate from '@/lib/utils/formatDate'
 import { SxProps, Theme } from '@mui/material'
 import { PostFrontMatter } from 'types/PostFrontMatter'
 import Link from './Link'
+import Image from './Image'
 
 interface ArticleCardProps {
   post: PostFrontMatter
@@ -20,10 +21,20 @@ export default function ArticleCard(props: ArticleCardProps) {
   return (
     <div className="group relative m-3 max-w-7xl">
       <div className="absolute -inset-1 rounded-lg bg-gradient-to-r from-slate-500 to-zinc-700 opacity-25 blur transition duration-700 group-hover:opacity-100 group-hover:duration-200"></div>
-      <div className="items-top relative flex h-full w-full justify-start space-x-6 rounded-lg bg-white px-7 py-6 leading-none ring-1 ring-gray-900/5">
+      <div className="items-top relative flex h-full w-full justify-start space-x-6 rounded-lg bg-white leading-none ring-1 ring-gray-900/5">
         <Link href={link} aria-label={`Link to ${link}`}>
-          <CardMedia component="img" sx={{ width: 1 }} image={props.post.thumbnail} />
-          <CardContent sx={{ flex: 1 }}>
+          {props.post.thumbnail ? (
+            <Image
+              alt={props.post.title}
+              src={props.post.thumbnail}
+              width={450}
+              height={306}
+              className="rounded-t-lg"
+            />
+          ) : (
+            <></>
+          )}
+          <div className="py-6 px-8">
             <Typography component="h2" variant="h5">
               {props.post.title}
             </Typography>
@@ -33,7 +44,7 @@ export default function ArticleCard(props: ArticleCardProps) {
             <Typography variant="subtitle1" paragraph>
               {props.post.summary}
             </Typography>
-          </CardContent>
+          </div>
         </Link>
       </div>
     </div>

@@ -3,7 +3,7 @@ import ArticleCard from './ArticleCard'
 
 export default function ArticleGallery(props) {
   const list = props.articles.map((article) => {
-    return <ArticleCard key={article.title} post={article} sx={{ margin: 2 }} />
+    return <ArticleCard key={article.title} post={article} />
   })
 
   return (
