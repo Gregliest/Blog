@@ -51,16 +51,16 @@ const MobileNav = (props: MobileNavProps) => {
         </svg>
       </button>
       <div
-        className={`fixed top-24 right-0 z-10 h-full w-full transform bg-gray-200 opacity-95 duration-300 ease-in-out dark:bg-gray-800 ${
+        className={`fixed right-0 z-10 h-full w-96 transform bg-gray-200 opacity-95 duration-300 ease-in-out dark:bg-gray-800 ${
           navShow ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
-        <button
+        {/* <button
           type="button"
           aria-label="toggle modal"
           className="fixed h-full w-full cursor-auto focus:outline-none"
           onClick={onToggleNav}
-        ></button>
+        ></button> */}
         <nav className="fixed mt-8 h-full">
           {navLinks.map((link) => (
             <div key={link.title} className="px-12 py-4">

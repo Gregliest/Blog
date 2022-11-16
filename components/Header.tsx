@@ -9,11 +9,12 @@ interface HeaderProps {
   navLinks?: string[]
 }
 
+// A header with a logo and title on the left, and a hamburger menu on the right
 export const MinimalHeader = (props: HeaderProps) => {
   const title = props.title ? props.title : siteMetadata.headerTitle
 
   return (
-    <header className="flex justify-between py-10">
+    <header className="flex justify-between p-3">
       <div>
         <Link href="/" aria-label={title}>
           <div className="flex items-center justify-between">
@@ -31,6 +32,7 @@ export const MinimalHeader = (props: HeaderProps) => {
   )
 }
 
+// A header with a center transparent gradient, that shows a hamburger at small screen sizes
 const Header = (props: HeaderProps) => {
   const title = props.title ? props.title : siteMetadata.headerTitle
 
@@ -53,7 +55,7 @@ const Header = (props: HeaderProps) => {
             <Link
               key={link.title}
               href={link.href}
-              className="p-1 font-medium text-gray-900 dark:text-gray-100 sm:p-4"
+              className="p-1 text-base font-medium text-gray-800 hover:text-blue-900 sm:p-4"
             >
               {link.title}
             </Link>
