@@ -21,6 +21,13 @@ export const getStaticProps = async () => {
 }
 
 export default function Blog({ allPosts }: InferGetStaticPropsType<typeof getStaticProps>) {
+  function resizeEvent() {
+    console.log(window.innerWidth)
+  }
+
+  if (typeof window !== 'undefined') {
+    window.addEventListener('resize', resizeEvent)
+  }
   const blogAbout = ['Software', 'Whitewater', 'Photography', 'Rescue', 'and More!']
   return (
     <div>
