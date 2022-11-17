@@ -1,5 +1,7 @@
 # Greg's Blog
 
+My goal is to create a website that is simple, elegant, responsive, and performant. Let me know if you have any suggestions, or find a bug!
+
 Based loosely on the [Tailwind Nextjs Starter Blog](https://github.com/timlrx/tailwind-nextjs-starter-blog).
 
 ## Design
@@ -9,8 +11,7 @@ Based loosely on the [Tailwind Nextjs Starter Blog](https://github.com/timlrx/ta
 - Frontmatter
 - Yarn
 - NextJS and Vercel
-
-5. Modify `projectsData.js`
+- Mdx
 
 ## Installation
 
@@ -102,10 +103,16 @@ Add a new post to the `data/blog` with the required frontmatter.
 
 ## Deploy
 
-Vercel: Push to master will trigger a deploy on Vercel.
+Vercel: Push to main will trigger a deploy on Vercel.
 
-## Licence
+## License
 
-Current: [MIT]()
+### Photography
+Please give proper attribution, and link back to the source page on this blog. Otherwise, you are free to use as you see fit. [CC](https://github.com/Gregliest/Blog/blob/main/CCLICENSE).
+
+For non-watermarked images and prints, contact me at prints @ gregliest dot com
+
+### Software
+This repo: [MIT](https://github.com/Gregliest/Blog/blob/main/LICENSE)
 
 Original (for the template): [MIT](https://github.com/timlrx/tailwind-nextjs-starter-blog/blob/master/LICENSE) © [Timothy Lin](https://www.timrlx.com)
