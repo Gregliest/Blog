@@ -127,6 +127,8 @@ export async function getAllFilesFrontMatter(folder: 'blog') {
     const matterFile = matter(source)
     const frontmatter = matterFile.data as PostFrontMatter
     if (!('draft' in frontmatter && frontmatter.draft)) {
+      const tags = frontmatter.tags.map((tag) => tag.toLowerCase())
+      frontmatter.tags = tags
       allFrontMatter.push({
         ...frontmatter,
         slug: formatSlug(fileName),

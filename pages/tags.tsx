@@ -4,7 +4,8 @@ import { MinimalHeader } from '@/components/Header'
 import { PageSEO } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata'
 import { getAllTags } from '@/lib/tags'
-import { filterByTag, getAllPosts } from '@/lib/utils/contentProvider'
+import { getAllPosts } from '@/lib/utils/contentProvider'
+import { filterByTag } from '@/lib/utils/posts'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { useEffect, useState } from 'react'
 import { PostFrontMatter } from 'types/PostFrontMatter'
@@ -25,7 +26,7 @@ export default function Tags({ tags, posts }: InferGetStaticPropsType<typeof get
   const [articles, setArticles] = useState([])
 
   useEffect(() => {
-    setArticles(posts.filter((post) => post.tags.includes(selectedTag)))
+    setArticles(filterByTag(selectedTag, posts))
   }, [selectedTag, posts])
 
   function TagComponent(tag, tags) {

@@ -1,5 +1,5 @@
 import { promises as fs } from 'fs'
-import { PostFrontMatter } from 'types/PostFrontMatter'
+import { filterByTag, sortByDate } from './posts'
 import path from 'path'
 import { getAllFilesFrontMatter } from '../mdx'
 
@@ -41,23 +41,4 @@ export async function getAllDisplayPosts() {
 export async function getSeries(name) {
   const posts = await getAllPosts()
   return posts.filter((post) => post.series && post.series.name === name)
-}
-
-export function dateSortDesc(a: string, b: string) {
-  if (a > b) return -1
-  if (a < b) return 1
-  return 0
-}
-
-export function sortByDate(posts: PostFrontMatter[]) {
-  posts.sort((post1, post2) => dateSortDesc(post1.date, post2.date))
-  return posts
-}
-
-export function filterByTag(tag: string, posts: PostFrontMatter[]) {
-  return posts.filter((post) => post.tags.includes(tag))
-}
-
-export function removeArchived(posts: PostFrontMatter[]) {
-  return posts.filter((post) => !post.archived)
 }
