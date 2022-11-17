@@ -1,3 +1,4 @@
+import ArticleGallery from '@/components/ArticleGallery'
 import Footer from '@/components/Footer'
 import { MinimalHeader } from '@/components/Header'
 import Link from '@/components/Link'
@@ -6,19 +7,27 @@ import { PageSEO } from '@/components/SEO'
 import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import { getAllTags } from '@/lib/tags'
+import { getAllPosts } from '@/lib/utils/contentProvider'
 import kebabCase from '@/lib/utils/kebabCase'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
+import { PostFrontMatter } from 'types/PostFrontMatter'
 
-export const getStaticProps: GetStaticProps<{ tags: Record<string, number> }> = async () => {
+export const getStaticProps: GetStaticProps<{
+  tags: Record<string, number>
+  posts: PostFrontMatter[]
+}> = async () => {
   const tags = await getAllTags('blog')
+  const posts = await getAllPosts()
 
-  return { props: { tags } }
+  return { props: { tags, posts } }
 }
 
-export default function Tags({ tags }: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function Tags({ tags, posts }: InferGetStaticPropsType<typeof getStaticProps>) {
   const sortedTags = Object.keys(tags).sort((a, b) => tags[b] - tags[a])
+  console.log(posts)
+
   return (
-    <SectionContainer>
+    <div>
       <MinimalHeader title="" />
       <PageSEO title={`Tags - ${siteMetadata.author}`} description="Things I blog about" />
       <div className="flex flex-col items-start justify-start divide-y divide-gray-200 dark:divide-gray-700 md:mt-24 md:flex-row md:items-center md:justify-center md:space-x-6 md:divide-y-0">
@@ -44,7 +53,8 @@ export default function Tags({ tags }: InferGetStaticPropsType<typeof getStaticP
           })}
         </div>
       </div>
+      <ArticleGallery articles={posts} />
       <Footer />
-    </SectionContainer>
+    </div>
   )
 }
