@@ -1,0 +1,76 @@
+---
+title: 'Why Conspiracy Theories Work'
+date: 2022-11-17
+summary: A discussion about why people believe in conspiracy theories, and why they don't change their mind with evidence, with a little math.
+tags: ['idea', 'bayesian', 'math']
+thumbnail:
+draft: true
+series:
+  name: Bayesian
+  number: 1
+type: Blog
+---
+
+# Why Do We Believe?
+
+In our current day and age, it seems that many people can’t be convinced. Their beliefs can’t be changed, their minds can’t be altered. They are utterly and truly convinced they are right, and nothing can sway them from that conviction. Why does this happen? It turns out that we can prove that if someone believes something without a shred of doubt, no amount of contrary evidence can change their mind. Furthermore, in certain cases, more contrary data will actually convince them that they are more right. In particular, if a person believes in a theory that perfectly explains a situation, like a conspiracy theory, evidence that seems to support a different theory will actually make them more sure of their conspiracy.
+
+This post will be in two parts. In the first, non-technical post, I will discuss the concepts without math. I will be using a Bayesian perspective, but don’t worry if you’re not familiar, I will explain the concepts as we go. It turns out that Bayesian statistics describes how we think, and so we can use it to prove what’s going on, and the concepts are surprisingly simple. In the second part, I will work through the math of the examples in part 1, and give a little more depth in introducing Bayesian statistics.
+
+TLDR: Using Bayesian statistics, we can show why people who hold beliefs too strongly will ignore all facts and evidence.
+
+## Prior Belief
+
+Let’s start with a simple thought experiment: how does the human brain decide what to believe? Your friend Gary is an average human. He doesn’t know everything, but he thinks he knows more than he does. He happens to be passionate about bowling. He is kind of an average bowler, but he’s always looking for ways to improve. One day he is watching his favorite bowling Youtube channel, and he see a video that claims to show the key to bowling, the perfect technique.
+
+“AAAHA,” thinks Gary. “This is the way! I can use this technique to throw a strike every time! I’m going to be the Sultan of Strikes.”
+
+Excited, he goes to the bowling alley, and starts throwing. Normally, he throws a strike about 1/10 of the time. But on this day, his first throw is a strike. Eureka, it works! He is now even more sure that he has found the key to eternal bowling stardom.
+
+You, as his friend, are with him at the bowling alley, but are a little more skeptical. Gary didn’t just become the Ace of the Alley overnight, right? So, let’s ask the question, how many strikes will Gary have to throw to convince you that he has found bowling bliss?
+
+The answer depends on your initial skepticism. In other words, what is your prior belief? Let’s say you are moderately skeptical, and you think there’s only a 10% chance that Gary is right. You then might want to see 3 strikes in a row before making up your mind. Recall that Gary normally only throws a strike 1/10 of the time. So 3 strikes in a row would have a probability of 1/1000, which is pretty unlikely, and perhaps enough to overcome your moderate skepticism. On the other hand, maybe you are super skeptical and think there’s a 1 in a million chance he’s telling the truth. You might then need to see 10 strikes in a row, which would only happen 1 in ten billion times if Gary had not improved. In Bayesian statistics, this initial belief is called a prior. We will go over these examples in more detail in part 2, and quantify how much evidence you should need to see to be convinced, given your prior.
+
+This prior belief is the key difference between Bayesian and frequentist statistics. Bayesian allows you to take into account your prior knowledge, namely that Gary isn’t a very good bowler, and the skepticism you have about how much he could have improved overnight. There’s strong evidence that this example, this Bayesian way of thinking, accurately describes how our brains work. When we enter a situation, we have some initial belief or skepticism. Then, we update that belief with the data that we see in the world, to form a new belief. We then apply that new belief in the next situation we encounter, etc.
+
+This strategy of always updating a belief is in contrast to classical frequentist statistics, where each situation is treated in isolation, without using your prior knowledge. Of course, the frequentist model doesn’t make sense in our lives. How would we ever make decision if we couldn’t take into account our previous knowledge and experience? Bayesian statistics is the correct way to view statistics in most situations, including in science. I’ll discuss this important point in a future post.
+
+## Beliefs that never change
+
+So, what would happen if your prior belief was 0? It turns out that a prior of 0 (where you believe there’s a 0% chance) is a really interesting case, because it means that you are never going to change your mind. You have a fixed belief. Gary could throw 100 strikes in a row, and you wouldn’t be convinced. This situation is intuitively obvious: if your mind is made up and you have no doubts at all, nothing is going to change your mind. Evidence is irrelevant.
+
+Similarly, a prior of 1 (100% chance) would mean that you believe without a shred of doubt that Gary is right. So, what would happen if Gary then did not throw a strike? If you truly have a prior of 1, the data is irrelevant, and so you would still believe that he is the Ace of the Alley. To account for the evidence, people start inventing all sorts of alternate hypotheses, like, the pins are glued to the floor, Gary is just having an off-day, etc. Or, maybe you would just refuse to believe that you actually saw the Great Gary miss. This situation is analogous to flat-earthers claiming that NASA photos of Earth from space are faked.
+
+A prior of 1 and 0 are both dangerous places to be, because you are ignoring the evidence in front of you. People do this in gambling, the stock market, politics, etc. all the time. My plea to you is, don’t be here. Always be willing to update your belief based on the evidence in front of you, no matter how weird or painful that belief change might be.
+
+
+## Conspiracy theories
+
+We’ve considered the case where you simply don’t believe your friend (prior belief of 0), and how having such a fixed belief can be dangerous. But how does this relate to conspiracy theories? It turns out that what you believe initially, and how well that belief explains the data, can prevent you from seeing alternatives.
+
+Sometimes your current theories are insufficient, and so we have to come up with an alternative. Recall that we were comparing two theories: A) Gary is still average Gary and B) Gary is now the Bowling Boss. Now, let’s say Gary throws 10 strikes in a row. This result would be astronomically unlikely if Gary was still an average bowler. So, Gary’s Bowling Boss theory overwhelming explains the data compared to the average Gary theory. You consider yourself a reasonable person, and so it seems that you now have to discard the average Gary theory. However, you still don’t want to believe that Gary is now the Bey of Bowling. It’s time to consider a third hypothesis. Maybe Gary is…*gasp*… cheating!
+
+Now, we have a fascinating situation, because we have two theories that perfectly explain the data. The first theory is that Gary is the Sultan of Strikes, and only throws strikes. Since he has only thrown strikes so far, the theory explains the data perfectly. Our second theory now is that he is cheating. Of course, if he’s cheating, he can create any result he wants, so the cheating theory also perfectly explains the data. Since both theories explain the data equally well, they offset (cancel), and all you are left with is your prior belief. Thus, if you initially believed that Gary was cheating more than you believed he became the Ace of the Alley, then more strikes are not going to convince you otherwise. I’ll show this mathematically in Part 2.
+
+However, at this point you might find yourself thinking that, the more strikes he throws, the MORE convinced you would be that he’s cheating. It turns out Bayesian statistics can explain that too.
+
+## The data is a conspiracy
+
+Let’s change the number a bit, and say that Gary knows he’s not perfect, and so he only claims to be able to throw strikes 90% of the time. He then throws 9/10 strikes, which is perfectly in line with his theory. However, you still think he’s cheating. This situation gets us a really interesting result, since more data will actually convince you, not that he’s the Sultan of Strikes, but that he’s cheating!
+
+Let’s say Gary throws another 9 strikes. We now have 19 strikes and 1 miss, which is pretty overwhelming evidence in favor of his theory, when compared with the average Gary theory. However, we still have some leftover doubt. Since we were skeptical at the beginning, no amount of evidence will ever make us completely sure. On the other hand, the cheating theory perfectly explains the data. There’s no doubt there. It turns out that as you gather more data, the leftover doubt about Gary’s theory actually gets stronger relative to your sureness in the cheating theory. Think about this intuitively: if you suspected Gary of cheating, you’d probably be pretty convinced that he’s hoodwinking you after 10 strikes, and you’d be even more sure after 19. The evidence would not convince you that Gary is telling the truth, even though the data appears to support his claim. For a more rigorous treatment, see the example in part 2.
+
+How did this happen? It turns out that we are comparing apples to oranges. We have two hypotheses, one that is probability based (that Gary is now Lord of the Lane), and one always explains the data perfectly (Gary is cheating). We are then trying to use probability-based data to explain both theories, but that data only actually applies to one of them. If Gary thinks he is trying to convince you that he is no longer average, more strikes would make sense. The more strikes he throws, the more likely it is that he has vastly improved, and the less likely it is that he is still average. However, if in reality you think he’s cheating, he will be harming his case, because more strikes will not convince you that he’s not cheating. He needs to convince you that he’s being truthful through some other means.
+
+Beware of this situation! Especially when talking with someone who holds a belief that does not depend on evidence, be very careful of presenting additional evidence to try to refute it. Instead, try examining the actual belief that you are trying to change.
+
+As a real world example, let’s think about a conspiracy theory. If someone believes in a conspiracy theory, they often use it to construct elaborate schemes to explain the world. In other words, they use their theory to perfectly explain what happens, and they are perfectly convinced that it is true. This situation is a combination of both of our dangerous situations. Their prior belief in their theory is 1, and in other theories is 0, so they will ignore all evidence as irrelevant. And if you do somehow get them to consider evidence, and that evidence is be probability based, it will actually convince them that they are more correct! Thus, you aren’t going to convince this person with data. We’ve all been in this situation, where we try to present the facts, and they get ignored.
+
+So, how do you convince a conspiracist that they are wrong? You have to challenge beliefs, assumptions, and feelings that underly their theory. Asking questions like, “why do you believe that,” “what are the assumptions you are making,” and “what would convince you,” can be good starting points to get a person to think outside their box.
+
+## Conclusion
+
+In this post, we learned about prior beliefs, theories that do and do not depend on data, and when data becomes irrelevant to an argument. I hope this post will help you to recognize situations where you or others hold unshakeable beliefs. In my humble opinion, there are far too many of those beliefs in our world. Our beliefs about most things in our lives are pretty fixed: relationships, how the world works, morality, religion, and politics to name a few. Many of those beliefs may be based on false or misleading assumptions. I think the world would be a happier, more sane place if we relied a little less on our preconceptions, and a little more on our observations of reality. So, if you enjoyed this post, try examining some of your own beliefs, and ask yourself, am I really willing to change these based on data?
+
+
+Footnote: Bayesian Statistics the Fun Way.
