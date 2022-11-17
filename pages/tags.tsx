@@ -24,11 +24,23 @@ export const getStaticProps: GetStaticProps<{
 
 export default function Tags({ tags, posts }: InferGetStaticPropsType<typeof getStaticProps>) {
   const sortedTags = Object.keys(tags).sort((a, b) => tags[b] - tags[a])
-  console.log(posts)
+
+  function TagComponent(tag, tags) {
+    return (
+      <div key={tag} className="mt-2 mb-2 mr-5 flex flex-row">
+        <button className="mr-3 text-sm font-medium uppercase text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
+          {tag}
+        </button>
+        <p className="-ml-2 text-sm font-semibold uppercase text-gray-600 dark:text-gray-300">
+          {` (${tags[tag]})`}
+        </p>
+      </div>
+    )
+  }
 
   return (
     <div>
-      <MinimalHeader title="" />
+      <MinimalHeader title="Search" />
       <PageSEO title={`Tags - ${siteMetadata.author}`} description="Things I blog about" />
       <div className="flex flex-col items-start justify-start divide-y divide-gray-200 dark:divide-gray-700 md:mt-24 md:flex-row md:items-center md:justify-center md:space-x-6 md:divide-y-0">
         <div className="space-x-2 pt-6 pb-8 md:space-y-5">
@@ -37,19 +49,8 @@ export default function Tags({ tags, posts }: InferGetStaticPropsType<typeof get
           </h1>
         </div>
         <div className="flex max-w-lg flex-wrap">
-          {Object.keys(tags).length === 0 && 'No tags found.'}
           {sortedTags.map((t) => {
-            return (
-              <div key={t} className="mt-2 mb-2 mr-5">
-                <Tag text={t} />
-                <Link
-                  href={`/tags/${kebabCase(t)}`}
-                  className="-ml-2 text-sm font-semibold uppercase text-gray-600 dark:text-gray-300"
-                >
-                  {` (${tags[t]})`}
-                </Link>
-              </div>
-            )
+            return TagComponent(t, tags)
           })}
         </div>
       </div>
