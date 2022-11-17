@@ -1,15 +1,12 @@
 import ArticleGallery from '@/components/ArticleGallery'
 import Footer from '@/components/Footer'
 import { MinimalHeader } from '@/components/Header'
-import Link from '@/components/Link'
-import SectionContainer from '@/components/SectionContainer'
 import { PageSEO } from '@/components/SEO'
-import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import { getAllTags } from '@/lib/tags'
-import { getAllPosts } from '@/lib/utils/contentProvider'
-import kebabCase from '@/lib/utils/kebabCase'
+import { filterByTag, getAllPosts } from '@/lib/utils/contentProvider'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
+import { useEffect, useState } from 'react'
 import { PostFrontMatter } from 'types/PostFrontMatter'
 
 export const getStaticProps: GetStaticProps<{
@@ -24,11 +21,20 @@ export const getStaticProps: GetStaticProps<{
 
 export default function Tags({ tags, posts }: InferGetStaticPropsType<typeof getStaticProps>) {
   const sortedTags = Object.keys(tags).sort((a, b) => tags[b] - tags[a])
+  const [selectedTag, setSelectedTag] = useState('')
+  const [articles, setArticles] = useState([])
+
+  useEffect(() => {
+    setArticles(posts.filter((post) => post.tags.includes(selectedTag)))
+  }, [selectedTag, posts])
 
   function TagComponent(tag, tags) {
     return (
       <div key={tag} className="mt-2 mb-2 mr-5 flex flex-row">
-        <button className="mr-3 text-sm font-medium uppercase text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
+        <button
+          className="mr-3 text-sm font-medium uppercase text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+          onClick={() => setSelectedTag(tag)}
+        >
           {tag}
         </button>
         <p className="-ml-2 text-sm font-semibold uppercase text-gray-600 dark:text-gray-300">
@@ -54,7 +60,7 @@ export default function Tags({ tags, posts }: InferGetStaticPropsType<typeof get
           })}
         </div>
       </div>
-      <ArticleGallery articles={posts} />
+      <ArticleGallery articles={articles} />
       <Footer />
     </div>
   )
