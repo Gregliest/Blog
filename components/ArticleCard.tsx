@@ -19,7 +19,7 @@ export default function ArticleCard(props: ArticleCardProps) {
 
   // Glowing gradient inspired by https://braydoncoyer.dev/blog/tailwind-gradients-how-to-make-a-glowing-gradient-background
   return (
-    <div className="group relative m-3 max-w-7xl">
+    <div className="group relative w-96 shrink-0">
       <div className="absolute -inset-1 rounded-lg bg-gradient-to-r from-slate-500 to-zinc-700 opacity-25 blur transition duration-700 group-hover:opacity-100 group-hover:duration-200"></div>
       <div className="items-top relative flex h-full w-full justify-start space-x-6 rounded-lg bg-white leading-none ring-1 ring-gray-900/5">
         <Link href={link} aria-label={`Link to ${link}`}>

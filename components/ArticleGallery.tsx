@@ -1,4 +1,3 @@
-import { Box } from '@mui/material'
 import ArticleCard from './ArticleCard'
 
 export default function ArticleGallery(props) {
@@ -7,17 +6,8 @@ export default function ArticleGallery(props) {
   })
 
   return (
-    <Box
-      sx={{
-        display: 'grid',
-        gridTemplateColumns: {
-          xs: 'repeat(1, 1fr)',
-          sm: 'repeat(2, 1fr)',
-          lg: 'repeat(3, 1fr)',
-        },
-      }}
-    >
-      {list}
-    </Box>
+    <div className="flex justify-center">
+      <div className="grid w-fit grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">{list}</div>
+    </div>
   )
 }

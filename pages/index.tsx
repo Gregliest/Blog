@@ -39,15 +39,13 @@ export default function Blog({ allPosts }: InferGetStaticPropsType<typeof getSta
         <AnimatedTextBox title="A Blog About:" array={blogAbout} />
         <div className="h-1/4" />
 
-        <SectionContainer>
-          <PageSEO
-            title={`Projects - ${siteMetadata.author}`}
-            description={siteMetadata.description}
-          />
+        <PageSEO
+          title={`Projects - ${siteMetadata.author}`}
+          description={siteMetadata.description}
+        />
 
-          <ArticleGallery articles={allPosts} />
-          <Footer />
-        </SectionContainer>
+        <ArticleGallery articles={allPosts} />
+        <Footer />
       </div>
     </div>
   )
