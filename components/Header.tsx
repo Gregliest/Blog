@@ -14,7 +14,7 @@ export const MinimalHeader = (props: HeaderProps) => {
   const title = props.title ? props.title : siteMetadata.headerTitle
 
   return (
-    <header className="flex justify-between p-3">
+    <header className="flex justify-between bg-white p-3">
       <div>
         <Link href="/" aria-label={title}>
           <div className="flex items-center justify-between">

@@ -1,17 +1,12 @@
 import * as React from 'react'
 import Typography from '@mui/material/Typography'
-import CardActionArea from '@mui/material/CardActionArea'
-import CardContent from '@mui/material/CardContent'
-import CardMedia from '@mui/material/CardMedia'
 import formatDate from '@/lib/utils/formatDate'
-import { SxProps, Theme } from '@mui/material'
 import { PostFrontMatter } from 'types/PostFrontMatter'
 import Link from './Link'
 import Image from './Image'
 
 interface ArticleCardProps {
   post: PostFrontMatter
-  sx?: SxProps<Theme>
 }
 
 export default function ArticleCard(props: ArticleCardProps) {

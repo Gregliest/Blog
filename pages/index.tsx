@@ -32,7 +32,6 @@ export default function Blog({ allPosts }: InferGetStaticPropsType<typeof getSta
   return (
     <div>
       <div className="h-screen w-full bg-bowser bg-cover bg-fixed bg-center">
-        {/* Background gradients for the header */}
         <Header />
 
         <div className="h-1/4" />

@@ -26,16 +26,11 @@ export const getStaticProps = async () => {
 
 export default function Photography({ photographyPosts }) {
   return (
-    <SectionContainer>
+    <div>
       <MinimalHeader title="Photography" />
-      <div className="divide-y">
-        <PageSEO
-          title={`Projects - ${siteMetadata.author}`}
-          description={siteMetadata.description}
-        />
-        <Gallery posts={photographyPosts} />
-      </div>
+      <PageSEO title={`Projects - ${siteMetadata.author}`} description={siteMetadata.description} />
+      <Gallery posts={photographyPosts} />
       <Footer />
-    </SectionContainer>
+    </div>
   )
 }

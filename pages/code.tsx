@@ -19,11 +19,12 @@ export const getStaticProps = async () => {
 }
 export default function Code({ codePosts }) {
   return (
-    <SectionContainer>
+    <div className="h-screen w-full bg-bowser bg-cover bg-fixed bg-center">
       <MinimalHeader title="Code" />
+      <div className="mb-6 h-4 bg-gradient-to-b from-white to-transparent" />
       <PageSEO title={`Projects - ${siteMetadata.author}`} description={siteMetadata.description} />
       <ArticleGallery articles={codePosts} />
       <Footer />
-    </SectionContainer>
+    </div>
   )
 }
