@@ -3,7 +3,6 @@ import { PageSEO } from '@/components/SEO'
 import { getPhotographyPosts } from '@/lib/utils/contentProvider'
 import Gallery from '@/components/Gallery'
 import Footer from '@/components/Footer'
-import SectionContainer from '@/components/SectionContainer'
 import { MinimalHeader } from '@/components/Header'
 const sizeOf = require('image-size')
 
