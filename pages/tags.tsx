@@ -38,11 +38,14 @@ export default function Tags({ tags, posts }: InferGetStaticPropsType<typeof get
   }
 
   function TagComponent(tag, tags) {
+    const isSelected = tag === selectedTag
     return (
       <div key={tag} className="mt-2 mb-2 mr-5 flex flex-row">
         <button
-          className="mr-3 text-sm font-medium uppercase text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-          onClick={() => setSelectedTag(tag)}
+          className={`mr-3 text-sm ${
+            isSelected ? 'font-extrabold' : 'font-medium'
+          } uppercase text-primary-500 hover:text-primary-600 dark:hover:text-primary-400`}
+          onClick={() => setSelectedTag(isSelected ? '' : tag)}
         >
           {tag}
         </button>
