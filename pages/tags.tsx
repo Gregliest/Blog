@@ -25,7 +25,7 @@ export default function Tags({ tags, posts }: InferGetStaticPropsType<typeof get
   const sortedTags = Object.keys(tags).sort((a, b) => tags[b] - tags[a])
   const [selectedTag, setSelectedTag] = useState('')
   const [searchText, setSearchText] = useState('')
-  const [articles, setArticles] = useState([])
+  const [articles, setArticles] = useState(posts)
 
   useEffect(() => {
     let selectedPosts = selectedTag ? filterByTag(selectedTag, posts) : posts
@@ -55,12 +55,7 @@ export default function Tags({ tags, posts }: InferGetStaticPropsType<typeof get
 
   function SearchComponent() {
     return (
-      <div className="flex flex-col items-start justify-start divide-y divide-gray-200 dark:divide-gray-700 md:mt-24 md:flex-row md:items-center md:justify-center md:space-x-6 md:divide-y-0">
-        <div className="space-x-2 pt-6 pb-8 md:space-y-5">
-          <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:border-r-2 md:px-6 md:text-6xl md:leading-14">
-            Search
-          </h1>
-        </div>
+      <div className="flex flex-col items-start items-center justify-start justify-center divide-y divide-gray-200 dark:divide-gray-700 md:mt-4 md:divide-y-0">
         <label className="relative block">
           <span className="sr-only">Search</span>
           <span className="absolute inset-y-0 left-0 flex items-center pl-2">
@@ -68,7 +63,7 @@ export default function Tags({ tags, posts }: InferGetStaticPropsType<typeof get
           </span>
           <input
             className="block w-full rounded-md border border-slate-300 bg-white py-2 pl-9 pr-3 shadow-sm placeholder:italic placeholder:text-slate-400 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 sm:text-sm"
-            placeholder="Search for anything..."
+            placeholder="Search by title..."
             name="search"
             onChange={handleSearch}
           />
@@ -79,13 +74,13 @@ export default function Tags({ tags, posts }: InferGetStaticPropsType<typeof get
 
   function TagsComponent() {
     return (
-      <div className="flex flex-col items-start justify-start divide-y divide-gray-200 dark:divide-gray-700 md:mt-24 md:flex-row md:items-center md:justify-center md:space-x-6 md:divide-y-0">
+      <div className="flex flex-col items-center justify-center divide-y divide-gray-200 dark:divide-gray-700 md:mt-4 md:flex-row md:space-x-6 md:divide-y-0">
         <div className="space-x-2 pt-6 pb-8 md:space-y-5">
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:border-r-2 md:px-6 md:text-6xl md:leading-14">
             Tags
           </h1>
         </div>
-        <div className="flex max-w-lg flex-wrap">
+        <div className="mx-6 mb-6 flex max-w-lg flex-wrap md:mb-0">
           {sortedTags.map((t) => {
             return TagComponent(t, tags)
           })}
