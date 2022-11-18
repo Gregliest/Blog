@@ -60,6 +60,13 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
               <div>
                 <PageTitle>{title}</PageTitle>
               </div>
+              <p
+                className={`${
+                  frontMatter.draft ? 'flex' : 'hidden'
+                } text-extrabold justify-center text-5xl text-red-600`}
+              >
+                *DRAFT*
+              </p>
             </div>
           </header>
           <div
