@@ -1,11 +1,12 @@
 import siteMetadata from '@/data/siteMetadata'
 import { PageSEO } from '@/components/SEO'
 
-import { filterByTag, getAllDisplayPosts } from '@/lib/utils/contentProvider'
+import { getAllDisplayPosts } from '@/lib/utils/contentProvider'
 import ArticleGallery from '@/components/ArticleGallery'
 import SectionContainer from '@/components/SectionContainer'
 import { MinimalHeader } from '@/components/Header'
 import Footer from '@/components/Footer'
+import { filterByTag } from '@/lib/utils/posts'
 
 export const getStaticProps = async () => {
   const allPosts = await getAllDisplayPosts()

@@ -5,7 +5,6 @@ import path from 'path'
 import readingTime from 'reading-time'
 import getAllFilesRecursively from './utils/files'
 import { PostFrontMatter } from 'types/PostFrontMatter'
-import { AuthorFrontMatter } from 'types/AuthorFrontMatter'
 import { Toc } from 'types/Toc'
 // Remark packages
 import remarkGfm from 'remark-gfm'

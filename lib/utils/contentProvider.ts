@@ -21,7 +21,6 @@ export async function getMediumPosts() {
 
 export async function getPhotographyPosts() {
   const posts = await getAllPosts()
-  console.log(posts)
   return filterByTag('photography', posts)
 }
 export async function getAllPosts() {

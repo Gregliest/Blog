@@ -1,5 +1,4 @@
 import fs from 'fs'
-import PageTitle from '@/components/PageTitle'
 import generateRss from '@/lib/generate-rss'
 import { MDXLayoutRenderer } from '@/components/MDXComponents'
 import { formatSlug, getAllFilesFrontMatter, getFileBySlug, getFiles } from '@/lib/mdx'
