@@ -15,6 +15,10 @@ export function filterByTag(tag: string, posts: PostFrontMatter[]) {
   return posts.filter((post) => post.tags.includes(tag.toLowerCase()))
 }
 
+export function filterByText(text: string, posts: PostFrontMatter[]) {
+  return posts.filter((post) => post.title.toLowerCase().includes(text.toLowerCase()))
+}
+
 export function removeArchived(posts: PostFrontMatter[]) {
   return posts.filter((post) => !post.archived)
 }
