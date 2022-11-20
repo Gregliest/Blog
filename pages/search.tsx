@@ -10,6 +10,7 @@ import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { useEffect, useState } from 'react'
 import { PostFrontMatter } from 'types/PostFrontMatter'
 import SearchIcon from '@mui/icons-material/Search'
+import { useRouter } from 'next/router'
 
 export const getStaticProps: GetStaticProps<{
   tags: Record<string, number>
@@ -23,12 +24,20 @@ export const getStaticProps: GetStaticProps<{
 
 export default function Tags({ tags, posts }: InferGetStaticPropsType<typeof getStaticProps>) {
   const sortedTags = Object.keys(tags).sort((a, b) => tags[b] - tags[a])
+
+  const router = useRouter()
   const [selectedTag, setSelectedTag] = useState('')
   const [searchText, setSearchText] = useState('')
   const [articles, setArticles] = useState(posts)
 
   useEffect(() => {
+    const initialTag = router.query.tag ? String(router.query.tag) : ''
+    setSelectedTag(initialTag)
+  }, [router.query.tag])
+
+  useEffect(() => {
     let selectedPosts = selectedTag ? filterByTag(selectedTag, posts) : posts
+    console.log(selectedTag)
     selectedPosts = filterByText(searchText, selectedPosts)
     setArticles(selectedPosts)
   }, [selectedTag, searchText, posts])

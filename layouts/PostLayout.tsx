@@ -36,7 +36,27 @@ interface Props {
 export default function PostLayout({ frontMatter, authorDetails, next, prev, children }: Props) {
   const { slug, fileName, date, title, tags } = frontMatter
   const router = useRouter()
-  console.log(router)
+
+  function tagView(tags) {
+    return (
+      tags && (
+        <div className="py-4 xl:py-8">
+          <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">Tags</h2>
+          <div className="flex flex-wrap">
+            {tags.map((tag) => (
+              <Link
+                href={`/search?tag=${tag}`}
+                key={tag}
+                className="mr-3 mt-2 text-sm font-medium uppercase text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+              >
+                {tag.split(' ').join('-')}
+              </Link>
+            ))}
+          </div>
+        </div>
+      )
+    )
+  }
 
   return (
     <SectionContainer>
@@ -124,18 +144,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
             </div>
             <footer>
               <div className="divide-gray-200 text-sm font-medium leading-5 dark:divide-gray-700 xl:col-start-1 xl:row-start-2 xl:divide-y">
-                {tags && (
-                  <div className="py-4 xl:py-8">
-                    <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
-                      Tags
-                    </h2>
-                    <div className="flex flex-wrap">
-                      {/* {tags.map((tag) => (
-                        <Tag key={tag} text={tag} />
-                      ))} */}
-                    </div>
-                  </div>
-                )}
+                {tagView(tags)}
                 {(next || prev) && (
                   <div className="flex justify-between py-4 xl:block xl:space-y-8 xl:py-8">
                     {prev && (
