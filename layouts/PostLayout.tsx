@@ -10,6 +10,7 @@ import ScrollTopAndComment from '@/components/ScrollTopAndComment'
 import { ReactNode } from 'react'
 import { PostFrontMatter } from 'types/PostFrontMatter'
 import { AuthorFrontMatter } from 'types/AuthorFrontMatter'
+import { useRouter } from 'next/router'
 
 const editUrl = (fileName) => `${siteMetadata.siteRepo}/blob/master/data/blog/${fileName}`
 const discussUrl = (slug) =>
@@ -34,6 +35,8 @@ interface Props {
 
 export default function PostLayout({ frontMatter, authorDetails, next, prev, children }: Props) {
   const { slug, fileName, date, title, tags } = frontMatter
+  const router = useRouter()
+  console.log(router)
 
   return (
     <SectionContainer>
@@ -91,14 +94,14 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                       <dl className="whitespace-nowrap text-sm font-medium leading-5">
                         <dt className="sr-only">Name</dt>
                         <dd className="text-gray-900 dark:text-gray-100">{author.name}</dd>
-                        <dt className="sr-only">Twitter</dt>
+                        <dt className="sr-only">Instagram</dt>
                         <dd>
-                          {author.twitter && (
+                          {author.instagram && (
                             <Link
-                              href={author.twitter}
+                              href={author.instagram}
                               className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
                             >
-                              {author.twitter.replace('https://twitter.com/', '@')}
+                              {author.instagram.replace('https://www.instagram.com/', '@')}
                             </Link>
                           )}
                         </dd>
