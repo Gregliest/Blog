@@ -11,6 +11,7 @@ import { ReactNode } from 'react'
 import { PostFrontMatter } from 'types/PostFrontMatter'
 import { AuthorFrontMatter } from 'types/AuthorFrontMatter'
 import { useRouter } from 'next/router'
+import { getSection } from '@/lib/utils/posts'
 
 const editUrl = (fileName) => `${siteMetadata.siteRepo}/blob/master/data/blog/${fileName}`
 const discussUrl = (slug) =>
@@ -122,9 +123,27 @@ function nextPreviousView(next, prev) {
   )
 }
 
+function backLink(section) {
+  const href = section ? '/' + section : '/'
+  const title = section ? section : 'Blog'
+  const title1 = title[0].toUpperCase() + title.slice(1)
+
+  return (
+    <div className="pt-4 xl:pt-8">
+      <Link
+        href={href}
+        className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+      >
+        &larr; {' Back to ' + title1}
+      </Link>
+    </div>
+  )
+}
+
 export default function PostLayout({ frontMatter, authorDetails, next, prev, children }: Props) {
   const { slug, fileName, date, title, tags } = frontMatter
-  const router = useRouter()
+  const section = getSection(frontMatter)
+
   return (
     <SectionContainer>
       <BlogSEO
@@ -180,14 +199,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                 {tagView(tags)}
                 {nextPreviousView(next, prev)}
               </div>
-              <div className="pt-4 xl:pt-8">
-                <Link
-                  href="/blog"
-                  className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-                >
-                  &larr; Back to the blog
-                </Link>
-              </div>
+              {backLink(section)}
             </footer>
           </div>
         </div>
