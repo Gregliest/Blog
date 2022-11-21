@@ -1,7 +1,7 @@
 import fs from 'fs'
 import generateRss from '@/lib/generate-rss'
 import { MDXLayoutRenderer } from '@/components/MDXComponents'
-import { formatSlug, getAllFilesFrontMatter, getFileBySlug, getFiles } from '@/lib/mdx'
+import { formatSlug, getAllFilesFrontMatter, getDisplayPost, getFiles } from '@/lib/mdx'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { AuthorFrontMatter } from 'types/AuthorFrontMatter'
 import { PostFrontMatter } from 'types/PostFrontMatter'
@@ -33,11 +33,11 @@ export const getStaticProps: GetStaticProps<{
   const postIndex = allPosts.findIndex((post) => formatSlug(post.slug) === slug)
   const prev: { slug: string; title: string } = allPosts[postIndex + 1] || null
   const next: { slug: string; title: string } = allPosts[postIndex - 1] || null
-  const post = await getFileBySlug<PostFrontMatter>('blog', slug)
+  const post = await getDisplayPost('blog', slug)
   // @ts-ignore
   const authorList = post.frontMatter.authors || ['default']
   const authorPromise = authorList.map(async (author) => {
-    const authorResults = await getFileBySlug<AuthorFrontMatter>('authors', [author])
+    const authorResults = await getDisplayPost('authors', [author])
     return authorResults.frontMatter
   })
   const authorDetails = await Promise.all(authorPromise)

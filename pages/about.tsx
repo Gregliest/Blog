@@ -2,7 +2,7 @@ import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import { MDXLayoutRenderer } from '@/components/MDXComponents'
 import SectionContainer from '@/components/SectionContainer'
-import { getFileBySlug } from '@/lib/mdx'
+import { getDisplayPost } from '@/lib/mdx'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { AuthorFrontMatter } from 'types/AuthorFrontMatter'
 
@@ -12,7 +12,7 @@ const DEFAULT_LAYOUT = 'AuthorLayout'
 export const getStaticProps: GetStaticProps<{
   authorDetails: { mdxSource: string; frontMatter: AuthorFrontMatter }
 }> = async () => {
-  const authorDetails = await getFileBySlug<AuthorFrontMatter>('authors', ['default'])
+  const authorDetails = await getDisplayPost('authors', ['default'])
   const { mdxSource, frontMatter } = authorDetails
   return { props: { authorDetails: { mdxSource, frontMatter } } }
 }

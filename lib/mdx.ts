@@ -41,12 +41,45 @@ export function dateSortDesc(a: string, b: string) {
   return 0
 }
 
-export async function getFileBySlug<T>(type: 'authors' | 'blog', slug: string | string[]) {
-  const mdxPath = path.join(root, 'data', type, `${slug}.mdx`)
-  const mdPath = path.join(root, 'data', type, `${slug}.md`)
-  const source = fs.existsSync(mdxPath)
-    ? fs.readFileSync(mdxPath, 'utf8')
-    : fs.readFileSync(mdPath, 'utf8')
+function getFrontMatter(file: string, folder: string) {
+  const prefixPaths = path.join(root, 'data', folder)
+  // Replace is needed to work on Windows
+  const fileName = file.slice(prefixPaths.length + 1).replace(/\\/g, '/')
+  // Remove Unexpected File
+  if (path.extname(fileName) !== '.md' && path.extname(fileName) !== '.mdx') {
+    return
+  }
+
+  const source = fs.readFileSync(file, 'utf8')
+  const matterFile = matter(source)
+  const frontmatter = matterFile.data as PostFrontMatter
+  if (frontmatter.tags) {
+    const tags = frontmatter.tags.map((tag) => tag.toLowerCase())
+    frontmatter.tags = tags
+  }
+
+  return {
+    ...frontmatter,
+    fileName,
+    slug: formatSlug(fileName),
+    date: frontmatter.date ? new Date(frontmatter.date).toISOString() : null,
+  }
+}
+
+export type DisplayPost = {
+  mdxSource: string
+  toc: Toc
+  frontMatter: PostFrontMatter
+}
+
+export async function getDisplayPost(
+  folder: 'authors' | 'blog',
+  slug: string | string[]
+): Promise<DisplayPost> {
+  const mdxPath = path.join(root, 'data', folder, `${slug}.mdx`)
+  const mdPath = path.join(root, 'data', folder, `${slug}.md`)
+  const file = fs.existsSync(mdxPath) ? mdxPath : mdPath
+  const source = fs.readFileSync(file, 'utf-8')
 
   // https://github.com/kentcdodds/mdx-bundler#nextjs-esbuild-enoent
   if (process.platform === 'win32') {
@@ -57,11 +90,11 @@ export async function getFileBySlug<T>(type: 'authors' | 'blog', slug: string | 
 
   const toc: Toc = []
 
-  const { code, frontmatter } = await bundleMDX({
+  const { code } = await bundleMDX({
     source,
     // mdx imports can be automatically source from the components directory
     cwd: path.join(root, 'components'),
-    mdxOptions(options, frontmatter) {
+    mdxOptions(options) {
       // this is the recommended way to add custom remark/rehype plugins:
       // The syntax might look weird, but it protects you in case we add/remove
       // plugins in the future.
@@ -95,46 +128,23 @@ export async function getFileBySlug<T>(type: 'authors' | 'blog', slug: string | 
     },
   })
 
+  const frontMatter = getFrontMatter(file, folder)
+  Object.assign(frontMatter, { readingTime: readingTime(code) })
+
   return {
     mdxSource: code,
     toc,
-    frontMatter: {
-      readingTime: readingTime(code),
-      slug: slug || null,
-      fileName: fs.existsSync(mdxPath) ? `${slug}.mdx` : `${slug}.md`,
-      ...frontmatter,
-      date: frontmatter.date ? new Date(frontmatter.date).toISOString() : null,
-    },
+    frontMatter,
   }
 }
 
 export async function getAllFilesFrontMatter(folder: 'blog') {
   const prefixPaths = path.join(root, 'data', folder)
-
   const files = getAllFilesRecursively(prefixPaths)
 
-  const allFrontMatter: PostFrontMatter[] = []
-
-  files.forEach((file: string) => {
-    // Replace is needed to work on Windows
-    const fileName = file.slice(prefixPaths.length + 1).replace(/\\/g, '/')
-    // Remove Unexpected File
-    if (path.extname(fileName) !== '.md' && path.extname(fileName) !== '.mdx') {
-      return
-    }
-    const source = fs.readFileSync(file, 'utf8')
-    const matterFile = matter(source)
-    const frontmatter = matterFile.data as PostFrontMatter
-    if (!('draft' in frontmatter && frontmatter.draft)) {
-      const tags = frontmatter.tags.map((tag) => tag.toLowerCase())
-      frontmatter.tags = tags
-      allFrontMatter.push({
-        ...frontmatter,
-        slug: formatSlug(fileName),
-        date: frontmatter.date ? new Date(frontmatter.date).toISOString() : null,
-      })
-    }
-  })
+  const allFrontMatter: PostFrontMatter[] = files.map((file: string) =>
+    getFrontMatter(file, folder)
+  )
 
   return allFrontMatter.sort((a, b) => dateSortDesc(a.date, b.date))
 }
