@@ -25,26 +25,8 @@ export function removeArchived(posts: PostFrontMatter[]) {
 }
 
 const SECTION_HIERARCHY = ['code', 'whitewater', 'photography']
-export async function nextPrev(post: PostFrontMatter) {
-  // Series first
-
-  // Then tag hierarchy, if the article is part of section, return a prev/next
-  const section = getSection(post)
-  if (!section) {
-    return [null, null]
-  }
-
-  const posts = getPostsForTag(section)
-  //TODO
-  const postIndex = 1
-
-  const prev: { slug: string; title: string } = posts[postIndex + 1] || null
-  const next: { slug: string; title: string } = posts[postIndex - 1] || null
-
-  return [prev, next]
-}
 
 // The order in which tags take precedence for section assignment
-function getSection(post: PostFrontMatter) {
+export function getSection(post: PostFrontMatter) {
   return SECTION_HIERARCHY.find((tag) => post.tags.includes(tag))
 }

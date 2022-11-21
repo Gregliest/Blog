@@ -6,6 +6,7 @@ import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { AuthorFrontMatter } from 'types/AuthorFrontMatter'
 import { PostFrontMatter } from 'types/PostFrontMatter'
 import { Toc } from 'types/Toc'
+import { prevNext } from '@/lib/utils/contentProvider'
 
 const DEFAULT_LAYOUT = 'PostLayout'
 
@@ -29,11 +30,9 @@ export const getStaticProps: GetStaticProps<{
   next?: { slug: string; title: string }
 }> = async ({ params }) => {
   const slug = (params.slug as string[]).join('/')
-  const allPosts = await getAllFilesFrontMatter('blog')
-  const postIndex = allPosts.findIndex((post) => formatSlug(post.slug) === slug)
-  const prev: { slug: string; title: string } = allPosts[postIndex + 1] || null
-  const next: { slug: string; title: string } = allPosts[postIndex - 1] || null
   const post = await getDisplayPost('blog', slug)
+  const [prev, next] = await prevNext(post.frontMatter)
+
   // @ts-ignore
   const authorList = post.frontMatter.authors || ['default']
   const authorPromise = authorList.map(async (author) => {
@@ -43,6 +42,7 @@ export const getStaticProps: GetStaticProps<{
   const authorDetails = await Promise.all(authorPromise)
 
   // rss
+  const allPosts = await getAllFilesFrontMatter('blog')
   if (allPosts.length > 0) {
     const rss = generateRss(allPosts)
     fs.writeFileSync('./public/feed.xml', rss)
