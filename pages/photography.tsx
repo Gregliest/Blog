@@ -1,13 +1,13 @@
 import siteMetadata from '@/data/siteMetadata'
 import { PageSEO } from '@/components/SEO'
-import { getPhotographyPosts } from '@/lib/utils/contentProvider'
+import { getPostsForTag } from '@/lib/utils/contentProvider'
 import Gallery from '@/components/Gallery'
 import Footer from '@/components/Footer'
 import { MinimalHeader } from '@/components/Header'
 const sizeOf = require('image-size')
 
 export const getStaticProps = async () => {
-  const photographyPosts = await getPhotographyPosts()
+  const photographyPosts = await getPostsForTag('photography')
   const posts = photographyPosts.map((post) => {
     const dimensions = sizeOf(process.cwd() + '/public' + post.image)
     post['originalWidth'] = dimensions.width

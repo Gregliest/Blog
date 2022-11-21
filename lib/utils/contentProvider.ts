@@ -19,10 +19,11 @@ export async function getMediumPosts() {
   return mediumPosts
 }
 
-export async function getPhotographyPosts() {
+export async function getPostsForTag(tag) {
   const posts = await getAllPosts()
-  return filterByTag('photography', posts)
+  return filterByTag(tag, posts)
 }
+
 export async function getAllPosts() {
   const mediumPosts = await getMediumPosts()
   const localPosts = await getLocalPosts()
