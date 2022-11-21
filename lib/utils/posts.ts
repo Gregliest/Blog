@@ -1,5 +1,4 @@
 import { PostFrontMatter } from 'types/PostFrontMatter'
-import { getPostsForTag } from './contentProvider'
 
 export function dateSortDesc(a: string, b: string) {
   if (a > b) return -1
