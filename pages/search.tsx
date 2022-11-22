@@ -29,6 +29,7 @@ export default function Tags({ tags, posts }: InferGetStaticPropsType<typeof get
   const [selectedTag, setSelectedTag] = useState('')
   const [searchText, setSearchText] = useState('')
   const [articles, setArticles] = useState(posts)
+  const [showArchived, setShowArchived] = useState(false)
 
   useEffect(() => {
     const initialTag = router.query.tag ? String(router.query.tag) : ''
@@ -37,7 +38,6 @@ export default function Tags({ tags, posts }: InferGetStaticPropsType<typeof get
 
   useEffect(() => {
     let selectedPosts = selectedTag ? filterByTag(selectedTag, posts) : posts
-    console.log(selectedTag)
     selectedPosts = filterByText(searchText, selectedPosts)
     setArticles(selectedPosts)
   }, [selectedTag, searchText, posts])
@@ -100,6 +100,28 @@ export default function Tags({ tags, posts }: InferGetStaticPropsType<typeof get
       </div>
     )
   }
+
+  function ArchiveComponent() {
+    const title = showArchived ? 'Hide Archived ' : 'Show Archived '
+    return (
+      <div className="flex flex-col">
+        <div className="my-6 flex justify-center">
+          <button
+            className="font-sm text-primary-500 hover:text-primary-600"
+            aria-label="archived"
+            onClick={() => setShowArchived(!showArchived)}
+          >
+            {title}&rarr;
+          </button>
+        </div>
+
+        {showArchived && (
+          <ArticleGallery articles={articles.filter((article) => article.archived)} />
+        )}
+      </div>
+    )
+  }
+
   return (
     <div>
       <MinimalHeader title="Search" />
@@ -107,7 +129,8 @@ export default function Tags({ tags, posts }: InferGetStaticPropsType<typeof get
       {/* Necessary to put search in a div so that it doesn't lose focus when rerendering */}
       <div>{SearchComponent()}</div>
       <TagsComponent />
-      <ArticleGallery articles={articles} />
+      <ArticleGallery articles={articles.filter((article) => !article.archived)} />
+      <ArchiveComponent />
       <Footer />
     </div>
   )
