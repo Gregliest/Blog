@@ -33,13 +33,13 @@ interface Props {
   children: ReactNode
 }
 
-function authorView(authorDetails) {
+function AuthorView(props) {
   return (
     <dl className="pt-6 pb-10 xl:border-b xl:border-gray-200 xl:pt-11 xl:dark:border-gray-700">
       <dt className="sr-only">Authors</dt>
       <dd>
         <ul className="flex justify-center space-x-8 sm:space-x-12 xl:block xl:space-x-0 xl:space-y-8">
-          {authorDetails.map((author) => (
+          {props.authorDetails.map((author) => (
             <li className="flex items-center space-x-2" key={author.name}>
               {author.avatar && (
                 <Image
@@ -72,13 +72,13 @@ function authorView(authorDetails) {
     </dl>
   )
 }
-function tagView(tags) {
+function TagView(props) {
   return (
-    tags && (
+    props.tags && (
       <div className="py-4 xl:py-8">
         <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">Tags</h2>
         <div className="flex flex-wrap">
-          {tags.map((tag) => (
+          {props.tags.map((tag) => (
             <Link
               href={`/search?tag=${tag}`}
               key={tag}
@@ -93,7 +93,8 @@ function tagView(tags) {
   )
 }
 
-function nextPreviousView(next, prev) {
+function NextPreviousView(props) {
+  const [next, prev] = [props.next, props.prev]
   return (
     (next || prev) && (
       <div className="flex justify-between py-4 xl:block xl:space-y-8 xl:py-8">
@@ -122,9 +123,9 @@ function nextPreviousView(next, prev) {
   )
 }
 
-function backLink(section) {
-  const href = section ? '/' + section : '/'
-  const title = section ? section : 'Blog'
+function BackLink(props) {
+  const href = props.section ? '/' + props.section : '/'
+  const title = props.section ? props.section : 'Blog'
   const title1 = title[0].toUpperCase() + title.slice(1)
 
   return (
@@ -139,10 +140,10 @@ function backLink(section) {
   )
 }
 
-function printsView(section) {
+function PrintsView(props) {
   return (
-    section &&
-    section === 'photography' && (
+    props.section &&
+    props.section === 'photography' && (
       <div className="py-4 xl:pt-8">
         <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
           FOR PRINTS, INQUIRE AT:
@@ -201,7 +202,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
             className="divide-y divide-gray-200 pb-8 dark:divide-gray-700 xl:grid xl:grid-cols-4 xl:gap-x-6 xl:divide-y-0"
             style={{ gridTemplateRows: 'auto 1fr' }}
           >
-            {authorView(authorDetails)}
+            <AuthorView authorDetails={authorDetails} />
             <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">
               <div className="prose max-w-none pt-10 pb-8 dark:prose-dark">{children}</div>
               <div className="pt-6 pb-6 text-sm text-gray-700 dark:text-gray-300">
@@ -217,11 +218,11 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
               <div className="divide-gray-200 text-sm font-medium leading-5 dark:divide-gray-700 xl:col-start-1 xl:row-start-2 xl:divide-y"></div>
               <div className="divide-gray-200 text-sm font-medium leading-5 dark:divide-gray-700 xl:col-start-1 xl:row-start-2 xl:divide-y">
                 <BlogNewsletterForm title="NEWSLETTER" />
-                {printsView(section)}
-                {tagView(tags)}
-                {nextPreviousView(next, prev)}
+                <PrintsView section={section} />
+                <TagView tags={tags} />
+                <NextPreviousView next={next} prev={prev} />
               </div>
-              {backLink(section)}
+              <BackLink section={section} />
             </footer>
           </div>
         </div>
