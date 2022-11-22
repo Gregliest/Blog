@@ -28,7 +28,7 @@ export default function Blog({ allPosts }: InferGetStaticPropsType<typeof getSta
   if (typeof window !== 'undefined') {
     window.addEventListener('resize', resizeEvent)
   }
-  const blogAbout = ['Software', 'Whitewater', 'Photography', 'Rescue', 'and More!']
+  const blogAbout = ['SOFTWARE', 'WHITEWATER', 'PHOTOGRAPHY']
   return (
     <div>
       <div className="fixed -z-10 h-screen w-screen">
@@ -45,9 +45,9 @@ export default function Blog({ allPosts }: InferGetStaticPropsType<typeof getSta
       <div className="h-screen w-screen">
         <Header />
 
-        <div className="h-1/4" />
-        <AnimatedTextBox title="A Blog About:" array={blogAbout} />
-        <div className="h-1/4" />
+        <div className="h-1/5" />
+        <AnimatedTextBox array={blogAbout} />
+        <div className="h-2/5" />
 
         <PageSEO
           title={`Projects - ${siteMetadata.author}`}
