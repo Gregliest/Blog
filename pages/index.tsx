@@ -31,23 +31,31 @@ export default function Blog({ allPosts }: InferGetStaticPropsType<typeof getSta
   const blogAbout = ['Software', 'Whitewater', 'Photography', 'Rescue', 'and More!']
   return (
     <div>
-      <div className="fixed -z-10 h-full w-full">
+      <div className="fixed -z-10 h-screen w-screen">
         <Image
           alt="Background"
-          src="/static/images/photography/capitol-reef-tree.jpg"
+          src="/static/images/BowserBanner.jpg"
           fill
           objectFit="cover"
+          priority
+          sizes="4032px"
+          quality={100}
         />
       </div>
-      <Header />
+      <div className="h-screen w-screen">
+        <Header />
 
-      <div className="h-1/4" />
-      <AnimatedTextBox title="A Blog About:" array={blogAbout} />
-      <div className="h-1/4" />
+        <div className="h-1/4" />
+        <AnimatedTextBox title="A Blog About:" array={blogAbout} />
+        <div className="h-1/4" />
 
-      <PageSEO title={`Projects - ${siteMetadata.author}`} description={siteMetadata.description} />
-      <ArticleGallery articles={allPosts} />
-      <Footer />
+        <PageSEO
+          title={`Projects - ${siteMetadata.author}`}
+          description={siteMetadata.description}
+        />
+        <ArticleGallery articles={allPosts} />
+        <Footer />
+      </div>
     </div>
   )
 }
