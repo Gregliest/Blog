@@ -139,6 +139,26 @@ function backLink(section) {
   )
 }
 
+function printsView(section) {
+  return (
+    section &&
+    section === 'photography' && (
+      <div className="py-4 xl:pt-8">
+        <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
+          FOR PRINTS, INQUIRE AT:
+        </h2>
+
+        <Link
+          href="mailto:prints@gregliest.com"
+          className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+        >
+          prints@gregliest.com
+        </Link>
+      </div>
+    )
+  )
+}
+
 export default function PostLayout({ frontMatter, authorDetails, next, prev, children }: Props) {
   const { slug, fileName, date, title, tags } = frontMatter
   const section = getSection(frontMatter)
@@ -194,10 +214,10 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
               <Comments frontMatter={frontMatter} />
             </div>
             <footer>
+              <div className="divide-gray-200 text-sm font-medium leading-5 dark:divide-gray-700 xl:col-start-1 xl:row-start-2 xl:divide-y"></div>
               <div className="divide-gray-200 text-sm font-medium leading-5 dark:divide-gray-700 xl:col-start-1 xl:row-start-2 xl:divide-y">
-                <BlogNewsletterForm title="Like what you are seeing?" />
-              </div>
-              <div className="divide-gray-200 text-sm font-medium leading-5 dark:divide-gray-700 xl:col-start-1 xl:row-start-2 xl:divide-y">
+                <BlogNewsletterForm title="NEWSLETTER" />
+                {printsView(section)}
                 {tagView(tags)}
                 {nextPreviousView(next, prev)}
               </div>
