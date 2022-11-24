@@ -11,6 +11,7 @@ import { PostFrontMatter } from 'types/PostFrontMatter'
 import { AuthorFrontMatter } from 'types/AuthorFrontMatter'
 import { getSection } from '@/lib/utils/posts'
 import { BlogNewsletterForm } from '@/components/NewsletterForm'
+import { useRouter } from 'next/router'
 
 const editUrl = (fileName) => `${siteMetadata.siteRepo}/blob/master/data/blog/${fileName}`
 const discussUrl = (slug) =>
@@ -33,6 +34,10 @@ interface Props {
   children: ReactNode
 }
 
+function onAuthorClick(router) {
+  router.push('/about')
+}
+
 function AuthorView(props) {
   return (
     <dl className="pt-6 pb-10 xl:border-b xl:border-gray-200 xl:pt-11 xl:dark:border-gray-700">
@@ -52,7 +57,7 @@ function AuthorView(props) {
               )}
               <dl className="whitespace-nowrap text-sm font-medium leading-5">
                 <dt className="sr-only">Name</dt>
-                <dd className="text-gray-900 dark:text-gray-100">{author.name}</dd>
+                <dd className="text-left text-gray-900 dark:text-gray-100">{author.name}</dd>
                 <dt className="sr-only">Instagram</dt>
                 <dd>
                   {author.instagram && (
@@ -163,6 +168,7 @@ function PrintsView(props) {
 export default function PostLayout({ frontMatter, authorDetails, next, prev, children }: Props) {
   const { slug, fileName, date, title, tags } = frontMatter
   const section = getSection(frontMatter)
+  const router = useRouter()
 
   return (
     <SectionContainer>
@@ -202,7 +208,9 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
             className="divide-y divide-gray-200 pb-8 dark:divide-gray-700 xl:grid xl:grid-cols-4 xl:gap-x-6 xl:divide-y-0"
             style={{ gridTemplateRows: 'auto 1fr' }}
           >
-            <AuthorView authorDetails={authorDetails} />
+            <button onClick={() => onAuthorClick(router)}>
+              <AuthorView authorDetails={authorDetails} />
+            </button>
             <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">
               <div className="prose max-w-none pt-10 pb-8 dark:prose-dark">{children}</div>
               <div className="pt-6 pb-6 text-sm text-gray-700 dark:text-gray-300">
