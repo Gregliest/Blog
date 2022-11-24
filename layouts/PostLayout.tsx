@@ -217,7 +217,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
             <footer>
               <div className="divide-gray-200 text-sm font-medium leading-5 dark:divide-gray-700 xl:col-start-1 xl:row-start-2 xl:divide-y"></div>
               <div className="divide-gray-200 text-sm font-medium leading-5 dark:divide-gray-700 xl:col-start-1 xl:row-start-2 xl:divide-y">
-                <BlogNewsletterForm title="NEWSLETTER" />
+                <BlogNewsletterForm title="SUBSCRIBE" />
                 <PrintsView section={section} />
                 <TagView tags={tags} />
                 <NextPreviousView next={next} prev={prev} />

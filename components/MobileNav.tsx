@@ -55,26 +55,26 @@ const MobileNav = (props: MobileNavProps) => {
           navShow ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
-        {/* <button
-          type="button"
-          aria-label="toggle modal"
-          className="fixed h-full w-full cursor-auto focus:outline-none"
-          onClick={onToggleNav}
-        ></button> */}
         <nav className="fixed mt-8 h-full">
           {navLinks.map((link) => (
-            <div key={link.title} className="px-12 py-4">
-              <Link
-                href={link.href}
-                className="text-2xl font-bold tracking-widest text-gray-900 dark:text-gray-100"
-                onClick={onToggleNav}
-              >
-                {link.title}
-              </Link>
-            </div>
+            <NavItem key={link.title} link={link} onToggleNav={onToggleNav} />
           ))}
         </nav>
       </div>
+    </div>
+  )
+}
+
+function NavItem(props) {
+  return (
+    <div className="px-12 py-4">
+      <Link
+        href={props.link.href}
+        className="text-2xl font-bold tracking-widest text-gray-900 dark:text-gray-100"
+        onClick={props.onToggleNav}
+      >
+        {props.link.title}
+      </Link>
     </div>
   )
 }
