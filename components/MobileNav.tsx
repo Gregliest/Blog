@@ -51,7 +51,7 @@ const MobileNav = (props: MobileNavProps) => {
         </svg>
       </button>
       <div
-        className={`fixed right-0 z-10 h-full w-96 transform bg-gray-200 opacity-95 duration-300 ease-in-out dark:bg-gray-800 ${
+        className={`fixed right-0 z-10 h-full w-96 transform opacity-95 backdrop-blur-sm duration-300 ease-in-out dark:bg-gray-800 ${
           navShow ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
@@ -70,7 +70,7 @@ function NavItem(props) {
     <div className="px-12 py-4">
       <Link
         href={props.link.href}
-        className="text-2xl font-bold tracking-widest text-gray-900 dark:text-gray-100"
+        className="text-2xl font-bold tracking-widest text-gray-200 hover:text-primary-500"
         onClick={props.onToggleNav}
       >
         {props.link.title}
