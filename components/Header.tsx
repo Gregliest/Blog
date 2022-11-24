@@ -3,6 +3,7 @@ import MobileNav from './MobileNav'
 import siteMetadata from '@/data/siteMetadata'
 import headerNavLinks from '@/data/headerNavLinks'
 import Logo from '@/data/logo.svg'
+import SearchIcon from '@mui/icons-material/Search'
 
 interface HeaderProps {
   title?: string
@@ -49,8 +50,8 @@ const Header = (props: HeaderProps) => {
         </Link>
       </div>
       <div className="w-full bg-gradient-to-r from-white via-transparent to-white" />
-      <div className="flex items-center bg-white p-3 text-base leading-5">
-        <div className="hidden sm:block">
+      <div className="flex items-center bg-white p-1 text-base leading-5">
+        <div className="hidden items-center sm:flex">
           {headerNavLinks.map((link) => (
             <Link
               key={link.title}
@@ -60,6 +61,13 @@ const Header = (props: HeaderProps) => {
               {link.title}
             </Link>
           ))}
+          <Link
+            key="search"
+            href="/search"
+            className="p-1 text-base font-medium text-gray-800 hover:text-blue-900 sm:p-4"
+          >
+            <SearchIcon />
+          </Link>
         </div>
         <div className="sm:hidden">
           <MobileNav />
