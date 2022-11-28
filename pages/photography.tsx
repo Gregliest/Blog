@@ -1,9 +1,11 @@
 import siteMetadata from '@/data/siteMetadata'
-import { PageSEO } from '@/components/SEO'
 import { getPostsForTag } from '@/lib/utils/contentProvider'
+
+import { PageSEO } from '@/components/SEO'
 import Gallery from '@/components/Gallery'
 import Footer from '@/components/Footer'
 import { MinimalHeader } from '@/components/Header'
+
 const sizeOf = require('image-size')
 
 export const getStaticProps = async () => {
