@@ -34,9 +34,9 @@ export default function Whitewater({ whitewaterPosts }) {
         />
       </div>
 
-      <div className="flex h-screen w-full flex-col">
+      <div className="h-screen w-full">
         <MinimalHeader title="Whitewater" />
-        <div className="mb-6 h-4 bg-gradient-to-b from-white to-transparent" />
+        <div className="h-6" />
         <PageSEO
           title={`Projects - ${siteMetadata.author}`}
           description={siteMetadata.description}

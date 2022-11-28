@@ -35,7 +35,7 @@ export default function Code({ codePosts }) {
 
       <div className="h-screen w-screen">
         <MinimalHeader title="Code" />
-        <div className="mb-6 h-3 bg-gradient-to-b from-white to-transparent" />
+        <div className="h-6" />
         <PageSEO
           title={`Projects - ${siteMetadata.author}`}
           description={siteMetadata.description}
