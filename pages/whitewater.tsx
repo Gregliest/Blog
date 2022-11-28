@@ -33,7 +33,7 @@ export default function Whitewater({ whitewaterPosts }) {
         />
       </div>
 
-      <div className="h-screen w-full">
+      <div className="flex h-screen w-full flex-col">
         <MinimalHeader title="Whitewater" />
         <div className="mb-6 h-4 bg-gradient-to-b from-white to-transparent" />
         <PageSEO
@@ -41,6 +41,7 @@ export default function Whitewater({ whitewaterPosts }) {
           description={siteMetadata.description}
         />
         <ArticleGallery articles={whitewaterPosts} />
+        <div className="flex flex-grow" />
         <Footer />
       </div>
     </div>

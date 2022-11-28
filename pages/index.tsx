@@ -43,7 +43,7 @@ export default function Blog({ allPosts }: InferGetStaticPropsType<typeof getSta
           quality={100}
         />
       </div>
-      <div className="h-screen w-screen">
+      <div className="h-screen w-full">
         <Header />
 
         <div className="h-1/5" />
