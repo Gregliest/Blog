@@ -30,6 +30,7 @@ export default function Whitewater({ whitewaterPosts }) {
           priority
           sizes="4032px"
           quality={100}
+          className="object-right"
         />
       </div>
 

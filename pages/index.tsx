@@ -8,6 +8,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Image from '@/components/Image'
 import AnimatedTextBox from '@/components/AnimatedTextBox'
+import headerNavLinks from '@/data/headerNavLinks'
 
 export const POSTS_PER_PAGE = 5
 
@@ -44,7 +45,7 @@ export default function Blog({ allPosts }: InferGetStaticPropsType<typeof getSta
         />
       </div>
       <div className="h-screen w-full">
-        <Header />
+        <Header navLinks={headerNavLinks} />
 
         <div className="h-1/5" />
         <AnimatedTextBox array={blogAbout} />

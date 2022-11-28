@@ -10,7 +10,7 @@ export default function AnimatedTextBox({ array }) {
   return (
     <div className="grid place-items-center">
       <p
-        className="text-semibold animate-fadeInOut p-5 text-center text-7xl text-white"
+        className="text-semibold animate-fadeInOut p-5 text-center text-4xl text-white sm:text-7xl"
         onAnimationIteration={incrementIndex}
       >
         {array[index]}

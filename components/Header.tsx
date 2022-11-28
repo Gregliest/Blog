@@ -70,7 +70,7 @@ const Header = (props: HeaderProps) => {
           </Link>
         </div>
         <div className="sm:hidden">
-          <MobileNav />
+          <MobileNav navLinks={props.navLinks} />
         </div>
       </div>
     </header>

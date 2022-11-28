@@ -6,7 +6,9 @@ interface MobileNavProps {
   navLinks?: string[]
 }
 const MobileNav = (props: MobileNavProps) => {
-  const navLinks = props.navLinks ? props.navLinks : headerNavLinks
+  const links = headerNavLinks.slice()
+  links.unshift({ href: '/', title: 'Overview' })
+  const navLinks = props.navLinks ? props.navLinks : links
   const [navShow, setNavShow] = useState(false)
 
   const onToggleNav = () => {
