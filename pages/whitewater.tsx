@@ -24,7 +24,7 @@ export default function Whitewater({ whitewaterPosts }) {
       <div className="fixed -z-10 h-screen w-screen">
         <Image
           alt="Background"
-          src="/static/images/photography/magilla.jpg"
+          src="/static/images/kayaking/magilla.jpg"
           fill
           objectFit="cover"
           priority
