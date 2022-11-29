@@ -178,6 +178,8 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
         {...frontMatter}
       />
       <ScrollTopAndComment />
+
+      <BackLink section={section} />
       <article>
         <div className="xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700">
           <header className="pt-6 xl:pb-6">
@@ -230,7 +232,6 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                 <TagView tags={tags} />
                 <NextPreviousView next={next} prev={prev} />
               </div>
-              <BackLink section={section} />
             </footer>
           </div>
         </div>
