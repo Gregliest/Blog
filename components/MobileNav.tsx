@@ -27,7 +27,7 @@ const MobileNav = (props: MobileNavProps) => {
     <div>
       <button
         type="button"
-        className="ml-1 mr-1 h-8 w-8 rounded py-1"
+        className="mx-1 h-8 w-8 rounded py-1"
         aria-label="Toggle Menu"
         onClick={onToggleNav}
       >
@@ -53,9 +53,10 @@ const MobileNav = (props: MobileNavProps) => {
         </svg>
       </button>
       <div
-        className={`fixed right-0 z-10 h-full w-96 transform opacity-95 backdrop-blur-sm duration-300 ease-in-out dark:bg-gray-800 ${
+        className={`fixed right-0 z-10 h-full w-96 transform backdrop-blur-md bg-white/30 mt-3 duration-300 ease-in-out ${
           navShow ? 'translate-x-0' : 'translate-x-full'
         }`}
+        backdrop-filter=""
       >
         <nav className="fixed mt-8 h-full">
           {navLinks.map((link) => (
@@ -72,7 +73,7 @@ function NavItem(props) {
     <div className="px-12 py-4">
       <Link
         href={props.link.href}
-        className="text-2xl font-bold tracking-widest text-gray-200 hover:text-primary-500"
+        className="text-2xl font-bold tracking-widest text-gray-700 hover:text-primary-500"
         onClick={props.onToggleNav}
       >
         {props.link.title}
