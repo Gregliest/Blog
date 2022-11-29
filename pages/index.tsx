@@ -40,7 +40,9 @@ export default function Blog({ allPosts }: InferGetStaticPropsType<typeof getSta
           fill
           objectFit="cover"
           priority
-          sizes="4032px"
+          sizes="(max-width: 1000px) 1000px,
+          (max-width: 1440px) 1500px,
+            2000px"
           quality={100}
         />
       </div>
