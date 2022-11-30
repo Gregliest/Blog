@@ -46,18 +46,20 @@ const Header = (props: HeaderProps) => {
             <div className="mr-3">
               <Logo />
             </div>
-            <div className="hidden h-6 text-2xl font-semibold sm:block">{title}</div>
+            <p className="hidden h-6 items-center whitespace-nowrap text-2xl font-semibold sm:flex">
+              {title}
+            </p>
           </div>
         </Link>
       </div>
       <div className="w-full bg-gradient-to-r from-white via-transparent to-white" />
       <div className="flex items-center bg-white p-1 text-base leading-5">
-        <div className="hidden items-center sm:flex">
+        <div className="hidden items-center md:flex">
           {headerNavLinks.map((link) => (
             <Link
               key={link.title}
               href={link.href}
-              className="p-1 text-base font-medium text-gray-800 hover:text-blue-900 sm:p-4"
+              className="p-4 text-base font-medium text-gray-800 hover:text-blue-900"
             >
               {link.title}
             </Link>
@@ -65,12 +67,12 @@ const Header = (props: HeaderProps) => {
           <Link
             key="search"
             href="/search"
-            className="p-1 text-base font-medium text-gray-800 hover:text-blue-900 sm:p-4"
+            className="p-4 text-base font-medium text-gray-800 hover:text-blue-900"
           >
             <SearchIcon />
           </Link>
         </div>
-        <div className="sm:hidden">
+        <div className="md:hidden">
           <MobileNav navLinks={props.navLinks} />
         </div>
       </div>

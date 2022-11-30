@@ -1,7 +1,7 @@
 const siteMetadata = {
   title: 'Blog',
   author: 'Gregory Lee',
-  headerTitle: 'Blog',
+  headerTitle: 'Canyons and Code',
   description: '',
   language: 'en-us',
   theme: 'light', // system, dark or light
