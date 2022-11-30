@@ -7,7 +7,7 @@ import SearchIcon from '@mui/icons-material/Search'
 
 interface HeaderProps {
   title?: string
-  navLinks?: string[]
+  navLinks?: Record<string, string>[]
 }
 
 // A header with a logo and title on the left, and a hamburger menu on the right
