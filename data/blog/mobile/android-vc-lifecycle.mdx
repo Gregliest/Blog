@@ -4,7 +4,7 @@ date: 2014-11-23T08:31:09-07:00
 summary: A comparison of the view and controller life cycle hooks in iOS and Android.
 tags: ['code', 'android', 'iOS', 'mobile']
 thumbnail: /static/images/lifecycle/basic-lifecycle-android.png
-type: Blog
+type: Article
 ---
 
 In this post, I’m going to compare the life cycle hooks in iOS and Android, and discuss at a high level why iOS’s system is superior to Android’s. In general, iOS provides hooks that match the life cycle of the view, which creates an easy and intuitive system, and successfully hides system level concerns from the developer. On the other hand, Android's hooks follow the state of the controller, which conflates the life cycle of the view with the state of the controller, breaking the fundamental abstraction of MVC. This terrible design creates a confusing and quirky system, and exposes system level complexity to the developer.
@@ -40,7 +40,7 @@ Apple's most common methods are:
 
 As you can see from names like 'viewDid' and 'viewWill,' the iOS hooks are focused on the state of the view. The hooks do not make any assertions about the state of the controller, or the larger state of the app. Apple has successfully separated the concerns of the view from the concerns of the rest of the app in their life cycle hooks.
 
-This separation, along with aptly-named hooks, creates an intuitive system. For instance, it's obvious that `viewWillAppear` will get called when the view is about to appear. It is also clear that `viewDidAppear` will get called after the view has been rendered on screen, and after any associated system level tasks have been completed. In general, I find the iOS hooks clearly named, and thoughtfully laid out. I will note that the developer is still responsible for learning what happens at a system level before each hook. For instance, views are not measure in `viewDidLoad`, so any requests for a dimension will return 0, which can be a source of frustration for new developers. But I find these details easy to look up.
+This separation, along with aptly-named hooks, creates an intuitive system. For instance, it's obvious that `viewWillAppear` will get called when the view is about to appear. It is also clear that `viewDidAppear` will get called after the view has been rendered on screen, and after any associated system level tasks have been completed. In general, I find the iOS hooks clearly named, and thoughtfully laid out. I will note that the developer is still responsible for learning what happens at a system level before each hook. For instance, views are not measured in `viewDidLoad`, so any requests for a dimension will return 0, which can be a source of frustration for new developers. But I find these details easy to look up.
 
 Here are the equivalent Android docs.
 

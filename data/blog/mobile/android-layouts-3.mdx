@@ -7,7 +7,7 @@ thumbnail: /static/images/linear-layout/android-buttons-weight.png
 series:
   name: Android Layouts
   number: 3
-type: Blog
+type: Article
 ---
 
 Android's power doesn't stop at just add/remove/collapse. Let’s take the view from the previous post one step further by replacing the single button with a row of three equally sized buttons. In Android, I can embed three buttons in a horizontal LinearLayout. Android provides a convenient attribute, `layout_weight` that dictates how elements of a layout expand to fill empty space. The weight of the current view divided by the total weights in the layout equal the percent of the layout that the view will take up. To get all of the buttons to be the same width, taking up the whole width of the screen, I simply set all of the layout_weights to be equal, and the `layout_width` of each button to be "0dp," like so.

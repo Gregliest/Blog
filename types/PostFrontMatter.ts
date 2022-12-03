@@ -3,12 +3,17 @@ export type PostSeries = {
   number: number
 }
 export type PostFrontMatter = {
+  // Required in each post
   title: string
   date: string
   tags: string[]
+
+  // Populated by the system
   slug: string
   fileName: string
 
+  // Optional
+  type?: string
   link?: string
   image?: string
   thumbnail?: string

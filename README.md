@@ -1,4 +1,4 @@
-# Greg's Blog
+# Canyons and Code
 
 My goal is to create a website that is simple, elegant, responsive, and performant. Let me know if you have any suggestions, or find a bug!
 
@@ -63,39 +63,13 @@ Open [http://localhost:3000](http://localhost:3000) to see the result. The site 
 
 ### Frontmatter
 
-Frontmatter follows [Hugo's standards](https://gohugo.io/content-management/front-matter/).
+Frontmatter populates the metadata for a post. Frontmatter follows [Hugo's standards](https://gohugo.io/content-management/front-matter/).
 
-Currently 10 fields are supported.
+See [PostFrontMatter](https://github.com/Gregliest/Blog/blob/main/types/PostFrontMatter.ts) for required and optional fields.
 
-```
-title (required)
-date (required)
-tags (required, can be empty array)
-lastmod (optional)
-draft (optional)
-summary (optional)
-images (optional, if none provided defaults to socialBanner in siteMetadata config)
-authors (optional list which should correspond to the file names in `data/authors`. Uses `default` if none is specified)
-layout (optional list which should correspond to the file names in `data/layouts`)
-canonicalUrl (optional, canonical url for the post for SEO)
-```
+### Series
 
-Here's an example of a post's frontmatter:
-
-```
----
-title: 'Introducing Tailwind Nexjs Starter Blog'
-date: '2021-01-12'
-lastmod: '2021-01-18'
-tags: ['next-js', 'tailwind', 'guide']
-draft: false
-summary: 'Looking for a performant, out of the box template, with all the best in web technology to support your blogging needs? Checkout the Tailwind Nextjs Starter Blog template.'
-images: ['/static/images/canada/mountains.jpg', '/static/images/canada/toronto.jpg']
-authors: ['default', 'sparrowhawk']
-layout: PostLayout
-canonicalUrl: https://tailwind-nextjs-starter-blog.vercel.app/blog/introducing-tailwind-nextjs-starter-blog
----
-```
+A post can be part of a series. Each post in a series should have the same PostSeries name, and incrementing numbers. The series will then populate the next/previous navigation on each post.
 
 ### Compose
 
@@ -108,11 +82,13 @@ Vercel: Push to main will trigger a deploy on Vercel.
 ## License
 
 ### Photography
+
 Please give proper attribution, and link back to the source page on this blog. Otherwise, you are free to use as you see fit. [CC](https://github.com/Gregliest/Blog/blob/main/CCLICENSE).
 
 For non-watermarked images and prints, contact me at prints @ gregliest dot com
 
 ### Software
+
 This repo: [MIT](https://github.com/Gregliest/Blog/blob/main/LICENSE)
 
 Original (for the template): [MIT](https://github.com/timlrx/tailwind-nextjs-starter-blog/blob/master/LICENSE) © [Timothy Lin](https://www.timrlx.com)
