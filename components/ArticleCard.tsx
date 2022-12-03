@@ -9,6 +9,18 @@ interface ArticleCardProps {
   post: PostFrontMatter
 }
 
+function getReadFull(post: PostFrontMatter) {
+  const properties =
+    'px-8 pb-6 w-full text-right justify-self-end text-primary-500 hover:text-primary-600'
+
+  if (post.link && post.link.includes('medium')) {
+    return <p className={properties}>Read on Medium &rarr;</p>
+  } else if (post.type === 'Article') {
+    return <p className={properties}>Read full article &rarr;</p>
+  }
+  return null
+}
+
 export default function ArticleCard(props: ArticleCardProps) {
   const link = props.post.link ? props.post.link : '/blog/' + props.post.slug
 
@@ -16,9 +28,9 @@ export default function ArticleCard(props: ArticleCardProps) {
   return (
     <div className="group relative w-96 shrink-0 drop-shadow-lg">
       <div className="absolute -inset-1 rounded-lg bg-gradient-to-r from-slate-500 to-zinc-700 opacity-25 blur transition duration-700 group-hover:opacity-100 group-hover:duration-200"></div>
-      <div className="items-top relative flex h-full w-full justify-start space-x-6 rounded-lg bg-white leading-none ring-1 ring-gray-900/5">
+      <div className="relative flex h-full w-full space-x-6 rounded-lg bg-white leading-none ring-1 ring-gray-900/5">
         <Link href={link} aria-label={`Link to ${link}`}>
-          {props.post.thumbnail ? (
+          {props.post.thumbnail && (
             <Image
               alt={props.post.title}
               src={props.post.thumbnail}
@@ -26,8 +38,6 @@ export default function ArticleCard(props: ArticleCardProps) {
               height={306}
               className="rounded-t-lg"
             />
-          ) : (
-            <></>
           )}
           <div className="py-6 px-8">
             <Typography component="h2" variant="h5">
@@ -40,6 +50,7 @@ export default function ArticleCard(props: ArticleCardProps) {
               {props.post.summary}
             </Typography>
           </div>
+          {getReadFull(props.post)}
         </Link>
       </div>
     </div>
