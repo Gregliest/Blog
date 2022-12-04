@@ -44,7 +44,6 @@ export default function Whitewater({ whitewaterPosts }) {
           description={siteMetadata.description}
         />
         <ArticleGallery articles={whitewaterPosts} />
-        <div className="flex flex-grow" />
         <Footer />
       </div>
     </div>
