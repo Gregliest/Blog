@@ -39,16 +39,14 @@ export default function ArticleCard(props: ArticleCardProps) {
               className="rounded-t-lg"
             />
           )}
-          <div className="py-6 px-8">
-            <Typography component="h2" variant="h5">
-              {props.post.title}
-            </Typography>
-            <Typography variant="subtitle1" color="text.secondary">
-              {formatDate(props.post.date)}
-            </Typography>
-            <Typography variant="subtitle1" paragraph>
-              {props.post.summary}
-            </Typography>
+          <div className="divide-y divide-gray-200 py-6 px-8">
+            <div>
+              <p className="w-full text-center text-2xl">{props.post.title}</p>
+              <p className="mb-2 w-full text-right text-sm italic text-gray-500">
+                {formatDate(props.post.date)}
+              </p>
+            </div>
+            <p className="pt-4 text-sm">{props.post.summary}</p>
           </div>
           {getReadFull(props.post)}
         </Link>
