@@ -28,9 +28,9 @@ export default function Code({ codePosts }) {
           fill
           objectFit="cover"
           priority
-          sizes="(max-width: 1000px) 1000px,
-          (max-width: 1440px) 1500px,
-            2000px"
+          sizes="(max-width: 1000px and max-height:450px) 1000px,
+          (max-width: 1440px and max-height:720px) 1500px,
+            3000px"
           quality={100}
         />
       </div>

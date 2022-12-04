@@ -24,7 +24,7 @@ export const getStaticProps = async () => {
 
 export default function Blog({ allPosts }: InferGetStaticPropsType<typeof getStaticProps>) {
   function resizeEvent() {
-    console.log(window.innerWidth)
+    console.log(window.innerWidth + ' ' + window.innerHeight)
   }
 
   if (typeof window !== 'undefined') {
@@ -40,9 +40,9 @@ export default function Blog({ allPosts }: InferGetStaticPropsType<typeof getSta
           fill
           objectFit="cover"
           priority
-          sizes="(max-width: 1000px) 1000px,
-          (max-width: 1440px) 1500px,
-            2000px"
+          sizes="(max-width: 1000px and max-height:450px) 1000px,
+          (max-width: 1440px and max-height:720px) 1500px,
+            3000px"
           quality={100}
         />
       </div>
