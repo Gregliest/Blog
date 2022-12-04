@@ -1,5 +1,4 @@
-import ImageListItem, { imageListItemClasses } from '@mui/material/ImageListItem'
-import Box from '@mui/material/Box'
+import ImageListItem from '@mui/material/ImageListItem'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -23,22 +22,5 @@ export default function Gallery({ posts }) {
     )
   })
 
-  return (
-    <Box
-      sx={{
-        display: 'grid',
-        gridTemplateColumns: {
-          xs: 'repeat(1, 1fr)',
-          sm: 'repeat(2, 1fr)',
-          lg: 'repeat(3, 1fr)',
-        },
-        [`& .${imageListItemClasses.root}`]: {
-          display: 'flex',
-          flexDirection: 'column',
-        },
-      }}
-    >
-      {list}
-    </Box>
-  )
+  return <div className="columns-1 gap-0 md:columns-2 lg:columns-3">{list}</div>
 }
