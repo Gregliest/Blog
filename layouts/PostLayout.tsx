@@ -40,10 +40,10 @@ function onAuthorClick(router) {
 
 function AuthorView(props) {
   return (
-    <dl className="pt-6 pb-10 xl:border-b xl:border-gray-200 xl:pt-11">
+    <dl className="pt-6 pb-10 lg:border-b lg:border-gray-200 lg:pt-11">
       <dt className="sr-only">Authors</dt>
       <dd>
-        <ul className="flex justify-center space-x-8 sm:space-x-12 xl:block xl:space-x-0 xl:space-y-8">
+        <ul className="flex justify-center space-x-8 sm:space-x-12 lg:block lg:space-x-0 lg:space-y-8">
           {props.authorDetails.map((author) => (
             <li className="flex items-center space-x-2" key={author.name}>
               {author.avatar && (
@@ -80,7 +80,7 @@ function AuthorView(props) {
 function TagView(props) {
   return (
     props.tags && (
-      <div className="py-4 xl:py-8">
+      <div className="py-4 lg:py-8">
         <h2 className="text-xs uppercase tracking-wide text-gray-500">Tags</h2>
         <div className="flex flex-wrap">
           {props.tags.map((tag) => (
@@ -102,7 +102,7 @@ function NextPreviousView(props) {
   const [next, prev] = [props.next, props.prev]
   return (
     (next || prev) && (
-      <div className="flex justify-between py-4 xl:block xl:space-y-8 xl:py-8">
+      <div className="flex justify-between py-4 lg:block lg:space-y-8 lg:py-8">
         {prev && (
           <div>
             <h2 className="text-xs uppercase tracking-wide text-gray-500">Previous Article</h2>
@@ -130,7 +130,7 @@ function BackLink(props) {
   const title1 = title[0].toUpperCase() + title.slice(1)
 
   return (
-    <div className="pt-4 xl:pt-8">
+    <div className="pt-4 lg:pt-8">
       <Link href={href} className="text-primary-500 hover:text-primary-600">
         &larr; {' Back to ' + title1}
       </Link>
@@ -142,7 +142,7 @@ function PrintsView(props) {
   return (
     props.section &&
     props.section === 'photography' && (
-      <div className="py-4 xl:pt-8">
+      <div className="py-4 lg:pt-8">
         <h2 className="text-xs uppercase tracking-wide text-gray-500">FOR PRINTS, INQUIRE AT:</h2>
 
         <Link
@@ -172,8 +172,8 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
 
       <BackLink section={section} />
       <article>
-        <div className="xl:divide-y xl:divide-gray-200">
-          <header className="pt-6 xl:pb-6">
+        <div className="lg:divide-y lg:divide-gray-200">
+          <header className="pt-6 lg:pb-6">
             <div className="space-y-1 text-center">
               <dl className="space-y-10">
                 <div>
@@ -198,13 +198,13 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
             </div>
           </header>
           <div
-            className="divide-y divide-gray-200 pb-8 xl:grid xl:grid-cols-4 xl:gap-x-6 xl:divide-y-0"
+            className="divide-y divide-gray-200 pb-8 lg:grid lg:grid-cols-4 lg:gap-x-6 lg:divide-y-0"
             style={{ gridTemplateRows: 'auto 1fr' }}
           >
             <button onClick={() => onAuthorClick(router)}>
               <AuthorView authorDetails={authorDetails} />
             </button>
-            <div className="divide-y divide-gray-200 xl:col-span-3 xl:row-span-2 xl:pb-0">
+            <div className="divide-y divide-gray-200 lg:col-span-3 lg:row-span-2 lg:pb-0">
               <div className="prose max-w-none pt-10 pb-8">{children}</div>
               <div className="pt-6 pb-6 text-sm text-gray-700">
                 <Link href={discussUrl(slug)} rel="nofollow">
@@ -216,8 +216,8 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
               <Comments frontMatter={frontMatter} />
             </div>
             <footer>
-              <div className="divide-gray-200 text-sm font-medium leading-5 xl:col-start-1 xl:row-start-2 xl:divide-y"></div>
-              <div className="divide-gray-200 text-sm font-medium leading-5 xl:col-start-1 xl:row-start-2 xl:divide-y">
+              <div className="divide-gray-200 text-sm font-medium leading-5 lg:col-start-1 lg:row-start-2 lg:divide-y"></div>
+              <div className="divide-gray-200 text-sm font-medium leading-5 lg:col-start-1 lg:row-start-2 lg:divide-y">
                 <BlogNewsletterForm title="SUBSCRIBE" />
                 <PrintsView section={section} />
                 <TagView tags={tags} />
