@@ -102,7 +102,7 @@ export default function Tags({ tags, posts }: InferGetStaticPropsType<typeof get
   }
 
   function ArchiveComponent() {
-    const title = showArchived ? 'Hide Archived ' : 'Show Archived '
+    const title = showArchived ? 'Hide Archived and Drafts' : 'Show Archived and Drafts'
     return (
       <div className="flex flex-col">
         <div className="my-6 flex justify-center">
@@ -116,21 +116,26 @@ export default function Tags({ tags, posts }: InferGetStaticPropsType<typeof get
         </div>
 
         {showArchived && (
-          <ArticleGallery articles={articles.filter((article) => article.archived)} />
+          <ArticleGallery
+            articles={articles.filter((article) => article.archived || article.draft)}
+          />
         )}
       </div>
     )
   }
 
   return (
-    <div>
+    <div className="flex h-screen flex-col">
       <MinimalHeader title="Search" />
       <PageSEO title={`Tags - ${siteMetadata.author}`} description="Things I blog about" />
       {/* Necessary to put search in a div so that it doesn't lose focus when rerendering */}
       <div>{SearchComponent()}</div>
       <TagsComponent />
-      <ArticleGallery articles={articles.filter((article) => !article.archived)} />
+      <ArticleGallery
+        articles={articles.filter((article) => !article.archived && !article.draft)}
+      />
       <ArchiveComponent />
+      <div className="flex-grow" />
       <Footer />
     </div>
   )
