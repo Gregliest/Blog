@@ -47,7 +47,7 @@ export default function ArticleCard(props: ArticleCardProps) {
                   {formatDate(props.post.date)}
                 </p>
               </div>
-              <p className="pt-4 text-sm">{props.post.summary}</p>
+              {props.post.summary && <p className="pt-4 text-sm">{props.post.summary}</p>}
             </div>
             <div className="flex-grow" />
             {getReadFull(props.post)}
