@@ -53,7 +53,7 @@ const MobileNav = (props: MobileNavProps) => {
         </svg>
       </button>
       <div
-        className={`fixed right-0 z-10 mt-3 h-full w-96 transform bg-white/30 backdrop-blur-md duration-300 ease-in-out ${
+        className={`fixed right-0 z-10 mt-3.5 h-full w-96 transform bg-white/30 backdrop-blur-md duration-300 ease-in-out ${
           navShow ? 'translate-x-0' : 'translate-x-full'
         }`}
         backdrop-filter=""

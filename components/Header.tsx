@@ -59,7 +59,7 @@ const Header = (props: HeaderProps) => {
             <Link
               key={link.title}
               href={link.href}
-              className="p-4 text-base font-medium text-gray-800 hover:text-blue-900"
+              className="p-4 text-base font-medium text-gray-800 hover:text-primary-500"
             >
               {link.title}
             </Link>
@@ -67,7 +67,7 @@ const Header = (props: HeaderProps) => {
           <Link
             key="search"
             href="/search"
-            className="p-4 text-base font-medium text-gray-800 hover:text-blue-900"
+            className="p-4 text-base font-medium text-gray-800 hover:text-primary-500"
           >
             <SearchIcon />
           </Link>
