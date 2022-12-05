@@ -17,7 +17,12 @@ export async function getMediumPosts() {
   const jsonData = await fs.readFile(filePath, 'utf-8')
   const mediumPosts = JSON.parse(jsonData)
 
-  return mediumPosts
+  return mediumPosts.map((_post) => {
+    const post = _post as PostFrontMatter
+    post.type = 'Medium'
+
+    return post
+  })
 }
 
 export async function getPostsForTag(tag) {
@@ -36,27 +41,35 @@ export async function getSeriesPosts(series: PostSeries) {
 
 export async function prevNext(post: PostFrontMatter) {
   // Series first
+  let seriesPrev, seriesNext
   if (post.series) {
     const seriesPosts = await getSeriesPosts(post.series)
     const postIndex = seriesPosts.findIndex((series) => series.slug === post.slug)
 
-    const prev = seriesPosts[postIndex + 1] || null
-    const next = seriesPosts[postIndex - 1] || null
-    return [prev, next]
+    seriesPrev = seriesPosts[postIndex + 1] || null
+    seriesNext = seriesPosts[postIndex - 1] || null
   }
 
   // Then tag hierarchy, if the article is part of section, return a prev/next
+  let sectionPrev, sectionNext
   const section = getSection(post)
   if (!section) {
-    return [null, null]
+    sectionPrev = null
+    sectionNext = null
+  } else {
+    const posts = await getPostsForTag(section)
+    const postIndex = posts.findIndex((series) => series.slug === post.slug)
+
+    const prev = posts[postIndex + 1] || null
+    const next = posts[postIndex - 1] || null
+
+    // Medium posts aren't on the blog, so don't link to them
+    sectionPrev = prev && prev.type === 'Medium' ? null : prev
+    sectionNext = next && next.type === 'Medium' ? null : next
   }
 
-  const posts = await getPostsForTag(section)
-  const postIndex = posts.findIndex((series) => series.slug === post.slug)
-
-  const prev = posts[postIndex + 1] || null
-  const next = posts[postIndex - 1] || null
-
+  const prev = seriesPrev || sectionPrev
+  const next = seriesNext || sectionNext
   return [prev, next]
 }
 
