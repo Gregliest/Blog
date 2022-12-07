@@ -1,3 +1,4 @@
+import { ImageList } from '@mui/material'
 import ImageListItem from '@mui/material/ImageListItem'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -22,5 +23,7 @@ export default function Gallery({ posts }) {
     )
   })
 
-  return <div className="columns-1 gap-0 md:columns-2 lg:columns-3">{list}</div>
+  return (
+    <ImageList variant="masonry" cols={2} gap={8}>{list}</ImageList>
+  )
 }
