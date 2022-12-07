@@ -7,7 +7,7 @@ const siteMetadata = {
   theme: 'light', // system, dark or light
   siteUrl: 'https://www.gregliest.com',
   siteRepo: 'https://github.com/gregliest/Blog',
-  siteLogo: '/static/images/logo.png',
+  siteLogo: '/static/favicons/android-chrome-192x192.png',
   image: '/static/images/avatar.png',
   socialBanner: '/static/images/twitter-card.png',
   email: 'blog@gregliest.com',
