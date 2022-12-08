@@ -1,10 +1,12 @@
-import { ImageList } from '@mui/material'
+import { ImageList, useMediaQuery } from '@mui/material'
 import ImageListItem from '@mui/material/ImageListItem'
-import Image from 'next/image'
+import Image from '@/components/Image'
 import Link from 'next/link'
 
 const WIDTH = 248
 export default function Gallery({ posts }) {
+  const columns = useMediaQuery('(min-width:640px)') ? 2 : 1
+
   const list = posts.map((post) => {
     const height = post.originalHeight / (post.originalWidth / WIDTH)
 
@@ -17,6 +19,8 @@ export default function Gallery({ posts }) {
             height={height}
             src={post.image}
             alt={post.title}
+            sizes="(max-width: 640px) 100vw,
+              50vw"
           />
         </ImageListItem>
       </Link>
@@ -24,6 +28,8 @@ export default function Gallery({ posts }) {
   })
 
   return (
-    <ImageList variant="masonry" cols={2} gap={8}>{list}</ImageList>
+    <ImageList variant="masonry" cols={columns} gap={8}>
+      {list}
+    </ImageList>
   )
 }

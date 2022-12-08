@@ -30,6 +30,7 @@ export default function Photography({ photographyPosts }) {
     <div>
       <MinimalHeader title="Photography" />
       <PageSEO title={`Projects - ${siteMetadata.author}`} description={siteMetadata.description} />
+      <div className="h-1 bg-neutral-200" />
       <Gallery posts={photographyPosts} />
       <Footer />
     </div>
