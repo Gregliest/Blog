@@ -1,6 +1,12 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import mailchimp from '@mailchimp/mailchimp_marketing'
 
+export const MailchimpResult = {
+  Success: 0,
+  AlreadySubscribed: 1,
+  Error: 2,
+}
+
 mailchimp.setConfig({
   apiKey: process.env.MAILCHIMP_API_KEY,
   server: process.env.MAILCHIMP_API_SERVER, // E.g. us1
@@ -19,8 +25,15 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       email_address: email,
       status: 'subscribed',
     })
-    return res.status(201).json({ error: '' })
+
+    return res.status(201).json({ status: MailchimpResult.Success })
   } catch (error) {
-    return res.status(500).json({ error: error.message || error.toString() })
+    if (error.status == 400 && error.response.body.title == 'Member Exists') {
+      return res.status(400).json({ status: MailchimpResult.AlreadySubscribed })
+    }
+
+    return res
+      .status(500)
+      .json({ status: MailchimpResult.Error, error: error.message || error.toString() })
   }
 }
