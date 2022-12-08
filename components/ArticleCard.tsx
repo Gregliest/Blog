@@ -38,6 +38,7 @@ export default function ArticleCard(props: ArticleCardProps) {
                 width={450}
                 height={306}
                 className="rounded-t-lg"
+                sizes="450px"
               />
             )}
             <div className="divide-y divide-gray-200 py-6 px-8">
