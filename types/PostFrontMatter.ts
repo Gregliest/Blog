@@ -2,6 +2,7 @@ export type PostSeries = {
   name: string
   number: number
 }
+
 export type PostFrontMatter = {
   // Required in each post
   title: string
@@ -13,6 +14,7 @@ export type PostFrontMatter = {
   fileName: string
 
   // Optional
+  postedDate?: string
   type?: string
   link?: string
   image?: string
@@ -26,4 +28,8 @@ export type PostFrontMatter = {
   canonicalUrl?: string
   archived?: boolean
   series?: PostSeries
+}
+
+export function getPostedDate(post: PostFrontMatter) {
+  return post.postedDate ? post.postedDate : post.date
 }

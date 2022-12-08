@@ -1,4 +1,4 @@
-import { PostFrontMatter } from 'types/PostFrontMatter'
+import { getPostedDate, PostFrontMatter } from 'types/PostFrontMatter'
 
 export function dateSortDesc(a: string, b: string) {
   if (a > b) return -1
@@ -9,6 +9,16 @@ export function dateSortDesc(a: string, b: string) {
 export function sortByDate(posts: PostFrontMatter[]) {
   posts.sort((post1, post2) => dateSortDesc(post1.date, post2.date))
   return posts
+}
+
+export function getLatestPostDate(posts: PostFrontMatter[]) {
+  let date = ''
+  posts.forEach((post) => {
+    const postedDate = getPostedDate(post)
+    date = postedDate > date ? postedDate : date
+  })
+
+  return date
 }
 
 export function filterByTag(tag: string, posts: PostFrontMatter[]) {
