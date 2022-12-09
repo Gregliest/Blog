@@ -1,0 +1,176 @@
+---
+title: 'Conspiracy Theories Part 2: The Math'
+date: 2022-12-09
+summary: A discussion about why people believe in conspiracy theories, and why they don't change their mind with evidence, with a little math.
+tags: ['idea', 'bayesian', 'math']
+thumbnail:
+draft: true
+series:
+  name: Bayesian
+  number: 2
+type: Article
+---
+
+# A Mathematical Proof of Why Conspiracy Theories Work
+
+In this post, I’m going to work through the examples from the previous blog post from a Bayesian perspective. This post will include some simple math and probability, and assumes no prior knowledge of Bayesian Statistics. In fact, this post should be a gentle introduction to hypothesis testing in Bayesian Statistics, and through these examples I hope to illustrate why Bayesian is an intuitive and useful way to think about the world.
+
+This post is meant to be read in conjunction with Part 1. Part 1 contains more discussion about the examples, the implications, and how they apply to conspiracy theories.
+
+## How do we compare two possibilities?
+
+Let’s say you’ve gathered some data. If you have two competing views that could explain that data, how can you decide which one to believe? How strong should your belief be? Let’s start by asking three clever but simple questions.
+
+What is your belief between the two hypotheses before seeing the data?
+If the first hypothesis is true, how likely is it that you observed your data?
+If the second hypothesis is true, how likely is it that you observed your data?
+
+Recall that in the first example of Part 1, we are trying to determine if Gary has suddenly become the Sultan of Strikes. So, we are going to compare two hypotheses:
+
+Gary is still Ordinary Gary, and throws a strike 1/10th of the time.
+Gary is now the Bey of Bowling, and throws a strike every time.
+
+For simplicity, we are only going to consider these two possibilities for now, and ignore a possibility where Gary got better, but is not 100%. Bayesian applies to that situation too, but that’s beyond the scope of this article.
+
+## Moderate Prior
+
+Let’s start with the moderate skepticism case. You think there’s only a 10% chance that Gary is now the Ace of the Alley. We then gather some data, and Gary throws 3 strikes in a row. Given that starting point, let’s see the three questions in action.
+
+What is your prior belief? You think there’s a 10% chance that Gary is the Bey of Bowling. In other words, the ratio of you belief that Gary is Great (B) to Gary is Garden-variety (A) is 1/10. We can write this as:
+	P(B) / P(A) = .1
+	In plain English, this equation says, “The ratio of the probability of hypothesis B to the probability of hypothesis A equals 10%.”
+If the first hypothesis is true, how likely is it that you observed your data? We assume hypothesis A is true, that Gary throws strikes 1/10 of the time. Thus, the chance of getting 3 strikes in a row is  (1/10) ^ 3 or .001.
+	P(D | A) = .001
+	In English: “The probability of seeing the Data, D, given that hypothesis A is true.”
+If the second hypothesis is true, how likely is it that you observed your data? We assume hypothesis B is true, that Gary only throws strikes. Thus, the probability of seeing three strikes in a row is 1*1*1 = 1 (100%). We can write this as:
+	P(D | B) = 1
+	In English: “The probability of the Data, D, given that hypothesis B is true.”
+
+Questions 2, 3 are called conditional probabilities because they ask for a probability conditional on something (in this case, the hypotheses). The notation of P(A | B), meaning the probability of A given B, is core to Bayesian Statistics, and it’s worth thoroughly understanding.
+
+So, how do we use these numbers? First, let’s take the ratio of the conditional probabilities (P(D | B) / P(D | A). If our data is more likely given hypothesis B than A, the ratio will be larger. Likewise, if the data is more likely given hypothesis A than B, the ratio will be smaller. Thus, this ratio tells us which hypothesis explains the data better. This ratio is both simple and extremely important. It is called the Bayes Factor.
+
+(P(D | B) / P(D | A) = 1 / .001 = 1000
+
+Our posterior odds are simply our prior odds times this Bayes Factor. So:
+
+Posterior odds in favor of B = prior * Bayes Factor = (P(B) / P(A)) * (P(D | B) / P(D | A)
+
+Plugging in our numbers, we have:
+
+Posterior = .1 * (1 / .001) = 100
+
+A good general rule of thumb is that a posterior over 20 is good evidence, and over 150 is overwhelming evidence. It looks like we’re on to something here, and one more strike would be pretty overwhelming evidence. At this point, given your prior belief, you should be open to thinking that Gary might actually be telling the truth.
+
+## Extreme Prior
+
+But, you say, “that’s ridiculous!” You still don’t believe. That means that your prior was actually much smaller than 10%. Let’s walk through an extreme skepticism case to show the power of the prior. Let’s say that you believe there’s only a 1 in a million chance that Gary is telling the truth. So, with Gary’s three strikes, we have:
+
+P(B) / P(A) -> 10^-6
+P(D | A) -> unchanged, (1/10) ^ 3 = .001
+P(D | B) -> unchanged, 1*1*1 = 1
+
+Posterior = 10^-6 * (1 / .001) = .001
+
+A posterior of .001 is not at all convincing: we’re going to need a lot more evidence to be convinced. So, let’s gather some more data. Gary throws another 7 strikes, for a total of 10 in a row!
+
+P(B) / P(A) -> unchanged, 10^-6
+P(D | A) -> 10^-10 -> This data is extraordinarily unlikely, given hypothesis A
+P(D | B) -> unchanged, 1
+
+Posterior = 10^-6 * (1 / 10^-10) = 10^4
+
+Now we can say that it’s very likely that Gary is telling the truth, to our amazement.
+
+Take a moment to think about this example from your perspective. How many strikes would you need to see to be convinced? What does that imply about your prior belief?
+
+## Beliefs that Never Change
+In this section, we’ll go through the two examples where the prior is so strong, that data is irrelevant.
+
+### Prior of 0
+Let’s say you think there’s no chance that Gary is now the Bowling Boss. We can represent that here as a prior of 0, meaning that you believe there is a 0% chance that Gary now only throws strikes.
+
+P(B) / P(A) -> 0
+P(D | A) -> irrelevant
+P(D | B) -> irrelevant
+
+Posterior = 0 * (P(D | B) / P(D | A)) = 0
+
+Since the prior is 0, both P(D | A) and P(D | B) are irrelevant. Since these are the only two places that the data can influence, the data itself is irrelevant. In other words, no amount of data will change your mind.
+
+### Prior of Infinity
+This is the corollary to the prior of 0. You believe without a shred of doubt that Gary is the Bowling Boss.
+
+P(B) / P(A) -> inf
+P(D | A) -> irrelevant
+P(D | B) -> irrelevant
+
+Posterior = inf * (P(D | B) / P(D | A)) = inf
+
+Again, no amount of data will change your mind.
+
+Footnote: I’m trying to keep things simple, but a clever reader will notice that things would get hairy if P(D | B) = 0. In this case, we would probably have to view the inf as lim -> inf. If the data is truly impossible given hypothesis B, then we have to accept the posterior of 0, meaning that hypothesis A is correct. The other way we can view this situation, is inverting everything to make the prior 0 instead of inf.
+
+## Cheating
+
+In this example, I’m going to illustrate how Bayesian statistics can explain a situation where data does not convince someone even though their prior is not infinity or 0. Let’s revisit our extreme skepticism example. We have a prior of 1 in a million, but Gary threw 10 strikes in a row.
+
+Posterior = 10^-6 * (1 / 10^-10) = 10^4
+
+Even though we have a prior of 1 in a million, this is still overwhelming evidence. So, we can probably discard hypothesis A. So, it’s time for a third hypothesis, C, that Gary is cheating. Under the cheating theory, Gary can create any result he wants. Something interesting happens when we compare B and C.
+
+P(D | C) -> The probability of seeing the data given that Gary is cheating is 1, since he can create any result he wants.
+P(D | B) -> The probability of seeing the data that consists only of strikes, given that Gary only throws strikes, is also 1.
+
+We are left with:
+
+P(A) * (1 / 1) = P(B)
+or
+P(A) = P(B)
+
+In plain English, the data doesn’t matter at all. Your posterior belief is always going to be your prior belief, whatever that was.
+
+## Cheating Part 2
+
+Let’s work through the full example from (The Data is a Conspiracy). Recall that we are illustrating a situation where more supporting data will actually convince you, not that Gary is now Gary the Great, but that he’s cheating. This situation is analogous to any number of conspiracy theories, as discussed in part 1.
+
+We are going to change hypothesis B slightly. Now, Gary only claims that he can throw a strike 90% of the time. The logic still works if you keep the original hypothesis B and Gary misses at least once, but having a probability here illustrates the point better. I’ll leave it up to you to show why a miss when Gary claims to only throw strikes supports the theory that he is cheating.
+
+Let’s say Gary throws 9 strikes in 10 tries. Here’s the comparison of A, B, with extreme initial skepticism.
+
+P(B) / P(A) -> 10^-6
+P(D | A) -> (1/10)^10 * (9/10)^1 = 9e-11
+P(D | B) -> (9/10)^10 * (1/10)^1 = .035
+
+Posterior for B vs A= 10^-6 * ( .035 / 9e-11) = 387
+
+As you can see, the evidence is overwhelming in favor of B.
+
+Now, let’s look at hypothesis C again, that Gary is cheating. If he is cheating, then he can create any result he wants.
+
+P(B) / P(C) -> 10^-6
+P(D | B) -> .035
+P(D | C) -> 1
+
+Posterior for B vs C = 10^-6 * ( .035 / 1) = 3.5e-8
+
+Now let’s add more data. Let’s say Gary throws another 10 strikes and 1 miss, for a total of 20 strikes and 2 misses.
+
+P(B) / P(A) -> 10^-6
+P(D | A) -> (1/10)^20 * (9/10)^2 = 8e-21
+P(D | B) -> (9/10)^20 * (1/10)^2 = .0012
+
+Posterior for B vs A = 1.5e11
+Crazy, insanely overwhelming evidence for B vs A.
+
+P(B) / P(C) -> 10^-6
+P(D | B) -> (9/10)^20 * (1/10)^2 = .0012
+P(D | C) -> 1
+
+Posterior for B vs C= .1 * ( .0012 / 1) = 1.2e-9
+
+The additional data actually decreased our belief in B when compared to C (posteriors of 3.5e-8 vs. 1.2e-9). The actual numbers don’t matter here, just that they are decreasing.
+
+Something really interesting happened here. Gary wants us to believe in hypothesis B, that he is now the Ace of the Alley. Thinking that we are comparing hypothesis A and B, he has shown us more data in order to convince us. That data is overwhelming, so he thinks, how can you not be convinced? But, we are actually comparing B against C, that he is cheating. When comparing B and C, the additional data actually made us more sure of C, and less sure of B. Evidence that Gary intended to show one thing has actually convinced us of something else!
+
+As discussed in Part 1, the key point here is that we are comparing a hypothesis that depends on data (hypothesis B), with a hypothesis that does not depend on data, the cheating hypothesis. Essentially, you are comparing a hypothesis that has some doubt, however small, with one that has no doubt. The ratio of doubt to no doubt gets larger with more data, always. Thus, when you are trying to convince someone, you must understand what hypothesis they are comparing against yours. Are you trying to convince someone with data, when their hypothesis doesn’t depend on data?
