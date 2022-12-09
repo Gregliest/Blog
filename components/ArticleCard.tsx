@@ -51,6 +51,9 @@ export default function ArticleCard(props: ArticleCardProps) {
             </div>
             <div className="flex-grow" />
             {getReadFull(props.post)}
+            {(props.post.type == 'Photo' || props.post.type == 'Blurb') && (
+              <p className="w-full px-8 pb-6 italic text-neutral-700">(photo only)</p>
+            )}
           </div>
         </Link>
       </div>
