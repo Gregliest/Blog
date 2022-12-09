@@ -1,5 +1,4 @@
 import * as React from 'react'
-import Typography from '@mui/material/Typography'
 import formatDate from '@/lib/utils/formatDate'
 import { PostFrontMatter } from 'types/PostFrontMatter'
 import Link from './Link'
