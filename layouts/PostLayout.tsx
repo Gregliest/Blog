@@ -12,6 +12,7 @@ import { AuthorFrontMatter } from 'types/AuthorFrontMatter'
 import { getSection } from '@/lib/utils/posts'
 import { BlogNewsletterForm } from '@/components/NewsletterForm'
 import { useRouter } from 'next/router'
+import formatDate from '@/lib/utils/formatDate'
 
 const editUrl = (fileName) => `${siteMetadata.siteRepo}/blob/master/data/blog/${fileName}`
 const discussUrl = (slug) =>
@@ -156,6 +157,14 @@ function PrintsView(props) {
   )
 }
 
+function PostedOn(props) {
+  return (
+    props.post.postedDate && (
+      <p className="mb-4 text-sm italic">{'Posted on: ' + formatDate(props.post.postedDate)}</p>
+    )
+  )
+}
+
 export default function PostLayout({ frontMatter, authorDetails, next, prev, children }: Props) {
   const { slug, fileName, date, title, tags } = frontMatter
   const section = getSection(frontMatter)
@@ -205,7 +214,10 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
               <AuthorView authorDetails={authorDetails} />
             </button>
             <div className="divide-y divide-gray-200 lg:col-span-3 lg:row-span-2 lg:pb-0">
-              <div className="prose max-w-none pt-10 pb-8">{children}</div>
+              <div>
+                <div className="prose max-w-none pt-10 pb-8">{children}</div>
+                <PostedOn post={frontMatter} />
+              </div>
               <div className="pt-6 pb-6 text-sm text-gray-700">
                 <Link href={discussUrl(slug)} rel="nofollow">
                   {'Discuss on Twitter'}

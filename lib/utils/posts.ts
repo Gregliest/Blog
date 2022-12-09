@@ -11,6 +11,15 @@ export function sortByDate(posts: PostFrontMatter[]) {
   return posts
 }
 
+// Sorts by posted date then by date
+export function sortByPostedDate(posts: PostFrontMatter[]) {
+  posts.sort((post1, post2) => {
+    const result = dateSortDesc(getPostedDate(post1), getPostedDate(post2))
+    return result == 0 ? dateSortDesc(post1.date, post2.date) : result
+  })
+  return posts
+}
+
 export function getLatestPostDate(posts: PostFrontMatter[]) {
   let date = ''
   posts.forEach((post) => {

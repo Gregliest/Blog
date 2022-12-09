@@ -9,11 +9,13 @@ import Footer from '@/components/Footer'
 import Image from '@/components/Image'
 import AnimatedTextBox from '@/components/AnimatedTextBox'
 import headerNavLinks from '@/data/headerNavLinks'
+import { sortByPostedDate } from '@/lib/utils/posts'
 
 export const POSTS_PER_PAGE = 5
 
 export const getStaticProps = async () => {
   const allPosts = await getAllDisplayPosts()
+  sortByPostedDate(allPosts)
 
   return {
     props: {
