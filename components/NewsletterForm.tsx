@@ -55,7 +55,7 @@ const NewsletterForm = ({ title = 'Subscribe to the newsletter' }) => {
             disabled={subscribed}
           />
         </div>
-        <div className="ml-4 flex rounded-md shadow-sm lg:mt-2 lg:ml-0 lg:w-full">
+        <div className="mt-2 ml-0 flex rounded-md shadow-sm sm:mt-0 sm:ml-4 lg:mt-2 lg:ml-0 lg:w-full">
           <button
             className={`w-full rounded-md bg-primary-500 py-2 px-4 font-medium text-white
               ${subscribed ? 'cursor-default' : 'hover:bg-primary-700'}

@@ -102,6 +102,7 @@ export default function Tags({ tags, posts }: InferGetStaticPropsType<typeof get
   }
 
   function ArchiveComponent() {
+    const archivedArticles = articles.filter((article) => article.archived || article.draft)
     const title = showArchived ? 'Hide Archived and Drafts' : 'Show Archived and Drafts'
     return (
       <div className="flex flex-col">
@@ -111,15 +112,11 @@ export default function Tags({ tags, posts }: InferGetStaticPropsType<typeof get
             aria-label="archived"
             onClick={() => setShowArchived(!showArchived)}
           >
-            {title}&rarr;
+            {title + ` (${archivedArticles.length})`}&rarr;
           </button>
         </div>
 
-        {showArchived && (
-          <ArticleGallery
-            articles={articles.filter((article) => article.archived || article.draft)}
-          />
-        )}
+        {showArchived && <ArticleGallery articles={archivedArticles} />}
       </div>
     )
   }

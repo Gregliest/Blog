@@ -100,4 +100,6 @@ As you can see, I set the height constraint of the caption to be 0. I then had t
 
 There are a couple of other ways to hide a view. I could have set another constraint that encompassed both the spacing and the text view height constraint. I would then set the priority of the spacing and height constraints to be lower than the larger constraint, and the height can be toggled using that single constraint. I also could have set the constraint between the image and the next item (the button in this case). Again this saves one constraint in the controller, but adds a constraint in IB. I find that the added constraint and the differing priorities create confusing views in IB, especially as views get more complex and have more constraints on screen. The added constraint also makes it harder to add or remove views, since the elements are now tied together with one more constraint. It's a tradeoff between complexity in IB and more code bloat. Again, all of this can be yours for free in Android.
 
-[Continue to Part III: The Beauty of Layout Weight and Conclusion](../android-ios-layouts-part-iii-the-beauty-of-layout-weight-and-conclusion)
+[Continue to Part III: The Beauty of Layout Weight and Conclusion](/blog/mobile/android-layouts-3)
+
+[Back to Part I: Android > iOS](/blog/mobile/android-layouts-1)
