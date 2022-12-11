@@ -1,16 +1,14 @@
 import { useState } from 'react'
 import Link from './Link'
-import headerNavLinks from '@/data/headerNavLinks'
+import { minimalHeaderNavLinks } from '@/data/headerNavLinks'
 
 interface MobileNavProps {
   navLinks?: Record<string, string>[]
 }
 const MobileNav = (props: MobileNavProps) => {
-  const links = headerNavLinks.slice()
-  links.unshift({ href: '/', title: 'Overview' })
-  const navLinks = props.navLinks ? props.navLinks : links
+  const navLinks = props.navLinks ? props.navLinks : minimalHeaderNavLinks
   const [navShow, setNavShow] = useState(false)
-
+  //
   const onToggleNav = () => {
     setNavShow((status) => {
       if (status) {

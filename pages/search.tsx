@@ -127,7 +127,7 @@ export default function Tags({ tags, posts }: InferGetStaticPropsType<typeof get
   return (
     <div className="flex h-screen flex-col">
       <MinimalHeader title="Search" />
-      <PageSEO title={`Tags - ${siteMetadata.author}`} description="Things I blog about" />
+      <PageSEO title={`Search - ${siteMetadata.author}`} description="Things I blog about" />
       {/* Necessary to put search in a div so that it doesn't lose focus when rerendering */}
       <div>{SearchComponent()}</div>
       <TagsComponent />

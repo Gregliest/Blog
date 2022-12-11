@@ -8,7 +8,6 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Image from '@/components/Image'
 import AnimatedTextBox from '@/components/AnimatedTextBox'
-import headerNavLinks from '@/data/headerNavLinks'
 import { sortByPostedDate } from '@/lib/utils/posts'
 
 export const POSTS_PER_PAGE = 5
@@ -49,14 +48,14 @@ export default function Blog({ allPosts }: InferGetStaticPropsType<typeof getSta
         />
       </div>
       <div className="h-screen w-full">
-        <Header navLinks={headerNavLinks} />
+        <Header />
 
         <div className="h-1/5" />
         <AnimatedTextBox array={blogAbout} />
         <div className="h-2/5" />
 
         <PageSEO
-          title={`Projects - ${siteMetadata.author}`}
+          title={`Canyons and Code - ${siteMetadata.author}`}
           description={siteMetadata.description}
         />
         <ArticleGallery articles={allPosts} />

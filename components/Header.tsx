@@ -1,7 +1,7 @@
 import Link from './Link'
 import MobileNav from './MobileNav'
 import siteMetadata from '@/data/siteMetadata'
-import headerNavLinks from '@/data/headerNavLinks'
+import { headerNavLinks } from '@/data/headerNavLinks'
 import Logo from '@/data/logo.svg'
 import SearchIcon from '@mui/icons-material/Search'
 

@@ -40,7 +40,7 @@ export default function Whitewater({ whitewaterPosts }) {
         <MinimalHeader title="Whitewater" />
         <div className="h-6" />
         <PageSEO
-          title={`Projects - ${siteMetadata.author}`}
+          title={`Whitewater - ${siteMetadata.author}`}
           description={siteMetadata.description}
         />
         <ArticleGallery articles={whitewaterPosts} />

@@ -2,6 +2,8 @@ import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import { MDXLayoutRenderer } from '@/components/MDXComponents'
 import SectionContainer from '@/components/SectionContainer'
+import { PageSEO } from '@/components/SEO'
+import siteMetadata from '@/data/siteMetadata'
 import { getDisplayPost } from '@/lib/mdx'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { AuthorFrontMatter } from 'types/AuthorFrontMatter'
@@ -21,15 +23,19 @@ export default function About({ authorDetails }: InferGetStaticPropsType<typeof 
   const { mdxSource, frontMatter } = authorDetails
 
   return (
-    <SectionContainer>
+    <div>
       <Header />
-      <MDXLayoutRenderer
-        layout={frontMatter.layout || DEFAULT_LAYOUT}
-        mdxSource={mdxSource}
-        frontMatter={frontMatter}
-        content={undefined}
-      />
+      <div className="mb-0 h-1 bg-neutral-200 sm:mb-4" />
+      <PageSEO title={`About - ${siteMetadata.author}`} description={siteMetadata.description} />
+      <SectionContainer>
+        <MDXLayoutRenderer
+          layout={frontMatter.layout || DEFAULT_LAYOUT}
+          mdxSource={mdxSource}
+          frontMatter={frontMatter}
+          content={undefined}
+        />
+      </SectionContainer>
       <Footer />
-    </SectionContainer>
+    </div>
   )
 }

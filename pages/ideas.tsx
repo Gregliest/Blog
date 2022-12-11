@@ -22,7 +22,7 @@ export default function Ideas({ ideaPosts }) {
   return (
     <SectionContainer>
       <MinimalHeader title="Ideas" />
-      <PageSEO title={`Projects - ${siteMetadata.author}`} description={siteMetadata.description} />
+      <PageSEO title={`Ideas - ${siteMetadata.author}`} description={siteMetadata.description} />
       <ArticleGallery articles={ideaPosts} />
       <Footer />
     </SectionContainer>

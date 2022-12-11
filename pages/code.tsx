@@ -38,10 +38,7 @@ export default function Code({ codePosts }) {
       <div className="h-screen w-screen">
         <MinimalHeader title="Code" />
         <div className="h-6" />
-        <PageSEO
-          title={`Projects - ${siteMetadata.author}`}
-          description={siteMetadata.description}
-        />
+        <PageSEO title={`Code - ${siteMetadata.author}`} description={siteMetadata.description} />
         <ArticleGallery articles={codePosts} />
         <Footer />
       </div>
