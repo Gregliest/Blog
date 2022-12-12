@@ -37,7 +37,9 @@ export default function Photography({ photographyPosts }) {
         description={siteMetadata.description}
       />
       <div className="h-1 bg-neutral-200" />
-      <Gallery posts={photographyPosts} />
+      <div className="mx-2">
+        <Gallery posts={photographyPosts} />
+      </div>
       <Footer />
     </div>
   )
