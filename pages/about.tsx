@@ -23,7 +23,7 @@ export default function About({ authorDetails }: InferGetStaticPropsType<typeof 
   const { mdxSource, frontMatter } = authorDetails
 
   return (
-    <div>
+    <div className="h-screen w-screen">
       <Header />
       <div className="mb-0 h-1 bg-neutral-200 sm:mb-4" />
       <PageSEO title={`About - ${siteMetadata.author}`} description={siteMetadata.description} />

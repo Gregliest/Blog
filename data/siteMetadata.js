@@ -15,8 +15,8 @@ const siteMetadata = {
   twitter: '',
   facebook: '',
   youtube: '',
-  instagram: '',
-  linkedin: 'https://www.linkedin.com',
+  instagram: 'https://www.instagram.com/gregliestkayak',
+  linkedin: 'https://www.linkedin.com/in/greg-lee-b1376a36',
   locale: 'en-US',
   analytics: {
     // If you want to use an analytics provider you have to add it to the

@@ -35,10 +35,6 @@ interface Props {
   children: ReactNode
 }
 
-function onAuthorClick(router) {
-  router.push('/about')
-}
-
 function AuthorView(props) {
   return (
     <dl className="pt-6 pb-10 lg:border-b lg:border-gray-200 lg:pt-11">
@@ -210,9 +206,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
             className="divide-y divide-gray-200 pb-8 lg:grid lg:grid-cols-4 lg:gap-x-6 lg:divide-y-0"
             style={{ gridTemplateRows: 'auto 1fr' }}
           >
-            <button onClick={() => onAuthorClick(router)}>
-              <AuthorView authorDetails={authorDetails} />
-            </button>
+            <AuthorView authorDetails={authorDetails} />
             <div className="divide-y divide-gray-200 lg:col-span-3 lg:row-span-2 lg:pb-0">
               <div>
                 <div className="prose max-w-none pt-10 pb-8">{children}</div>
