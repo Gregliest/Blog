@@ -30,7 +30,7 @@ export const getStaticProps = async () => {
 
 export default function Photography({ photographyPosts }) {
   return (
-    <div>
+    <div className="h-screen w-screen">
       <MinimalHeader title="Photography" />
       <PageSEO
         title={`Photography - ${siteMetadata.author}`}

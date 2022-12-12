@@ -15,7 +15,7 @@ export const MinimalHeader = (props: HeaderProps) => {
   const title = props.title ? props.title : siteMetadata.headerTitle
 
   return (
-    <header className="flex justify-between">
+    <header className="flex w-full justify-between">
       <div className="bg-white bg-opacity-50 p-3">
         <Link href="/" aria-label={title}>
           <div className="flex items-center justify-between">
@@ -39,7 +39,7 @@ const Header = (props: HeaderProps) => {
   const title = props.title ? props.title : siteMetadata.headerTitle
 
   return (
-    <header className="flex justify-between">
+    <header className="flex w-full justify-between">
       <div className="bg-white p-3">
         <Link href="/" aria-label={title}>
           <div className="flex items-center justify-between">
@@ -52,7 +52,7 @@ const Header = (props: HeaderProps) => {
           </div>
         </Link>
       </div>
-      <div className="w-full bg-gradient-to-r from-white via-transparent to-white" />
+      <div className="flex-grow bg-gradient-to-r from-white via-transparent to-white" />
       <div className="flex items-center bg-white p-1 text-base leading-5">
         <div className="hidden items-center md:flex">
           {headerNavLinks.map((link) => (
@@ -72,7 +72,7 @@ const Header = (props: HeaderProps) => {
             <SearchIcon />
           </Link>
         </div>
-        <div className="md:hidden">
+        <div className="flex items-center bg-white bg-opacity-50 p-3 text-base leading-5 md:hidden">
           <MobileNav navLinks={props.navLinks} />
         </div>
       </div>
