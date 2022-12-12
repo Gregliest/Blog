@@ -35,6 +35,12 @@ interface Props {
   children: ReactNode
 }
 
+function onAuthorClick(event, router) {
+  if (event.target.id !== 'instagram') {
+    router.push('/about')
+  }
+}
+
 function AuthorView(props) {
   return (
     <dl className="pt-6 pb-10 lg:border-b lg:border-gray-200 lg:pt-11">
@@ -42,38 +48,42 @@ function AuthorView(props) {
       <dd>
         <ul className="flex justify-center space-x-8 sm:space-x-12 lg:block lg:space-x-0 lg:space-y-8">
           {props.authorDetails.map((author) => (
-            <li className="flex items-center space-x-2" key={author.name}>
-              {author.avatar && (
-                <Image
-                  src={author.avatar}
-                  width="38"
-                  height="38"
-                  alt="avatar"
-                  className="h-10 w-10 rounded-full"
-                />
-              )}
-              <dl className="whitespace-nowrap text-sm font-medium leading-5">
-                <dt className="sr-only">Name</dt>
-                <dd className="text-left text-gray-900">{author.name}</dd>
-                <dt className="sr-only">Instagram</dt>
-                <dd>
-                  {author.instagram && (
-                    <Link
-                      href={author.instagram}
-                      className="text-primary-500 hover:text-primary-600"
-                    >
-                      {author.instagram.replace('https://www.instagram.com/', '@')}
-                    </Link>
-                  )}
-                </dd>
-              </dl>
-            </li>
+            <button onClick={(e) => onAuthorClick(e, props.router)} key={author.name}>
+              <li className="flex items-center space-x-2">
+                {author.avatar && (
+                  <Image
+                    src={author.avatar}
+                    width="38"
+                    height="38"
+                    alt="avatar"
+                    className="h-10 w-10 rounded-full"
+                  />
+                )}
+                <dl className="whitespace-nowrap text-sm font-medium leading-5">
+                  <dt className="sr-only">Name</dt>
+                  <dd className="text-left text-gray-900">{author.name}</dd>
+                  <dt className="sr-only">Instagram</dt>
+                  <dd>
+                    {author.instagram && (
+                      <Link
+                        href={author.instagram}
+                        className="text-primary-500 hover:text-primary-600"
+                        id="instagram"
+                      >
+                        {author.instagram.replace('https://www.instagram.com/', '@')}
+                      </Link>
+                    )}
+                  </dd>
+                </dl>
+              </li>
+            </button>
           ))}
         </ul>
       </dd>
     </dl>
   )
 }
+
 function TagView(props) {
   return (
     props.tags && (
@@ -206,7 +216,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
             className="divide-y divide-gray-200 pb-8 lg:grid lg:grid-cols-4 lg:gap-x-6 lg:divide-y-0"
             style={{ gridTemplateRows: 'auto 1fr' }}
           >
-            <AuthorView authorDetails={authorDetails} />
+            <AuthorView authorDetails={authorDetails} router={router} />
             <div className="divide-y divide-gray-200 lg:col-span-3 lg:row-span-2 lg:pb-0">
               <div>
                 <div className="prose max-w-none pt-10 pb-8">{children}</div>
