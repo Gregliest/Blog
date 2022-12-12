@@ -1,4 +1,3 @@
-import { ImageList, useMediaQuery } from '@mui/material'
 import ImageListItem from '@mui/material/ImageListItem'
 import Image from '@/components/Image'
 import Link from 'next/link'
