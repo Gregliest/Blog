@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 import siteMetadata from '@/data/siteMetadata'
 import { InferGetStaticPropsType } from 'next'
 import { getAllDisplayPosts } from '@/lib/utils/contentProvider'
@@ -6,9 +8,9 @@ import { PageSEO } from '@/components/SEO'
 import ArticleGallery from '@/components/ArticleGallery'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import Image from '@/components/Image'
 import AnimatedTextBox from '@/components/AnimatedTextBox'
 import { sortByPostedDate } from '@/lib/utils/posts'
+import lake from '../public/static/lake.jpg'
 
 export const POSTS_PER_PAGE = 5
 
@@ -34,19 +36,8 @@ export default function Blog({ allPosts }: InferGetStaticPropsType<typeof getSta
   const blogAbout = ['SOFTWARE', 'WHITEWATER', 'PHOTOGRAPHY']
   return (
     <div>
-      <div className="fixed -z-10 h-screen w-screen">
-        <Image
-          alt="Background"
-          src="/static/images/BowserBanner.jpg"
-          fill
-          objectFit="cover"
-          priority
-          sizes="(max-width: 1000px and max-height:450px) 1000px,
-          (max-width: 1440px and max-height:720px) 1500px,
-            3000px"
-          quality={100}
-        />
-      </div>
+      <Image alt="Background" src={lake} />
+      <div className="fixed -z-10 h-screen w-screen"></div>
       <div className="h-screen w-screen">
         <Header />
 
