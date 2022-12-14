@@ -67,12 +67,12 @@ const Header = (props: HeaderProps) => {
           <Link
             key="search"
             href="/search"
-            className="p-4 text-base font-medium text-gray-800 hover:text-primary-500"
+            className="px-4 text-base font-medium text-gray-800 hover:text-primary-500"
           >
             <SearchIcon />
           </Link>
         </div>
-        <div className="flex items-center bg-white bg-opacity-50 p-3 text-base leading-5 md:hidden">
+        <div className="md:hidden">
           <MobileNav navLinks={props.navLinks} />
         </div>
       </div>
