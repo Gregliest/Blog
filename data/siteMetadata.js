@@ -9,7 +9,7 @@ const siteMetadata = {
   siteRepo: 'https://github.com/gregliest/Blog',
   siteLogo: '/static/favicons/android-chrome-192x192.png',
   image: '/static/images/avatar.png',
-  socialBanner: '/static/images/twitter-card.png',
+  socialBanner: '/static/images/LogoV3.png',
   email: 'blog@gregliest.com',
   github: 'https://github.com/gregliest/Blog',
   twitter: '',
