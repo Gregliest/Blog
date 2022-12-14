@@ -37,7 +37,8 @@ export default function Photography({ photographyPosts }) {
         description={siteMetadata.description}
       />
       <div className="h-1 bg-neutral-200" />
-      <div className="mx-2">
+      {/* There's a bug in masonry that adds spacing to the right but not the left */}
+      <div className="ml-2">
         <Gallery posts={photographyPosts} />
       </div>
       <Footer />

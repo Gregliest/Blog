@@ -82,7 +82,7 @@ $Prior Odds * Bayes Factor = \frac{P(B)}{P(A)} * \frac{P(D | B)}{P(D | A)} = .1 
 
 What does this number mean? The 100 is our _posterior odds_. It quantifies how much we should believe in one hypothesis over another. It combines our prior belief, via the prior odds, and the amount that the data should sway us, via the Bayes Factor, into a single, convenient number.
 
-A good general rule of thumb is that a posterior over 20 is good evidence, and over 150 is overwhelming evidence. With a result of 100, it looks like we’re on to something here, and one more strike would be overwhelming evidence. At this point, given your prior belief, you should be open to thinking that Gary might actually be telling the truth.
+A good general rule of thumb is that a posterior over 20 is good evidence, and over 150 is overwhelming evidence. With a result of 100, it looks like we’re on to something here, and one more strike would show overwhelming evidence. At this point, given your prior belief, you should be open to thinking that Gary might be telling the truth.
 
 ## Extreme Prior
 
@@ -124,7 +124,7 @@ Since the prior is 0, both $P(D | A)$ and $P(D | B)$ are irrelevant. Since these
 
 ### Prior of Infinity
 
-This is the corollary to the prior of 0. You believe without a shred of doubt that Gary is the Bowling Boss.
+This is the corollary to the prior of 0. You believe without a shred of doubt that Gary is the Bey of Bowling.
 
 $\frac{P(B)}{P(A)} = \infin$\
 $P(D | A)$ -> irrelevant\
@@ -161,11 +161,11 @@ Your posterior belief is always going to be your prior belief, whatever that was
 
 Let’s work through the full example from [The Data is a Conspiracy](/blog/ideas/bayesian-belief-1#the-data-is-a-conspiracy) from Part 1. Recall that we are illustrating a situation where more supporting data will actually convince you, not that Gary is now Gary the Great, but that he’s cheating. This situation is crazy on it's surface, because data that seems to show one thing, actually convinces us of something else. As discussed in Part 1, this situation is analogous to any number of conspiracy theories.
 
-We are going to change hypothesis B slightly. Now, Gary only claims that he can throw a strike 90% of the time. The logic still works if you keep the original hypothesis B and Gary misses at least once, but having a probability here illustrates the point better. I’ll leave it up to you to show why a miss when Gary claims to only throw strikes supports the theory that he is cheating.
+We are going to change hypothesis B slightly. Now, Gary only claims that he can throw a strike 90% of the time. The logic still works if you keep the original hypothesis B and Gary misses at least once, but having a probability here illustrates the point more clearly. I’ll leave it up to you to show why a miss when Gary claims to only throw strikes supports the theory that he is cheating.
 
 ### Initial Data
 
-Let’s say Gary throws 9 strikes in 10 tries. Here’s the comparison of A, B, with extreme initial skepticism.
+Let’s say Gary throws 9 strikes in 10 tries. Here’s the comparison of A, B, with extreme initial skepticism. Don't get too lost in the numbers, the actual values aren't as important as comparing them at the end.
 
 $\frac{P(B)}{P(A)} -> 10^{-6}$\
 $P(D | A) = \frac{1}{10}^{10} * \frac{9}{10}^1 = 9e-11$\
@@ -207,6 +207,10 @@ The additional data actually decreased our belief in B when compared to C (poste
 
 ### It's all a conspiracy
 
-Something really interesting happened here. Gary wants us to believe in hypothesis B, that he is now the Ace of the Alley. Thinking that we are comparing hypothesis A and B, he has shown us more data in order to convince us. That data is objectively overwhelming. So he thinks, how can you not be convinced? But, we are actually comparing B against C, that he is cheating. When comparing B and C, the additional data actually made us more sure of C, and less sure of B. Evidence that Gary intended to show one thing has actually convinced us of something else!
+Something really interesting happened here. Gary wants us to believe in hypothesis B, that he is now the Ace of the Alley. Thinking that we are comparing hypothesis A and B, he has shown us more data in order to convince us. That data is objectively overwhelming. So he thinks, how can you not be convinced? But, we are actually comparing B against C, that he is cheating. When comparing B and C, the additional data made us more sure of C, and less sure of B. Evidence that Gary intended to show one thing has actually convinced us of something else!
 
 As discussed in Part 1, the key point here is that we are comparing a hypothesis that depends on data (hypothesis B), with a hypothesis that does not depend on data, the cheating hypothesis. Essentially, you are comparing a hypothesis that has some doubt, however small, with one that has no doubt. The ratio of doubt to no doubt gets larger with more data, always. Thus, when you are trying to convince someone, you must understand what hypothesis they are comparing against yours. Are you trying to convince someone with data, when their hypothesis doesn’t depend on data?
+
+## Conclusion
+
+In these posts, we learned about prior beliefs, theories that do and do not depend on data, and when data becomes irrelevant to an argument. I hope this info will help you to recognize situations where you or others hold unshakeable beliefs. In my humble opinion, there are far too many of those beliefs in our world. Our beliefs about most things in our lives are pretty fixed: relationships, how the world works, morality, religion, and politics to name a few. Many of those beliefs may be based on false or misleading assumptions. I think the world would be a happier, more sane place if we relied a little less on our preconceptions, and a little more on our observations of reality. So, if you enjoyed this post, try examining some of your own beliefs, and ask yourself, am I really willing to change them based on data?
