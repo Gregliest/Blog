@@ -19,7 +19,9 @@ This post is meant to be read in conjunction with [Part 1](/blog/ideas/bayesian-
 
 ## How do we compare two possibilities?
 
-Let’s say you’ve gathered some data. If you have two competing views that could explain that data, how can you decide which one to believe? How strong should your belief be? Let’s start by asking three clever but simple questions.
+Let’s say you’ve gathered some data, and you have two competing views that could explain that data. How do you then decide which one to believe? How strong should your belief be?
+
+Let’s start by asking three clever but simple questions.
 
 1. What is your belief between the two hypotheses before seeing the data?
 2. If the first hypothesis is true, how likely is it that you observed your data?
@@ -28,7 +30,7 @@ Let’s say you’ve gathered some data. If you have two competing views that co
 Recall that in the [first example](/blog/ideas/bayesian-belief-1#prior-belief) of Part 1, we are trying to determine if Gary has suddenly become the Sultan of Strikes. So, we are going to compare two hypotheses:
 
 A) Gary is still Ordinary Gary, and throws a strike 1/10th of the time.\
-B) Gary is now the Bey of Bowling, and throws a strike every time.
+B) Gary is now the Bowling Boss, and throws a strike every time.
 
 For simplicity, we are only going to consider these two possibilities for now, and ignore a possibility where Gary got better, but is not 100%. Bayesian applies to that situation too, but that’s beyond the scope of this article.
 
@@ -42,7 +44,7 @@ You think there’s a 10% chance that Gary is the Bey of Bowling. In other words
 
     $\frac{P(B)}{P(A)} = .1$
 
-    In plain English, this equation says, “The ratio of the probability of hypothesis B to the probability of hypothesis A equals 10%.”
+    In plain English, this equation says, “I believe that hypothesis B is 1/10 as likely than hypothesis A," or more formally, "The ratio of the probability of hypothesis B to the probability of hypothesis A equals 10%.”
 
 ### 2) If the first hypothesis is true, how likely is it that you observed your data?
 
@@ -50,7 +52,7 @@ We assume hypothesis A is true, that Gary throws strikes $\frac{1}{10}$ of the t
 
     $P(D | A) = \frac{1}{10}^3 = .001$
 
-    In English: “The probability of seeing the Data, D, given that hypothesis A is true.”
+    In English: “The probability of seeing the data, 3 strikes in a row, given that hypothesis A is true.”
 
 ### 3) If the second hypothesis is true, how likely is it that you observed your data?
 
@@ -58,9 +60,9 @@ We assume hypothesis B is true, that Gary only throws strikes. Thus, the probabi
 
     $P(D | B) = 1*1*1 = 1$
 
-    In English: “The probability of the Data, D, given that hypothesis B is true.”
+    In English: “The probability of the data, 3 strikes in a row, given that hypothesis B is true.”
 
-Questions 2, 3 are called conditional probabilities because they ask for a probability conditional on something (in this case, the hypotheses). The notation of P(A | B), meaning the probability of A given B, is core to Bayesian Statistics, and it’s worth thoroughly understanding.
+Questions 2, 3 are called conditional probabilities because they ask for a probability conditional on something (in this case, the hypotheses). The notation of P(A | B), meaning the probability of A given B, is core to Bayesian Statistics, and is worth thoroughly understanding.
 
 ### Posterior Odds
 
@@ -80,11 +82,11 @@ $Prior Odds * Bayes Factor = \frac{P(B)}{P(A)} * \frac{P(D | B)}{P(D | A)} = .1 
 
 What does this number mean? The 100 is our _posterior odds_. It quantifies how much we should believe in one hypothesis over another. It combines our prior belief, via the prior odds, and the amount that the data should sway us, via the Bayes Factor, into a single, convenient number.
 
-A good general rule of thumb is that a posterior over 20 is good evidence, and over 150 is overwhelming evidence. It looks like we’re on to something here, and one more strike would be pretty overwhelming evidence. At this point, given your prior belief, you should be open to thinking that Gary might actually be telling the truth.
+A good general rule of thumb is that a posterior over 20 is good evidence, and over 150 is overwhelming evidence. With a result of 100, it looks like we’re on to something here, and one more strike would be overwhelming evidence. At this point, given your prior belief, you should be open to thinking that Gary might actually be telling the truth.
 
 ## Extreme Prior
 
-But, you say, “that’s ridiculous!” You still don’t believe. That means that your prior was actually much smaller than 10%. Let’s walk through the [extreme skepticism](/blog/ideas/bayesian-belief-1#extreme-skepticism) case from Part 1 to show the power of the prior. Let’s say that you believe there’s only a 1 in a million chance that Gary is telling the truth. So, with Gary’s three strikes, we have:
+But, you say, “that’s ridiculous!” You still don’t believe. That means that your prior was actually smaller than 10%. Let’s walk through the [extreme skepticism](/blog/ideas/bayesian-belief-1#extreme-skepticism) case from Part 1 to show the power of the prior. Let’s say that you believe there’s only a 1 in a million chance that Gary is telling the truth. So, with Gary’s three strikes, we have:
 
 $\frac{P(B)}{P(A)} = 10^{-6}$\
 $P(D | A) = (1/10)^3 = .001$\
@@ -92,10 +94,10 @@ $P(D | B) = 1*1*1 = 1$
 
 $Posterior = 10^{-6} * \frac{1}{.001} = .001$
 
-A posterior of .001 is not at all convincing: we’re going to need a lot more evidence to be convinced. So, let’s gather some more data. Gary proceeds to throw another 7 strikes, for a total of 10 in a row!
+A posterior of .001 is not at all convincing: Gary is going to have to show a lot more evidence to convince us. So, we ask Gary to bowl some more. He proceeds to throw another 7 strikes, for a total of 10 in a row!
 
 $\frac{P(B)}{P(A)} = 10^{-6}$\
-$P(D | A) = (1/10)^10 = 10^{-10}$ -> The data is extraordinarily unlikely, given hypothesis A.\
+$P(D | A) = (1/10)^10 = 10^{-10}$ -> 10 strikes are extraordinarily unlikely, given hypothesis A.\
 $P(D | B) = 1*1*1 = 1$
 
 $Posterior = 10^{-6} * \frac{1}{10^{-10}} = 10^4$
@@ -132,7 +134,7 @@ $Posterior = \infin * \frac{P(D | B)}{P(D | A)} = \infin$
 
 Again, no amount of data will change your mind.[^1]
 
-[^1]: I’m trying to keep things simple, but a clever reader will notice that things would get hairy if $P(D | B) = 0$. In this case, we would probably have to view the $\infin$ as $\lim \infin$. Thus, if the data is truly impossible given hypothesis B, then we have to accept the posterior of 0, meaning that hypothesis A is correct. The other way we can view this situation, is by inverting everything to make the prior 0 instead of $\infin$.
+[^1]: I’m trying to keep things simple, but a clever reader will notice that things would get hairy if $P(D | B) = 0$. In this case, we would probably have to view the $\infin$ as $\lim \infin$. Thus, if the data is truly impossible given hypothesis B, then we have to accept the posterior of 0, meaning that hypothesis A is correct. The other way we can view this situation, is by inverting everything to make the prior 0 instead of $\infin$, which is simpler to handle.
 
 ## Cheating
 
@@ -140,24 +142,24 @@ In this example, I’m going to illustrate how Bayesian statistics can explain t
 
 $Posterior = 10^{-6} * \frac{1}{10^{-10}} = 10^4$
 
-Even though we have a prior of 1 in a million, this is still overwhelming evidence. So, we can probably discard hypothesis A. So, it’s time for a third hypothesis, C, that Gary is cheating. Under the cheating theory, Gary can create any result he wants. Something interesting happens when we compare B and C.
+Even though we have a prior of 1 in a million, this is still overwhelming evidence. So, we can probably discard hypothesis A. It’s time for a third hypothesis, C, that Gary is cheating. Under the cheating theory, Gary can create any result he wants. Something interesting happens when we compare B and C.
 
-$P(D | B)$ -> The probability of seeing the data that consists only of strikes, given that Gary only throws strikes, is 1.
+$P(D | B)$ -> The probability of seeing the data that consists only of strikes, given that Gary only throws strikes, is 1.\
 $P(D | C)$ -> The probability of seeing the data given that Gary is cheating is 1, since he can create any result he wants.
 
 We are left with:
 
-$P(A) * \frac{1}{1} = P(B)$
+$prior * \frac{1}{1} = posterior$
 
 or
 
-$P(A) = P(B)$
+$prior = posterior$
 
-In plain English, the data doesn’t matter at all. Your posterior belief is always going to be your prior belief, whatever that was.
+Your posterior belief is always going to be your prior belief, whatever that was. The data is irrelevant.
 
 ## The Data is a Conspiracy
 
-Let’s work through the full example from [The Data is a Conspiracy](/blog/ideas/bayesian-belief-1#the-data-is-a-conspiracy) from Part 1. Recall that we are illustrating a situation where more supporting data will actually convince you, not that Gary is now Gary the Great, but that he’s cheating. This situation is analogous to any number of conspiracy theories, as discussed in part 1.
+Let’s work through the full example from [The Data is a Conspiracy](/blog/ideas/bayesian-belief-1#the-data-is-a-conspiracy) from Part 1. Recall that we are illustrating a situation where more supporting data will actually convince you, not that Gary is now Gary the Great, but that he’s cheating. This situation is crazy on it's surface, because data that seems to show one thing, actually convinces us of something else. As discussed in Part 1, this situation is analogous to any number of conspiracy theories.
 
 We are going to change hypothesis B slightly. Now, Gary only claims that he can throw a strike 90% of the time. The logic still works if you keep the original hypothesis B and Gary misses at least once, but having a probability here illustrates the point better. I’ll leave it up to you to show why a miss when Gary claims to only throw strikes supports the theory that he is cheating.
 
@@ -169,7 +171,7 @@ $\frac{P(B)}{P(A)} -> 10^{-6}$\
 $P(D | A) = \frac{1}{10}^{10} * \frac{9}{10}^1 = 9e-11$\
 $P(D | B) = \frac{9}{10}^{10} * \frac{1}{10}^1 = .035$
 
-$Posterior for B vs A= 10^{-6} * \frac{.035}{9e-11} = 387$
+$Posterior B vs A= 10^{-6} * \frac{.035}{9e-11} = 387$
 
 As you can see, the evidence is overwhelming in favor of B.
 
@@ -179,7 +181,9 @@ $\frac{P(B}{P(C} = 10^{-6}$\
 $P(D | B) = .035$\
 $P(D | C) = 1$
 
-$Posterior for B vs C = 10^{-6} * \frac{.035}{1} = 3.5e-8$
+$Posterior B vs C = 10^{-6} * \frac{.035}{1} = 3.5e-8$
+
+As you can see, we already think that it's extremely likely that Gary is cheating.
 
 ### Add more data to the mix
 
@@ -189,7 +193,7 @@ $\frac{P(B)}{P(A)} = 10^{-6}$\
 $P(D | A) -> \frac{1}{10}^{20} * \frac{9}{10}^2 = 8e-21$\
 $P(D | B) -> \frac{9}{10}^{20} * \frac{1}{10}^2 = .0012$
 
-$Posterior for B vs A = 1.5e11$
+$Posterior B vs A = 1.5e11$
 
 Crazy, insanely overwhelming evidence for B vs A.
 
@@ -197,12 +201,12 @@ $\frac{P(B)}{P(C)} = 10^{-6}$\
 $P(D | B) -> \frac{9}{10}^{20} * \frac{1}{10}^2 = .0012$\
 $P(D | C) -> 1$
 
-$Posterior for B vs C= .1 * \frac{.0012}{1} = 1.2e-9$
+$Posterior B vs C= .1 * \frac{.0012}{1} = 1.2e-9$
 
-The additional data actually decreased our belief in B when compared to C (posteriors of 3.5e-8 vs. 1.2e-9). The actual numbers don’t matter here, just that they are decreasing.
+The additional data actually decreased our belief in B when compared to C (posteriors of 3.5e-8 vs. 1.2e-9)! The actual numbers don’t matter here, just that they are decreasing.
 
 ### It's all a conspiracy
 
-Something really interesting happened here. Gary wants us to believe in hypothesis B, that he is now the Ace of the Alley. Thinking that we are comparing hypothesis A and B, he has shown us more data in order to convince us. That data is overwhelming, so he thinks, how can you not be convinced? But, we are actually comparing B against C, that he is cheating. When comparing B and C, the additional data actually made us more sure of C, and less sure of B. Evidence that Gary intended to show one thing has actually convinced us of something else!
+Something really interesting happened here. Gary wants us to believe in hypothesis B, that he is now the Ace of the Alley. Thinking that we are comparing hypothesis A and B, he has shown us more data in order to convince us. That data is objectively overwhelming. So he thinks, how can you not be convinced? But, we are actually comparing B against C, that he is cheating. When comparing B and C, the additional data actually made us more sure of C, and less sure of B. Evidence that Gary intended to show one thing has actually convinced us of something else!
 
 As discussed in Part 1, the key point here is that we are comparing a hypothesis that depends on data (hypothesis B), with a hypothesis that does not depend on data, the cheating hypothesis. Essentially, you are comparing a hypothesis that has some doubt, however small, with one that has no doubt. The ratio of doubt to no doubt gets larger with more data, always. Thus, when you are trying to convince someone, you must understand what hypothesis they are comparing against yours. Are you trying to convince someone with data, when their hypothesis doesn’t depend on data?
