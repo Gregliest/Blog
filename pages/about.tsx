@@ -24,7 +24,7 @@ export default function About({ authorDetails }: InferGetStaticPropsType<typeof 
 
   return (
     <div className="h-screen w-screen">
-      <Header />
+      <Header title="About" />
       <div className="mb-0 h-1 bg-neutral-200 sm:mb-4" />
       <PageSEO title={`About - ${siteMetadata.author}`} description={siteMetadata.description} />
       <SectionContainer>

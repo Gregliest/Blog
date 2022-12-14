@@ -36,7 +36,7 @@ export default function Whitewater({ whitewaterPosts }) {
         />
       </div>
 
-      <div className="h-screen w-full">
+      <div className="h-screen w-screen">
         <MinimalHeader title="Whitewater" />
         <div className="h-6" />
         <PageSEO
