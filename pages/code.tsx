@@ -6,7 +6,8 @@ import { PageSEO } from '@/components/SEO'
 import ArticleGallery from '@/components/ArticleGallery'
 import { MinimalHeader } from '@/components/Header'
 import Footer from '@/components/Footer'
-import Image from '@/components/Image'
+import BackgroundImage from '@/components/BackgroundImage'
+import alsek from '@/images/photography/alsek-lake.jpg'
 
 export const getStaticProps = async () => {
   const allPosts = await getAllDisplayPosts()
@@ -18,23 +19,11 @@ export const getStaticProps = async () => {
     },
   }
 }
+
 export default function Code({ codePosts }) {
   return (
     <div>
-      <div className="fixed -z-10 h-screen w-screen">
-        <Image
-          alt="Background"
-          src="/static/images/photography/alsek-lake.jpg"
-          fill
-          objectFit="cover"
-          priority
-          sizes="(max-width: 1000px and max-height:450px) 1000px,
-          (max-width: 1440px and max-height:720px) 1500px,
-            3000px"
-          quality={100}
-        />
-      </div>
-
+      <BackgroundImage image={alsek} />
       <div className="h-screen w-screen">
         <MinimalHeader title="Code" />
         <div className="h-6" />
