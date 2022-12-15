@@ -8,7 +8,7 @@ interface MobileNavProps {
 const MobileNav = (props: MobileNavProps) => {
   const navLinks = props.navLinks ? props.navLinks : minimalHeaderNavLinks
   const [navShow, setNavShow] = useState(false)
-  //
+
   const onToggleNav = () => {
     setNavShow((status) => {
       if (status) {
