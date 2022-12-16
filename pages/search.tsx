@@ -122,18 +122,21 @@ export default function Tags({ tags, posts }: InferGetStaticPropsType<typeof get
   }
 
   return (
-    <div className="flex h-screen flex-col">
-      <MinimalHeader title="Search" />
-      <PageSEO title={`Search - ${siteMetadata.author}`} description="Things I blog about" />
-      {/* Necessary to put search in a div so that it doesn't lose focus when rerendering */}
-      <div>{SearchComponent()}</div>
-      <TagsComponent />
-      <ArticleGallery
-        articles={articles.filter((article) => !article.archived && !article.draft)}
-      />
-      <ArchiveComponent />
-      <div className="flex-grow" />
-      <Footer />
+    <div>
+      {/* <BackgroundImage image={santaFe} /> */}
+      <div className="flex h-screen flex-col">
+        <MinimalHeader title="Search" />
+        <PageSEO title={`Search - ${siteMetadata.author}`} description="Things I blog about" />
+        {/* Necessary to put search in a div so that it doesn't lose focus when rerendering */}
+        <div>{SearchComponent()}</div>
+        <TagsComponent />
+        <ArticleGallery
+          articles={articles.filter((article) => !article.archived && !article.draft)}
+        />
+        <ArchiveComponent />
+        <div className="flex-grow" />
+        <Footer />
+      </div>
     </div>
   )
 }
