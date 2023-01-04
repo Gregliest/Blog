@@ -83,7 +83,8 @@ def processFile(filename, title, tags, summary, folder):
     mdx = generateMdx(filename, title, tags, summary, captureDate)
 
     # Create Mdx file
-    mdxFile = getMdxFolder(tags) + title.lower() + '.mdx'
+    t = filename.split('.')[0]
+    mdxFile = getMdxFolder(tags) + t.lower() + '.mdx'
     with open(mdxFile, 'w') as mf:
       mf.write(mdx)
 
