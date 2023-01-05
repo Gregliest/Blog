@@ -8,6 +8,7 @@ export type PostFrontMatter = {
   title: string
   date: string
   tags: string[]
+  type: string
 
   // Populated by the system
   slug: string
@@ -15,7 +16,6 @@ export type PostFrontMatter = {
 
   // Optional
   postedDate?: string
-  type?: string
   link?: string
   image?: string
   thumbnail?: string
