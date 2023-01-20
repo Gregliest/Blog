@@ -38,6 +38,14 @@ export function filterByText(text: string, posts: PostFrontMatter[]) {
   return posts.filter((post) => post.title.toLowerCase().includes(text.toLowerCase()))
 }
 
+export function filterByType(type: string, posts: PostFrontMatter[]) {
+  return posts.filter((post) => post.type && post.type.toLowerCase() === type)
+}
+
+export function filterByNotType(type: string, posts: PostFrontMatter[]) {
+  return posts.filter((post) => post.type && post.type.toLowerCase() !== type)
+}
+
 export function removeArchived(posts: PostFrontMatter[]) {
   return posts.filter((post) => !post.archived)
 }

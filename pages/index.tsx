@@ -8,7 +8,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import bowser from '@/images/BowserBanner.jpg'
 import AnimatedTextBox from '@/components/AnimatedTextBox'
-import { sortByPostedDate } from '@/lib/utils/posts'
+import { filterByNotType, filterByType, sortByPostedDate } from '@/lib/utils/posts'
 import BackgroundImage from '@/components/BackgroundImage'
 
 export const POSTS_PER_PAGE = 5
@@ -41,19 +41,33 @@ function orderPosts(allPosts) {
   return allPosts
 }
 
+// Removes all but the most recent photo
+function removeMostPhotos(posts) {
+  const photos = filterByType('photo', posts)
+  const articles = filterByNotType('photo', posts)
+
+  if (photos.length > 0) {
+    sortByPostedDate(photos)
+    const mostRecentPhoto = photos[0]
+    articles.push(mostRecentPhoto)
+  }
+
+  sortByPostedDate(articles)
+  return articles
+}
+
 export const getStaticProps = async () => {
   const allPosts = await getAllDisplayPosts()
-  sortByPostedDate(allPosts)
-  orderPosts(allPosts)
+  const posts = removeMostPhotos(allPosts)
 
   return {
     props: {
-      allPosts,
+      posts,
     },
   }
 }
 
-export default function Blog({ allPosts }: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function Blog({ posts }: InferGetStaticPropsType<typeof getStaticProps>) {
   function resizeEvent() {
     console.log(window.innerWidth + ' ' + window.innerHeight)
   }
@@ -76,7 +90,7 @@ export default function Blog({ allPosts }: InferGetStaticPropsType<typeof getSta
           title={`Canyons and Code - ${siteMetadata.author}`}
           description={siteMetadata.description}
         />
-        <ArticleGallery articles={allPosts} />
+        <ArticleGallery articles={posts} />
         <Footer />
       </div>
     </div>
