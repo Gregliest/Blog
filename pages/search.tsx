@@ -92,7 +92,7 @@ export default function Tags({ tags, posts }: InferGetStaticPropsType<typeof get
             Tags
           </h1>
         </div>
-        <div className="mx-6 mb-6 flex max-w-lg flex-wrap md:mb-0">
+        <div className="mx-6 mb-6 flex max-w-lg flex-wrap">
           {sortedTags.map((t) => {
             return TagComponent(t, tags)
           })}
