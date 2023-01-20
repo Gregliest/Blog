@@ -1,5 +1,5 @@
 import { promises as fs } from 'fs'
-import { filterByTag, sortByDate, getSection } from './posts'
+import { filterByTag, sortByDate, getSection, filterByType } from './posts'
 import path from 'path'
 import { getAllFilesFrontMatter } from '../mdx'
 import { PostFrontMatter, PostSeries } from 'types/PostFrontMatter'
@@ -28,6 +28,11 @@ export async function getMediumPosts() {
 export async function getPostsForTag(tag) {
   const posts = await getAllPosts()
   return filterByTag(tag, posts)
+}
+
+export async function getPostsForType(type) {
+  const posts = await getAllPosts()
+  return filterByType(type, posts)
 }
 
 export async function getSeriesPosts(series: PostSeries) {
