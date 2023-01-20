@@ -15,7 +15,7 @@ export const getStaticProps = async () => {
   // Get all posts of type photo or with the photography tag.
   photographyPosts = photographyPosts.filter(
     (post) =>
-      (post.type && post.type.toLowerCase() === 'photo') || post.tags.includes('photography')
+      post.type && (post.type.toLowerCase() === 'photo' || post.type.toLowerCase() === 'blurb')
   )
   photographyPosts = removeArchived(photographyPosts)
 
