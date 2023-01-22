@@ -1,5 +1,5 @@
 import siteMetadata from '@/data/siteMetadata'
-import { getPostsForTag } from '@/lib/utils/contentProvider'
+import { getAllDisplayPosts } from '@/lib/utils/contentProvider'
 
 import { PageSEO } from '@/components/SEO'
 import Gallery from '@/components/Gallery'
@@ -10,10 +10,17 @@ import { removeArchived } from '@/lib/utils/posts'
 const sizeOf = require('image-size')
 
 export const getStaticProps = async () => {
-  let photographyPosts = await getPostsForTag('photography')
+  let photographyPosts = await getAllDisplayPosts()
+
+  // Get all posts of type photo or with the photography tag.
+  photographyPosts = photographyPosts.filter(
+    (post) =>
+      post.type && (post.type.toLowerCase() === 'photo' || post.type.toLowerCase() === 'blurb')
+  )
   photographyPosts = removeArchived(photographyPosts)
 
   const posts = photographyPosts.map((post) => {
+    console.log(post)
     const dimensions = sizeOf(process.cwd() + '/public' + post.image)
     post['originalWidth'] = dimensions.width
     post['originalHeight'] = dimensions.height

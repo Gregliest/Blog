@@ -1,4 +1,7 @@
 # Generates mdx files for photos in the csv and adds the posts to the repo
+# Run like p addPhotos.py ~/Desktop/Best1/pictures.csv ~/Desktop/Best1/
+# IMPORTANT: Make sure the photos have metadata including capture date.
+
 # Steps
 # 1. Read csv with format (filename, title, tags[colon separated], summary)
 # 2. Generate mdx
