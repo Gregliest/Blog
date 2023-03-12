@@ -117,8 +117,11 @@ export const BlogSEO = ({
   const publishedAt = new Date(date).toISOString()
   const modifiedAt = new Date(lastmod || date).toISOString()
 
-  const imagesArr =
-    image === null ? [siteMetadata.socialBanner] : typeof image === 'string' ? [image] : image
+  const imagesArr = !image
+    ? [siteMetadata.socialBanner]
+    : typeof image === 'string'
+    ? [image]
+    : image
 
   const featuredImages = imagesArr.map((img) => {
     return {
