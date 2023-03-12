@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { useRouter } from 'next/router'
+import { usePathname } from 'next/navigation'
 import siteMetadata from '@/data/siteMetadata'
 import { AuthorFrontMatter } from 'types/AuthorFrontMatter'
 import { PostFrontMatter } from 'types/PostFrontMatter'
@@ -26,13 +26,13 @@ const CommonSEO = ({
   twImage,
   canonicalUrl,
 }: CommonSEOProps) => {
-  const router = useRouter()
+  const pathname = usePathname()
   return (
     <Head>
       <title>{title}</title>
       <meta name="robots" content="follow, index" />
       <meta name="description" content={description} />
-      <meta property="og:url" content={`${siteMetadata.siteUrl}${router.asPath}`} />
+      <meta property="og:url" content={`${siteMetadata.siteUrl}${pathname}`} />
       <meta property="og:type" content={ogType} />
       <meta property="og:site_name" content={siteMetadata.title} />
       <meta property="og:description" content={description} />
@@ -49,7 +49,7 @@ const CommonSEO = ({
       <meta name="twitter:image" content={twImage} />
       <link
         rel="canonical"
-        href={canonicalUrl ? canonicalUrl : `${siteMetadata.siteUrl}${router.asPath}`}
+        href={canonicalUrl ? canonicalUrl : `${siteMetadata.siteUrl}${pathname}`}
       />
     </Head>
   )
@@ -77,7 +77,7 @@ export const PageSEO = ({ title, description }: PageSEOProps) => {
 export const TagSEO = ({ title, description }: PageSEOProps) => {
   const ogImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner
   const twImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner
-  const router = useRouter()
+  const pathname = usePathname()
   return (
     <>
       <CommonSEO
@@ -92,7 +92,7 @@ export const TagSEO = ({ title, description }: PageSEOProps) => {
           rel="alternate"
           type="application/rss+xml"
           title={`${description} - RSS feed`}
-          href={`${siteMetadata.siteUrl}${router.asPath}/feed.xml`}
+          href={`${siteMetadata.siteUrl}${pathname}/feed.xml`}
         />
       </Head>
     </>
@@ -111,17 +111,14 @@ export const BlogSEO = ({
   date,
   lastmod,
   url,
-  images = [],
+  image,
   canonicalUrl,
 }: BlogSeoProps) => {
   const publishedAt = new Date(date).toISOString()
   const modifiedAt = new Date(lastmod || date).toISOString()
+
   const imagesArr =
-    images.length === 0
-      ? [siteMetadata.socialBanner]
-      : typeof images === 'string'
-      ? [images]
-      : images
+    image === null ? [siteMetadata.socialBanner] : typeof image === 'string' ? [image] : image
 
   const featuredImages = imagesArr.map((img) => {
     return {
