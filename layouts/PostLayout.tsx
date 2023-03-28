@@ -13,6 +13,7 @@ import { getSection } from '@/lib/utils/posts'
 import { BlogNewsletterForm } from '@/components/NewsletterForm'
 import { useRouter } from 'next/router'
 import formatDate from '@/lib/utils/formatDate'
+import { like } from '@/lib/utils/dynamo'
 
 const editUrl = (fileName) => `${siteMetadata.siteRepo}/blob/master/data/blog/${fileName}`
 const discussUrl = (slug) =>
@@ -234,6 +235,15 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
             <footer>
               <div className="divide-gray-200 text-sm font-medium leading-5 lg:col-start-1 lg:row-start-2 lg:divide-y"></div>
               <div className="divide-gray-200 text-sm font-medium leading-5 lg:col-start-1 lg:row-start-2 lg:divide-y">
+                <div>
+                  <button
+                    className={`'hover:bg-primary-700' w-full rounded-md bg-primary-500 py-2 px-4 font-medium text-white focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-offset-2`}
+                    type="submit"
+                    onClick={() => like(slug)}
+                  >
+                    Like
+                  </button>
+                </div>
                 <BlogNewsletterForm title="SUBSCRIBE" />
                 <PrintsView section={section} />
                 <TagView tags={tags} />
