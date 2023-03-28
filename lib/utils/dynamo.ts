@@ -2,7 +2,6 @@ import {
   CreateTableCommand,
   DynamoDBClient,
   GetItemCommand,
-  PutItemCommand,
   UpdateItemCommand,
 } from '@aws-sdk/client-dynamodb'
 
@@ -34,27 +33,6 @@ async function createLikeTable() {
     return data
   } catch (err) {
     console.log('Error', err)
-  }
-}
-
-export async function likePut(path) {
-  console.log('Liked ' + path)
-  const params = {
-    Item: {
-      page_id: { S: path },
-      likes: { N: '0' },
-    },
-
-    ReturnConsumedCapacity: 'TOTAL',
-    TableName: 'LIKES',
-  }
-
-  try {
-    const data = await client.send(new PutItemCommand(params))
-    console.log(data)
-    return data
-  } catch (err) {
-    console.error(err)
   }
 }
 
