@@ -6,14 +6,14 @@ import Image from '@/components/Image'
 import siteMetadata from '@/data/siteMetadata'
 import Comments from '@/components/comments'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
-import { ReactNode } from 'react'
+import { ReactNode, useEffect, useState } from 'react'
 import { PostFrontMatter } from 'types/PostFrontMatter'
 import { AuthorFrontMatter } from 'types/AuthorFrontMatter'
 import { getSection } from '@/lib/utils/posts'
 import { BlogNewsletterForm } from '@/components/NewsletterForm'
 import { useRouter } from 'next/router'
 import formatDate from '@/lib/utils/formatDate'
-import { like } from '@/lib/utils/dynamo'
+import { getLikes, addLike, addPageView } from '@/lib/utils/dynamo'
 
 const editUrl = (fileName) => `${siteMetadata.siteRepo}/blob/master/data/blog/${fileName}`
 const discussUrl = (slug) =>
@@ -176,6 +176,31 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
   const { slug, fileName, date, title, tags } = frontMatter
   const section = getSection(frontMatter)
   const router = useRouter()
+  const [numLikes, setNumLikes] = useState(0)
+
+  // Get likes
+  useEffect(() => {
+    const getNumLikes = async () => {
+      const likes = await getLikes(slug)
+      setNumLikes(likes)
+    }
+
+    getNumLikes()
+  })
+
+  // Track page views
+  useEffect(() => {
+    const addAnalytics = async () => {
+      await addPageView(slug)
+    }
+
+    addAnalytics()
+  }, [slug])
+
+  async function like(path) {
+    setNumLikes((ls) => ls + 1)
+    await addLike(path)
+  }
 
   return (
     <SectionContainer>
@@ -241,7 +266,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                     type="submit"
                     onClick={() => like(slug)}
                   >
-                    Like
+                    Like{numLikes == 0 ? '' : `s (${numLikes})`}
                   </button>
                 </div>
                 <BlogNewsletterForm title="SUBSCRIBE" />

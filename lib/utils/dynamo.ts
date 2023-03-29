@@ -6,7 +6,9 @@ import {
 } from '@aws-sdk/client-dynamodb'
 
 const REGION = 'us-west-2'
-const LIKES_TABLE = 'likes'
+const LIKES_TABLE = 'LIKES'
+
+const { DynamoDBDocument } = require('@aws-sdk/lib-dynamodb')
 
 const client = new DynamoDBClient({
   credentials: {
@@ -15,10 +17,11 @@ const client = new DynamoDBClient({
   },
   region: REGION,
 })
+const docClient = DynamoDBDocument.from(client)
 
 async function createLikeTable() {
   const params = {
-    TableName: 'LIKES',
+    TableName: LIKES_TABLE,
     KeySchema: [{ AttributeName: 'page_id', KeyType: 'HASH' }],
     AttributeDefinitions: [{ AttributeName: 'page_id', AttributeType: 'S' }],
     ProvisionedThroughput: {
@@ -36,9 +39,36 @@ async function createLikeTable() {
   }
 }
 
-export async function like(path) {
+export async function addPageView(path) {
   const params = {
-    TableName: 'LIKES',
+    TableName: LIKES_TABLE,
+    Key: {
+      page_id: { S: path },
+    },
+    ExpressionAttributeNames: {
+      '#views': 'views',
+    },
+    ExpressionAttributeValues: {
+      ':start': { N: '0' },
+      ':incr': { N: '1' },
+    },
+    UpdateExpression: 'SET #views = if_not_exists(#views, :start) + :incr',
+    ReturnValues: 'UPDATED_NEW',
+  }
+
+  try {
+    const data = await client.send(new UpdateItemCommand(params))
+    console.log(data)
+    return data
+  } catch (err) {
+    console.error(err)
+  }
+
+  return ''
+}
+export async function addLike(path) {
+  const params = {
+    TableName: LIKES_TABLE,
     Key: {
       page_id: { S: path },
     },
@@ -69,9 +99,25 @@ export async function getLikes(path) {
   const params = {
     TableName: LIKES_TABLE,
     Key: {
-      KEY_NAME: { N: path },
+      page_id: path,
     },
   }
 
-  return await client.send(new GetItemCommand(params))
+  const response = await docClient.get(params)
+  return response.Item.likes
 }
+
+// export async function getLikes(path) {
+//   console.log('Got likes ' + path)
+//   const params = {
+//     TableName: 'LIKES',
+//     Key: {
+//       page_id: { S: path },
+//     },
+//   }
+
+//   const response = await client.send(new GetItemCommand(params))
+//   console.log(response.Item)
+
+//   return response
+// }
