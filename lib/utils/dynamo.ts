@@ -104,7 +104,7 @@ export async function getLikes(path) {
   }
 
   const response = await docClient.get(params)
-  return response.Item.likes
+  return response.Item != undefined ? response.Item.likes : 0
 }
 
 // export async function getLikes(path) {

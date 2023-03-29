@@ -266,7 +266,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                     type="submit"
                     onClick={() => like(slug)}
                   >
-                    Like{numLikes == 0 ? '' : `s (${numLikes})`}
+                    Like{numLikes == 0 || numLikes == undefined ? '' : ` (${numLikes})`}
                   </button>
                 </div>
                 <BlogNewsletterForm title="SUBSCRIBE" />
