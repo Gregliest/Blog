@@ -1,0 +1,66 @@
+---
+title: 'The Four Pillars of Intelligence'
+date: 2023-04-09
+summary: The building blocks of a general AI, inspired by biology.
+tags: ['idea', 'ai', 'article']
+thumbnail: /static/images/photography/monkey.jpg
+draft: True
+type: Article
+---
+
+_The building blocks of a general AI, inspired by biology._
+
+With ChatGPT revolutionizing AI, people often ask me, when is AI going to take over? When are we going to have a general intelligence? To start to answer those questions, we need to think about intelligence from first principles, particularly with biology as inspiration. The best framework I’ve found for intelligence is the called the Four Pillars of Intelligence, based on the work of cognitive neuroscientist, Stanislas Dehaene, in his book [How We Learn](https://a.co/d/gtG0N26). Dr. Dehaene’s work is more on the brain/neuroscience side, and so I’ve modified and reordered his framework slightly to make it more relevant to AI.
+
+The Four Pillars for AI are error feedback, attention, schema, and curiosity. Dr. Dehaene postulates that if something has all four of these pillars, then that entity can learn like a human. To support this theory, he cites cutting edge research that is surprising, and often contradicts what I learned in college psych and bio classes. It turns out that the Four Pillars explain a lot of current research in AI, and might inform where we should go next.
+
+I’m going to caveat this post by acknowledging that the field is moving very fast. I’ve been thinking about the 4 Pillars for over three years now and much has changed in the last 6 months. I’ve had to update this post as I was writing it with new advances, and I’m certainly not aware of everything that is happening.
+
+# Error feedback
+
+Error feedback is the ability to update your system to get closer to the right answer. We do this all the time. For instance, if you are learning a piece of music on the piano, the first time you try, you will play a lot of wrong notes. As you practice, you will reduce those errors, until you can play the piece to your satisfaction. Likewise, in an artificial neural network, error is the difference between the desired output and the actual output from the network. We reduce that error by training the neural network using gradient descent, which is the mathematically precise way to correct for errors.
+
+By utilizing gradient descent, error feedback forms the basis of current neural networks. You feed some input into the network, and get some output. You measure the difference between the output from your network, and the actual desired output, to get the error. Then, by back propagation, you push that error backwards through the network, and update all the weights to move the network closer to the desired output.
+
+There are a ton of tutorials, courses, and videos about how the backprop algorithm works, so I won’t go into more detail here. The key is that we have largely solved this pillar, at least in the context of our current neural networks. However, if we invent a new architecture, we may need to come up with a different way to solve error propagation. It’s also worth noting that backprop-based neural networks are really just statistics. A feed-forward neural network is essentially just a fancy logistic regression[^1]. Thus, that network can’t tell you anything that wasn’t already in your data, and certainly can’t draw any sort of causal conclusions.
+
+[^1]: For more depth on AI as a statistical model, check out [The Myth of Artificial Intelligence](https://a.co/d/1a38lGG) by Erik Larson.
+
+# Attention
+
+Attention is the ability to learn to weight certain inputs more than others. When you look at a scene, your brain instantly zeros in on certain parts of what you perceive and ignores others. If you’re crossing the street, you will (hopefully) pay attention to any moving cars, and probably ignore any trees. Your brain has learned what is relevant for the task at hand, and filters out everything else.
+
+Attention is the basis of the current wave of amazing new AI models, like ChatGPT and Stable Diffusion. The basic advance was the transformer, which is simply an attention layer on top of a feed-forward neural network. A transformer implements attention as a system of query, key, and value matrices[^2]. At a high level, you can think of these matrices as forming a type of mask, that increases the signal from some inputs, and decreases it from others. Then, you simply feed the masked input into a traditional feed-forward neural network. It’s actually quite simple, and maybe a little crude. However, the transformer’s effectiveness can’t be denied.
+
+I believe there are more advances to be made with attention. For instance, if you think of attention as a learnable mask, you can imagine building something much more complex than a transformer that would fulfill the same function. This is probably what the multiple layers of transformers are doing in the large language models, but without any design or direction. Perhaps you could use an image recognition module as a mask, or some other high level functionality. You could even imagine having interchangeable attention layers, where you can slap a different attention module on the same processing network, and get different results.
+
+I also want to note here that attention-based models are still statistical models. Since they can essentially cherry-pick which data are important, they are much more powerful than simple backprop-based models. However, while they can focus on a subset of the input data, they still can't output something that’s not in their data set. They can't infer causality, and also have no notion of correctness, which is why they [hallucinate](<https://en.wikipedia.org/wiki/Hallucination_(artificial_intelligence)>). They can, however, combine input and training data in new and interesting ways, and that’s why they appear so magical.
+
+[^2]: I really like this [explanation](https://jalammar.github.io/illustrated-transformer/) of transformers.
+
+# Schema
+
+Dr. Dehaene describes this pillar slightly differently, as “Consolidation,” which is the brain’s way of synthesizing what it has learned. This consolidation is one of the core functions of sleep. The brain replays what’s happened during the day over and over, changes weights, and prunes neural connections, to find the most efficient way to represent and preserve the knowledge gained. In other words, consolidation is the process by which our brains build models or schemas for the world. In the context of building AI, I think it's more useful to think about this pillar as the schemas rather than the consolidation, although the consolidation process will certainly have some interesting applications.
+
+A schema is a simplified representation of some part of the world, and our brains have learned schemas for everything. For instance, when you throw a ball, your brain has a physics model that predicts where the ball is going to go. When you interact with someone, your brain is constantly trying to figure out what they are thinking, and what they are going to do next. These models represent the sum of our experience, distilled as much as possible. With these models, we can do higher level reasoning, like prediction and induction. We can infer causality, and we can predict things that we've never seen before. While we build most of these models through experience, Dr. Dehaene presents some fascinating evidence that we are born with some of our models. Innate models might have some interesting applications to theories like the [Lottery Ticket Hypothesis](https://arxiv.org/abs/1803.03635).
+
+I believe that schemas are the key to the next generation of AI. I’m going to use “schema” instead of “model” because model has all sorts of other connotations within machine learning. Schemas can be built manually or automatically. For instance, self driving car algorithms are highly modular. The engineers have broken down the problem into smaller chunks, and each chunk is solved independently. Essentially, they have manually dictated or discovered some structure to the problem, by identifying intermediate problems to be solved, and that structure represents a sort of schema for self-driving cars. However, obviously it would be more flexible and powerful if AI could generate these schemas automatically. Once AI can automatically generate schemas, we can finally move away from AI as only statistical models, and I think we will quickly cross the threshold to a general intelligence.
+
+Automated schemas in AI are not well solved. The field of model-based reinforcement learning has stalled for the last 5 or more years. There’s some interesting work going on in pruning and sparsity, but that field is pretty nascent as far as I know. Theoretically, a pruned network might be able to discover structure, and thus do abstraction. While I was writing this post, some really interesting new tools came out like [ViperGPT](https://github.com/cvlab-columbia/viper) and [Segment Anything](https://segment-anything.com/), which seem to have notions of correctness and abstraction, but are limited to images. There are also many more tools for generating code from prompts. These tools could be the first step towards building automated backing schemas.
+
+Automated schema generation is the area of AI research that I’m most interested in. I’ve had some interesting results using localized training and modular neural networks that I’ll share in a future blog post or paper. If you’re interested in collaborating, I’d love to hear from you!
+
+# Curiosity
+
+Curiosity is the ability to figure out what you don’t know, and gather more information about it. It requires that you can take actions to find the knowlege you lack. Curiosity is key to how humans learn: just hang out with any kid, and wait for the “why …?” The child has identified that they don’t know something, and then taken an action (asking the question) to find out more.
+
+Curiosity has been explored a little bit, such as in [Curiosity-driven Exploration by Self-supervised Prediction
+](https://arxiv.org/abs/1705.05363) . In my opinion, that paper’s results were unacceptably cherry picked, and obviously, you do need more than just curiosity. However, the authors showed that you can implement curiosity relatively easily.
+
+Of the four pillars, I think curiosity is the easiest to understand and implement. However, true curiosity requires that you know what you don’t know: that you have robust uncertainty measurement. I tend to think that this level of uncertainty measurement requires a backing schema, but perhaps we can apply curiosity to a Bayesian Neural Network or something. I’m optimistic that curiosity will be relatively easy to add on once we have either uncertainty or a backing schema, and curiosity might even be a core requirement for training backing schemas.
+
+# The Future
+
+So, I hope you enjoyed this tour through all of intelligence in a couple of pages. I believe the Four Pillars give us a great blueprint for building a general AI, inspired by biology. However, we must acknowledge that machine intelligence will probably not work the same way as the brain. For one, the hardware is completely different. Brains are massively parallel, and not very fast. You could, for instance, fire all 100 billion or so of your neurons at once and see what happens (I wouldn’t recommend that). But single calculations take a relatively long time, maybe on the order of ms. On the other hand, computers are blazingly fast, but not very parallel (although they are getting more parallel with GPUs). Two, the problem sets are not the same. Brains had to evolve, with all the mess and chaos of living in the real world. Computers can live in as sanitized an environment as you want. But, perhaps the Four Pillars are the building blocks that will apply to both hardware and wetware.
+
+Let me leave you with an analogy. When we wanted a mechanical way to travel, we didn’t build machines with legs. We invented the wheel, and built roads. We still had to harness energy to create motion, but the fuels and mechanisms were entirely different. In the same way, machine intelligence almost certainly will share some similarities, but also have many of its own, new characteristics. Perhaps we will have to keep AI on the roads for a while, or maybe AI will suddenly decide to take us to space.
